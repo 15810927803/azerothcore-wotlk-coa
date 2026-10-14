@@ -1527,6 +1527,11 @@ void AuraEffect::HandleShapeshiftBoosts(Unit* target, bool apply) const
             break;
     }
 
+    if (spellId)
+        spellId = sSpellMgr->GetSpellTwinFor(spellId, GetId());
+    if (spellId2)
+        spellId2 = sSpellMgr->GetSpellTwinFor(spellId2, GetId());
+
     Player* player = target->ToPlayer();
     if (apply)
     {
@@ -1600,7 +1605,9 @@ void AuraEffect::HandleShapeshiftBoosts(Unit* target, bool apply) const
             }
 
             // Leader of the Pack
-            if (player->HasTalent(17007, player->GetActiveSpec()))
+            std::vector<uint32> const leaderOfThePack = sSpellMgr->GetSpellAndRelatives(17007);
+            if (std::any_of(leaderOfThePack.begin(), leaderOfThePack.end(),
+                [player](uint32 spellId) { return player->HasTalent(spellId, player->GetActiveSpec()); }))
             {
                 SpellInfo const* spellInfo = sSpellMgr->GetSpellInfo(24932);
                 if (spellInfo && spellInfo->Stances & (1 << (GetMiscValue() - 1)))
@@ -2198,11 +2205,11 @@ void AuraEffect::HandleAuraModShapeshift(AuraApplication const* aurApp, uint8 mo
         if (PowerType != POWER_MANA)
         {
             uint32 oldPower = target->GetPower(PowerType);
+            bool const powerAlreadyActive = target->IsPlayer() &&
+                target->ToPlayer()->HasActivePowerType(PowerType);
             // reset power to default values only at power change
             if (target->getPowerType() != PowerType)
             {
-                bool const powerAlreadyActive = target->IsPlayer() &&
-                    target->ToPlayer()->HasActivePowerType(PowerType);
                 target->setPowerType(PowerType);
                 if (powerAlreadyActive)
                     target->SetPower(PowerType, oldPower);
@@ -2223,6 +2230,8 @@ void AuraEffect::HandleAuraModShapeshift(AuraApplication const* aurApp, uint8 mo
                         {
                             case FORM_CAT:
                                 {
+                                    if (powerAlreadyActive)
+                                        break;
                                     int32 basePoints = int32(std::min(oldPower, FurorChance));
                                     target->SetPower(POWER_ENERGY, 0);
                                     target->CastCustomSpell(target, 17099, &basePoints, nullptr, nullptr, true, nullptr, this);

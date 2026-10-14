@@ -69,6 +69,7 @@
 #include "Totem.h"
 #include "TotemAI.h"
 #include "Transport.h"
+#include "TypeContainerVisitor.h"
 #include "UpdateFieldFlags.h"
 #include "UpdateFields.h"
 #include "Util.h"
@@ -1248,7 +1249,8 @@ uint32 Unit::DealDamage(Unit* attacker, Unit* victim, uint32 damage, CleanDamage
             return 0;
 
         // prevent kill only if killed in duel and killed by opponent or opponent controlled creature
-        if (victim->ToPlayer()->duel->Opponent == attacker || victim->ToPlayer()->duel->Opponent->GetGUID() == attacker->GetOwnerGUID())
+        if (victim->ToPlayer()->duel->Opponent == attacker ||
+            victim->ToPlayer()->duel->Opponent->GetGUID() == attacker->GetCharmerOrOwnerGUID())
             damage = health - 1;
 
         duel_hasEnded = true;
@@ -6626,6 +6628,36 @@ bool Unit::HasAuras(SearchMethod sm, std::vector<uint32>& spellIds) const
         LOG_ERROR("entities.unit", "Unit::HasAuras using non-supported SearchMethod {}", sm);
         return false;
     }
+}
+
+bool Unit::HasAuraOrTwin(uint32 spellId, ObjectGuid casterGUID) const
+{
+    for (uint32 relative : sSpellMgr->GetSpellAndRelatives(spellId))
+        if (HasAura(relative, casterGUID))
+            return true;
+    return false;
+}
+
+Aura* Unit::GetAuraOfRankedSpellOrTwin(uint32 spellId, ObjectGuid casterGUID) const
+{
+    for (uint32 relative : sSpellMgr->GetSpellAndRelatives(spellId))
+        if (Aura* aura = GetAuraOfRankedSpell(relative, casterGUID))
+            return aura;
+    return nullptr;
+}
+
+AuraEffect* Unit::GetAuraEffectOfRankedSpellOrTwin(uint32 spellId, uint8 effIndex, ObjectGuid casterGUID) const
+{
+    for (uint32 relative : sSpellMgr->GetSpellAndRelatives(spellId))
+        if (AuraEffect* effect = GetAuraEffectOfRankedSpell(relative, effIndex, casterGUID))
+            return effect;
+    return nullptr;
+}
+
+void Unit::RemoveAurasDueToSpellOrTwin(uint32 spellId)
+{
+    for (uint32 relative : sSpellMgr->GetSpellAndRelatives(spellId))
+        RemoveAurasDueToSpell(relative);
 }
 
 bool Unit::HasAura(uint32 spellId, ObjectGuid casterGUID, ObjectGuid itemCasterGUID, uint8 reqEffMask) const
@@ -12175,6 +12207,12 @@ void Unit::UpdateSpeed(UnitMoveType mtype, bool forced)
     if (mtype == MOVE_RUN && !IsMounted())
         if (AuraEffect const* hellknight = GetAuraEffect(ASCENSION_SPELL_HELLKNIGHT, EFFECT_0))
             main_speed_mod = std::max(main_speed_mod, -hellknight->GetAmount());
+    if (IsPlayer() && IsMounted() && HasAura(1005000) && (mtype == MOVE_RUN || mtype == MOVE_FLIGHT))
+    {
+        main_speed_mod = 0;
+        stack_bonus = 1.0f;
+        non_stack_bonus = 1.0f;
+    }
     float speed = std::max(non_stack_bonus, stack_bonus);
     if (main_speed_mod)
         AddPct(speed, main_speed_mod);
@@ -15064,6 +15102,61 @@ bool Unit::HandleAuraRaidProcFromCharge(AuraEffect* triggeredByAura)
     return true;
 }
 
+namespace
+{
+    struct BossSummonCollector
+    {
+        std::vector<Creature*> summons;
+
+        void Visit(std::unordered_map<ObjectGuid, Creature*>& creatures)
+        {
+            for (auto const& [guid, creature] : creatures)
+                if (creature->IsSummon())
+                    summons.push_back(creature);
+        }
+
+        template<class T>
+        void Visit(std::unordered_map<ObjectGuid, T*>&) { }
+    };
+
+    // CoA: when a boss dies in an instance, the adds and totems it summoned (and
+    // what those summoned in turn) despawn with it. Runs before the boss's
+    // JustDied, so anything its script summons on death stays.
+    void DespawnBossSummons(Creature* boss)
+    {
+        Map* map = boss->GetMap();
+        if (!map || !map->Instanceable() || boss->IsCharmedOwnedByPlayerOrPlayer())
+            return;
+        if (!boss->IsDungeonBoss() && !boss->isWorldBoss() && boss->GetCreatureTemplate()->rank != CREATURE_ELITE_WORLDBOSS)
+            return;
+
+        BossSummonCollector collector;
+        TypeContainerVisitor<BossSummonCollector, MapStoredObjectTypesContainer> visitor(collector);
+        visitor.Visit(map->GetObjectsStore());
+
+        std::set<ObjectGuid> parents{ boss->GetGUID() };
+        std::vector<Creature*> despawn;
+        bool added;
+        do
+        {
+            added = false;
+            for (Creature* summon : collector.summons)
+            {
+                if (summon->IsCharmedOwnedByPlayerOrPlayer() || summon->IsDungeonBoss() || !summon->IsHostileToPlayers())
+                    continue;
+                if (parents.count(summon->ToTempSummon()->GetSummonerGUID()) && parents.insert(summon->GetGUID()).second)
+                {
+                    despawn.push_back(summon);
+                    added = true;
+                }
+            }
+        } while (added);
+
+        for (Creature* summon : despawn)
+            summon->DespawnOrUnsummon();
+    }
+}
+
 void Unit::Kill(Unit* killer, Unit* victim, bool durabilityLoss, WeaponAttackType attackType, SpellInfo const* /*spellProto*/, Spell const* /*spell*/ /*= nullptr*/)
 {
     // Prevent killing unit twice (and giving reward from kill twice)
@@ -15215,7 +15308,11 @@ void Unit::Kill(Unit* killer, Unit* victim, bool durabilityLoss, WeaponAttackTyp
     bool spiritOfRedemption = false;
     if (victim->IsPlayer() && victim->IsClass(CLASS_PRIEST, CLASS_CONTEXT_ABILITY) && !victim->ToPlayer()->HasPlayerFlag(PLAYER_FLAGS_IS_OUT_OF_BOUNDS))
     {
-        if (AuraEffect* aurEff = victim->GetAuraEffectDummy(20711))
+        AuraEffect* aurEff = victim->GetAuraEffectDummy(20711);
+        auto const [twinBegin, twinEnd] = sSpellMgr->GetSpellTwins().equal_range(20711);
+        for (auto twin = twinBegin; !aurEff && twin != twinEnd; ++twin)
+            aurEff = victim->GetAuraEffectDummy(twin->second);
+        if (aurEff)
         {
             // Xinef: aura_spirit_of_redemption is triggered by 27827 shapeshift
             if (victim->HasSpiritOfRedemptionAura() || victim->HasAura(27827))
@@ -15314,6 +15411,8 @@ void Unit::Kill(Unit* killer, Unit* victim, bool durabilityLoss, WeaponAttackTyp
         // Call KilledUnit for creatures, this needs to be called after the lootable flag is set
         if (killer && killer->IsCreature() && killer->IsAIEnabled)
             killer->ToCreature()->AI()->KilledUnit(victim);
+
+        DespawnBossSummons(creature);
 
         // Call creature just died function
         if (CreatureAI* ai = creature->AI())
@@ -17224,7 +17323,7 @@ void Unit::RewardRage(uint32 damage, uint32 weaponSpeedHitFactor, bool attacker)
         addRage = damage / rageconversion * 2.5f;
 
         // Berserker Rage effect
-        if (HasAura(18499))
+        if (HasAuraOrTwin(18499))
             addRage *= 3.0f;
     }
 

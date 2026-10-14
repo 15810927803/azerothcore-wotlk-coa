@@ -7,10 +7,16 @@
 # 启用兼容性数据包过滤器。
 CoA.Enable = 1
 
+# 制造物品最大升级次数：0 禁用升级套件，1 允许精制，
+# 2 允许精良，3 允许杰作。默认：2。数值被限制在 0-3。
+# 在启动和配置重载时应用；已有的升级物品保持不变。
+# 衬衣、背包/箭袋、奥术扳手以及被排除的模糊家族无法升级。
+CoA.Crafting.MaxUpgradeSteps = 2
+
 # 将 Ascension 协议设置应用于远程连接以及回环连接
-# （扩展操作码、ping 间隔、法术修改器布局、职业 10 映射）。
-# 仅在对应该 Ascension 客户端版本的专用服务器上启用。
-# 身份验证证明和数据包大小检查仍然需要。重启以应用。
+# （扩展操作码、ping 间隔、法术修饰符布局、职业 10 映射）。
+# 仅在专用于匹配 Ascension 客户端版本的服务器上启用。
+# 身份验证证明和数据包大小检查仍然必需。重启以应用。
 CoA.AllowRemoteClients = 1
 
 # Ascension 的无职业角色创建器提交职业 ID 10（英雄）
@@ -249,6 +255,77 @@ HighRisk.GearChance = 50
 HighRisk.ResourceChance = 50
 HighRisk.GoldChance = 50
 
+###################################################################################################
+# RATED SOLO ARENA-单排竞技场
+#
+#    RatedSoloArena.RoleBalanceWaitSeconds
+#        Description: 最旧的评级单排队列条目在匹配可以忽略治疗平衡
+#                     （每边一个治疗或没有）之前等待的秒数。平衡的阵容仍然优先。
+#        Default:     60
+#                     0 - （从不放宽治疗平衡）
+
+RatedSoloArena.RoleBalanceWaitSeconds = 60
+
+#    RatedSoloArena.RoleBalance.2v2
+#    RatedSoloArena.RoleBalance.3v3
+#        Description: 该 bracket 的评级单排阵容是否在RatedSoloArena.RoleBalanceWaitSeconds 
+#                     过去之前需要治疗平衡。禁用时，任何分配从一开始就被接受，
+#                     并且当存在角色平衡的分配时仍然优先。
+#        Default:     0 - (2v2：允许双倍伤害阵容)
+#                     1 - (3v3：需要治疗平衡)
+
+RatedSoloArena.RoleBalance.2v2 = 0
+RatedSoloArena.RoleBalance.3v3 = 1
+
+#    RatedSoloArena.Win.ArenaPoints.1v1
+#    RatedSoloArena.Win.ArenaPoints.2v2
+#    RatedSoloArena.Win.ArenaPoints.3v3
+#        Description: 按分组授予评级单排或组队比赛每位获胜者的竞技场点数。
+#        Default:     25 (1v1), 300 (2v2), 300 (3v3)
+
+RatedSoloArena.Win.ArenaPoints.1v1 = 25
+RatedSoloArena.Win.ArenaPoints.2v2 = 300
+RatedSoloArena.Win.ArenaPoints.3v3 = 300
+
+#    RatedSoloArena.Win.RunesOfAscension
+#        Description: 授予评级单排或组队比赛每位获胜者的飞升符文（物品 375250）。
+#        Default:     25
+
+RatedSoloArena.Win.RunesOfAscension = 25
+
+#    RatedSoloArena.SeasonCap.PerWeek
+#        Description: 当前竞技场赛季期间，
+#                     通过评级单排竞技场胜利获得的竞技场点数的征服点数上限。
+#                     该上限自赛季开始以来在每次每周重置时增加此数量（第1周 = 一步）。
+#        Default:     12000
+
+RatedSoloArena.SeasonCap.PerWeek = 12000
+
+#    RatedSoloArena.SeasonCap.Max
+#        Description: 赛季征服上限的最高值。
+#        Default:     0 - (No limit)
+
+RatedSoloArena.SeasonCap.Max = 0
+
+#    RatedSoloArena.Tier.Combatant
+#        Description: 在 PvP 框架中显示为竞争者等级的个人等级。竞争者没有头衔。
+#        Default:     1400
+
+RatedSoloArena.Tier.Combatant = 1400
+
+#    RatedSoloArena.Title.Challenger
+#    RatedSoloArena.Title.Rival
+#    RatedSoloArena.Title.Duelist
+#    RatedSoloArena.Title.Gladiator
+#        Description: 评级单排分组中的个人等级，在首次达到时授予对应的角色头衔
+#                     头衔永不会被移除。
+#        Default:     1700（挑战者），2000（竞争者），2300（决斗者），2600（角斗士）
+
+RatedSoloArena.Title.Challenger = 1700
+RatedSoloArena.Title.Rival = 2000
+RatedSoloArena.Title.Duelist = 2300
+RatedSoloArena.Title.Gladiator = 2600
+
 #    PvpPower.Enable
 #        说明：名为“PvP Power (+N)”的物品法术在 60 级时缩放伤害和治疗，上限为
 #                     495 点。对玩家（以及开放世界中高风险攻击者对不受控
@@ -399,3 +476,34 @@ Ascension.CallboardCache.GoldMax = 15
 #        Default:     1
 
 CoA.DungeonTuning.Enable = 1
+
+#
+#    CoA.TestZoneBonus.AnnounceIntervalMinutes
+#        Description: 每隔多久向每位玩家告知哪些测试区域处于激活状态以及他们在那里能获得什么
+#                     这些区域本身位于 coa_test_zone_bonus 中，并通过.testzone 进行管理；
+#                     将某个区域设为测试区域总是会公告。0 关闭该提醒。
+#        Default:     15
+
+CoA.TestZoneBonus.AnnounceIntervalMinutes = 15
+
+CrowsCache.Enable = 0
+CrowsCache.IntervalSeconds = 10800
+CrowsCache.WarningSeconds = 1800
+CrowsCache.X = -7831
+CrowsCache.Y = -3465
+CrowsCache.Z = 56.87
+
+CrowsCache.RandomLocation = 1
+CrowsCache.Silithus.X = -7203.1616
+CrowsCache.Silithus.Y = 372.38562
+CrowsCache.Silithus.Z = 25.355282
+CrowsCache.Silithus.O = 4.4326873
+
+CrowsCache.Needles.X = -5805.1646
+CrowsCache.Needles.Y = -3899.4047
+CrowsCache.Needles.Z = -95.3205
+CrowsCache.Needles.O = 3.215081
+CrowsCache.Barrens.X = -763.6296
+CrowsCache.Barrens.Y = -3191.6892
+CrowsCache.Barrens.Z = 91.666626
+CrowsCache.Barrens.O = 2.3004022

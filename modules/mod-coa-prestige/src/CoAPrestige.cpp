@@ -16,6 +16,8 @@
  */
 
 #include "AllBattlegroundScript.h"
+#include "AscensionHighRiskPolicy.h"
+#include "AscensionRulesets.h"
 #include "AscensionSpecialization.h"
 #include "AscensionTalentReplacementData.h"
 #include "AscensionWildcard.h"
@@ -331,7 +333,7 @@ namespace
             {
                 QuestTraits const traits{ quest->GetZoneOrSort(), quest->GetQuestLevel(), quest->GetType(),
                     quest->IsRepeatable() || quest->IsDailyOrWeekly() || quest->IsMonthly() || quest->IsSeasonal() ||
-                    quest->IsDFQuest() };
+                    quest->IsDFQuest(), quest->GetMinLevel() };
                 if (IsReplayableQuest(traits, maxLevel))
                     replayable.push_back(questId);
             }
@@ -527,6 +529,7 @@ namespace
         ReactivateRemainingRanks(player, chains);
         player->SendInitialActionButtons();
         StripTemporaryAuras(player);
+        AscensionRulesets::Apply(player, AscensionRulesets::Ruleset::WarMode);
 
         CharacterDatabaseTransaction trans = CharacterDatabase.BeginTransaction();
         std::vector<Item*> mailed;
@@ -546,7 +549,16 @@ namespace
 
         MailItems(player, mailed, trans);
         player->SaveToDB(trans, false, false);
-        CharacterDatabase.CommitTransaction(trans);
+        sScriptMgr->OnPlayerCoAPrestige(player, trans);
+        if (!CharacterDatabase.AsyncCommitTransaction(trans).m_future.get())
+        {
+            LOG_ERROR("module.coa_prestige", "The prestige save of {} ({}) was rolled back by the character database.",
+                player->GetName(), player->GetGUID().ToString());
+            chat.SendSysMessage("Chromie's magic faltered and your prestige could not be saved. "
+                "Contact a game master.");
+            return false;
+        }
+        sScriptMgr->OnPlayerCoAPrestigeSaved(player);
 
         SendPrestigeLevels(player);
         chat.PSendSysMessage("Chromie winds back time. Prestige {}: reach level {} again to unlock your "
@@ -719,12 +731,18 @@ public:
         g_otherCharactersPrestige.erase(player->GetGUID().GetCounter());
     }
 
-    void OnPlayerLevelChanged(Player* player, uint8 /*oldLevel*/) override
+    void OnPlayerLevelChanged(Player* player, uint8 oldLevel) override
     {
         if (!g_enabled)
             return;
 
         RestoreSpecializationSignature(player);
+
+        // A prestige starts in War Mode; reaching the level where the PvP rulesets can be
+        // chosen switches it to PvE Mode, and the player picks High-Risk or War Mode from there.
+        if (IsActive(player) && oldLevel < HighRisk::MinimumLevel && player->GetLevel() >= HighRisk::MinimumLevel
+            && AscensionRulesets::Has(player, AscensionRulesets::Ruleset::WarMode))
+            AscensionRulesets::Apply(player, AscensionRulesets::Ruleset::PvE);
 
         // "Max Level Reached" daily objective: credited at the required level. The
         // daily still keeps its content objective until that is met too.

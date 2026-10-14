@@ -96,13 +96,18 @@ MythicPlus.NoCreatureLoot = 1
 MythicPlus.OvertimeCaches = 1
 
 #    MythicPlus.CoinItem
+#    MythicPlus.CoinItem.TBC
+#    MythicPlus.CoinItem.WotLK
 #    MythicPlus.CoinsPerLevel
 #    MythicPlus.Coins.WeeklyCap
-#        Description: 完成一次地下城获得的史诗硬币：CoinsPerLevel × 钥石等级，
-#                     每个角色每周最多可获得 WeeklyCap 数量（每周从周二 00:00 UTC 开始）。
-#        Default:     1414500, 50, 5500
+#        Description: 完成一次运行的史诗硬币：CoinsPerLevel x 钥石等级，最高为 WeeklyCap
+#                     每个角色和每周（每周从周二 00:00 UTC 开始）。
+#                     该硬币跟随地下城所属的资料片。
+#        Default:     1414500, 1414529, 1414530, 50, 5500
 
 MythicPlus.CoinItem = 1414500
+MythicPlus.CoinItem.TBC = 1414529
+MythicPlus.CoinItem.WotLK = 1414530
 MythicPlus.CoinsPerLevel = 50
 MythicPlus.Coins.WeeklyCap = 5500
 

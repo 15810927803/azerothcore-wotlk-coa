@@ -8439,7 +8439,8 @@ void Player::SendLoot(ObjectGuid guid, LootType loot_type)
             switch (loot_type)
             {
                 case LOOT_DISENCHANTING:
-                    loot->FillLoot(item->GetTemplate()->DisenchantID, LootTemplates_Disenchant, this, true);
+                    loot->FillLoot(LocalLevelScaling::InstanceTemplateFor(item, item->GetTemplate())->DisenchantID,
+                        LootTemplates_Disenchant, this, true);
                     break;
                 case LOOT_PROSPECTING:
                     loot->FillLoot(item->GetEntry(), LootTemplates_Prospecting, this, true);
@@ -11554,6 +11555,10 @@ uint32 Player::GetMaxPersonalArenaRatingRequirement(uint32 minarenaslot) const
     return max_personal_rating;
 }
 
+// Item spell category shared by potions and potion-like consumables (ranger waterskins declare the
+// same category and cooldown as classic potions). The client enforces this pool across spell families.
+static constexpr uint32 SPELL_CATEGORY_SHARED_POTION_COOLDOWN = 5004;
+
 void Player::AddSpellAndCategoryCooldowns(SpellInfo const* spellInfo, uint32 itemId, Spell* spell, bool infinityCooldown)
 {
     if (spell && !itemId && !infinityCooldown && spellInfo->MaxCharges)
@@ -11680,9 +11685,12 @@ void Player::AddSpellAndCategoryCooldowns(SpellInfo const* spellInfo, uint32 ite
                     continue;
                 }
 
-                // Only within the same spellfamily
+                // Only within the same spellfamily, except for item-driven cooldowns in the shared
+                // potion pool, which spans spell families by design (classic potions vs. custom
+                // consumables such as the ranger waterskins, see #6911).
+                bool const sharedPotionPool = itemId > 0 && cat == SPELL_CATEGORY_SHARED_POTION_COOLDOWN;
                 SpellInfo const* categorySpellInfo = sSpellMgr->GetSpellInfo(i_scset->second);
-                if (!categorySpellInfo || categorySpellInfo->SpellFamilyName != spellInfo->SpellFamilyName)
+                if (!categorySpellInfo || (!sharedPotionPool && categorySpellInfo->SpellFamilyName != spellInfo->SpellFamilyName))
                 {
                     continue;
                 }
@@ -12936,7 +12944,8 @@ bool Player::InBattlegroundQueue(bool ignoreArena) const
         if (_BgBattlegroundQueueID[i].bgQueueTypeId != BATTLEGROUND_QUEUE_NONE &&
             (!ignoreArena || (_BgBattlegroundQueueID[i].bgQueueTypeId != BATTLEGROUND_QUEUE_2v2 &&
                 _BgBattlegroundQueueID[i].bgQueueTypeId != BATTLEGROUND_QUEUE_3v3 &&
-                _BgBattlegroundQueueID[i].bgQueueTypeId != BATTLEGROUND_QUEUE_5v5)))
+                _BgBattlegroundQueueID[i].bgQueueTypeId != BATTLEGROUND_QUEUE_5v5 &&
+                _BgBattlegroundQueueID[i].bgQueueTypeId != BATTLEGROUND_QUEUE_1v1)))
             return true;
     return false;
 }
@@ -13437,7 +13446,9 @@ uint32 Player::GetResurrectionSpellId()
     }
 
     // Reincarnation (passive spell)  // prio: 1                  // Glyph of Renewed Life
-    if (prio < 1 && HasSpell(20608) && !HasSpellCooldown(21169) && (HasAura(58059) || HasItemCount(17030)))
+    std::vector<uint32> const reincarnation = sSpellMgr->GetSpellAndRelatives(20608);
+    bool const knowsReincarnation = std::any_of(reincarnation.begin(), reincarnation.end(), [this](uint32 spellId) { return HasSpell(spellId); });
+    if (prio < 1 && knowsReincarnation && !HasSpellCooldown(21169) && (HasAura(58059) || HasItemCount(17030)))
         spell_id = 21169;
 
     return spell_id;
@@ -13963,7 +13974,7 @@ bool Player::CanTitanGrip(ItemTemplate const* weapon) const
         (weapon->SubClass != ITEM_SUBCLASS_WEAPON_POLEARM || commander));
 }
 
-void Player::SetTemporarySpellReplacement(uint32 original, uint32 replacement)
+void Player::SetTemporarySpellReplacement(uint32 original, uint32 replacement, bool redirect)
 {
     auto itr = m_temporarySpellReplacements.find(original);
     uint32 previous = itr == m_temporarySpellReplacements.end() ? original : itr->second;
@@ -13975,6 +13986,7 @@ void Player::SetTemporarySpellReplacement(uint32 original, uint32 replacement)
     if (!replacement)
     {
         m_temporarySpellReplacements.erase(original);
+        m_temporarySpellReplacementKeepsCast.erase(original);
         replacement = original;
     }
     else
@@ -13983,6 +13995,10 @@ void Player::SetTemporarySpellReplacement(uint32 original, uint32 replacement)
             return;
         m_temporarySpellReplacements[original] = replacement;
         m_temporarySpellReplacementOrigins[replacement] = original;
+        if (redirect)
+            m_temporarySpellReplacementKeepsCast.erase(original);
+        else
+            m_temporarySpellReplacementKeepsCast[original] = 1;
     }
     if (previous != replacement && IsInWorld() && HasActiveSpell(original))
     {
@@ -14005,6 +14021,13 @@ uint32 Player::GetTemporarySpellReplacement(uint32 original) const
     auto itr = m_temporarySpellReplacements.find(original);
     return itr != m_temporarySpellReplacements.end() && HasActiveSpell(original) && HasActiveSpell(itr->second) ?
         itr->second : original;
+}
+
+uint32 Player::GetCastReplacement(uint32 original) const
+{
+    if (m_temporarySpellReplacementKeepsCast.count(original))
+        return original;
+    return GetTemporarySpellReplacement(original);
 }
 
 bool Player::IsTemporarySpellReplacementStandIn(uint32 spellId) const
