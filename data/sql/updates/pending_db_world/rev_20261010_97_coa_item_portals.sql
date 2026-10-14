@@ -11,14 +11,14 @@
 -- in the server and client GameObjectDisplayInfo.dbc.
 INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `size`, `Data0`, `Data1`, `Data2`, `Data3`)
 VALUES
-(100575, 5, 138010, 'Legion pocket portal', 0.33, 0, 0, 0, 0),
-(100576, 22, 138009, 'Portal to Blasted Lands', 0.33, 966369, 0, 1, 1),
-(600576, 22, 1042710, 'Portal to Molten Core', 0.2, 992031, 0, 1, 1),
-(600577, 22, 1042710, 'Portal to Zul''Gurub', 0.2, 992033, 0, 1, 1),
-(600578, 22, 1042710, 'Portal to Blackwing Lair', 0.2, 992035, 0, 1, 1),
-(600579, 22, 1042710, 'Portal to Ahn''Qiraj', 0.2, 992037, 0, 1, 1),
-(600580, 22, 1042710, 'Portal to Naxxramas', 0.2, 992039, 0, 1, 1),
-(600581, 22, 1042710, 'Portal to Onyxia''s Lair', 0.2, 992041, 0, 1, 1)
+(100575, 5, 138010, '军团便携传送门', 0.33, 0, 0, 0, 0),
+(100576, 22, 138009, '通往诅咒之地的传送门', 0.33, 966369, 0, 1, 1),
+(600576, 22, 1042710, '通往熔火之心的传送门', 0.2, 992031, 0, 1, 1),
+(600577, 22, 1042710, '通往祖尔格拉布的传送门', 0.2, 992033, 0, 1, 1),
+(600578, 22, 1042710, '通往黑翼之巢的传送门', 0.2, 992035, 0, 1, 1),
+(600579, 22, 1042710, '通往安其拉的传送门', 0.2, 992037, 0, 1, 1),
+(600580, 22, 1042710, '通往纳克萨玛斯的传送门', 0.2, 992039, 0, 1, 1),
+(600581, 22, 1042710, '通往奥妮克希亚的巢穴的传送门', 0.2, 992041, 0, 1, 1)
 ON DUPLICATE KEY UPDATE `type` = VALUES(`type`), `displayId` = VALUES(`displayId`), `name` = VALUES(`name`),
     `size` = VALUES(`size`), `Data0` = VALUES(`Data0`), `Data1` = VALUES(`Data1`), `Data2` = VALUES(`Data2`),
     `Data3` = VALUES(`Data3`);

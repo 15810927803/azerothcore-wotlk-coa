@@ -2,10 +2,10 @@
 -- quest_request_items and quest_offer_reward had no row for them. Text as shown by Ascension (issue #7416).
 DELETE FROM `quest_request_items` WHERE `ID` IN (255079,255080);
 INSERT INTO `quest_request_items` (`ID`, `CompletionText`) VALUES
-(255079, 'What do you need, friend?'),
-(255080, 'Ya'' back! Did ya get dat drum yet?');
+(255079, '你需要什么，朋友？'),
+(255080, '你回来啦！拿到那面鼓了吗？');
 
 DELETE FROM `quest_offer_reward` WHERE `ID` IN (255079,255080);
 INSERT INTO `quest_offer_reward` (`ID`, `RewardText`) VALUES
-(255079, 'In need of a drum you say?$B$BYou''ve come to the right place, my leatherworking skills are the finest in all the Barrens!'),
-(255080, 'By de loa look at dat!$B$BA well crafted drum and a big ol'' drumstick!$B$BDis is surely to lift ma sister''s heavy heart! Spirits be wit ya mon!');
+(255079, '你说你需要一面鼓？$B$B你找对地方了，我的制皮手艺是整个贫瘠之地最好的！'),
+(255080, '以洛阿之名，看看这个！$B$B一面做工精良的鼓和一根大鼓槌！$B$B这一定能让我妹妹沉重的心情好起来！愿灵魂与你同在，兄弟！');

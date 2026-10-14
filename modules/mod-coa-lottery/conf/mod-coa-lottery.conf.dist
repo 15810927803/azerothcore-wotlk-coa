@@ -2,40 +2,40 @@
 
 CoALottery.Enable = 1
 
-# Defaults match the requested economy. Settings are captured when a round starts;
-# changing them does not change the price or payout terms of tickets already sold.
-# Minimum interval: 60 seconds. Weekly: 604800. Rounds with no player or house tickets extend.
+# 默认值匹配所需的经济系统。每轮开始时捕获设置；
+# 更改它们不会改变已售出彩票的价格或赔付条款。
+# 最小间隔：60 秒。每周：604800。没有玩家或庄家彩票的轮次会延长。
 CoALottery.DrawIntervalSeconds = 604800
 CoALottery.StartingJackpotGold = 0
 CoALottery.PotContributionPercent = 100
 
-# One randomly selected item per round, persisted across restarts and config reloads.
-# CSV example: "97393,98073,99491". Duplicate IDs do not add weight.
-# Missing item templates are skipped. Empty string disables bonus prizes.
+# 每轮随机选择一个物品，跨重启和配置重载持久保存。
+# CSV 示例："97393,98073,99491"。重复 ID 不会增加权重。
+# 缺失的物品模板会被跳过。空字符串禁用奖励奖品。
 CoALottery.BonusItems = "97393"
 
-# House tickets seed the pot at 10 gold each, in addition to StartingJackpotGold.
-# Each has the same draw weight as a purchased ticket. 0 disables house tickets.
-# A house win records Trade Prince Gallywix and destroys the entire pot; no mail or bonus.
-# Captured per round; existing rounds are unchanged. Clamped to remaining pot capacity.
-# With house tickets, even rounds with no player purchases draw normally.
+# 庄家彩票以每张 10 金币为底池注入资金，外加 StartingJackpotGold。
+# 每张与购买的彩票具有相同的抽奖权重。0 禁用庄家彩票。
+# 庄家中奖会记录贸易亲王加里维克斯并摧毁整个底池；无邮件或奖励。
+# 每轮捕获；现有轮次不变。限制在剩余底池容量内。
+# 有庄家彩票时，即使没有玩家购买的轮次也会正常抽奖。
 CoALottery.FakeTickets = 100
 
-# Announce player and house winners in-game only after the draw transaction commits.
+# 仅在抽奖事务提交后，在游戏内宣布玩家和庄家中奖者。
 CoALottery.AnnounceWinners = 1
 
-# Spawn a managed Gallywix in Stormwind (map 0), at -8787.7705 640.43396 96.12781.
-# Present while Enable=1 and lottery initialization succeeds; removed when disabled.
+# 在暴风城（地图 0）生成一个受管理的加里维克斯，位于 -8787.7705 640.43396 96.12781。
+# 当 Enable=1 且彩票初始化成功时存在；禁用时移除。
 CoALottery.SpawnGallywix = 1
 
-# Zone-wide monster yells, using universal language. No client changes needed.
-# First ad occurs after one interval. Config reload restarts the advertisement timer.
-# Interval is clamped to 60..86400 seconds; named players are within 1..500 yards.
+# 区域范围的怪物喊话，使用通用语言。无需客户端更改。
+# 第一次广告在一个间隔后发生。配置重载会重启广告计时器。
+# 间隔被限制在 60..86400 秒；命名的玩家在 1..500 码内。
 CoALottery.Advertise = 1
 CoALottery.AdvertisementIntervalSeconds = 1800
 CoALottery.AdvertisementPlayerRadius = 60
 
-# Managed Goldilocks beside Gallywix, map 0: -8788.967 643.0418 94.944855.
-# Scale grows linearly from 0.5 to 1.5 with round progress, on the advertising timer.
-# A new round resets scale immediately. Scaling continues when ads are muted.
+# 受管理的金发姑娘在加里维克斯旁边，地图 0：-8788.967 643.0418 94.944855。
+# 规模随轮次进度在广告计时器上从 0.5 线性增长到 1.5。
+# 新一轮立即重置规模。当广告静音时，缩放继续。
 CoALottery.SpawnGoldilocks = 1

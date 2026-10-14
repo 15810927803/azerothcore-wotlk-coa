@@ -70,34 +70,34 @@ EtherealBazaar.Tokens.BonusPercent = 150
 # Default: 0 (no toast)
 EtherealBazaar.Tokens.Announce = 0
 
-# Groot Coins (item 910001): staff mail them for useful bug reports, players
-# exchange carried coins with Tiraxis for Bazaar Tokens. All keys are read
-# once at startup. Turning a switch off stops new awards or exchanges only;
-# coins already held and every audit record stay. See
+# 格鲁特硬币（物品 910001）：工作人员通过邮件发送给提供有用错误报告的玩家，玩家
+# 与 Tiraxis 交换携带的硬币以获得集市代币。所有键在启动时读取
+# 一次。关闭开关只会停止新的奖励或交换；
+# 已持有的硬币和所有审计记录保留。参见
 # modules/mod-ethereal-bazaar/GROOT_COINS.md.
 
-# .groot award. Also needs RBAC permission 1001 and Game Master security.
+# .groot 奖励。还需要 RBAC 权限 1001 和 Game Master 安全权限。
 # Default: 0 (off)
 GrootCoin.Enable = 0
 
-# The "I want to exchange Groot Coins" option at Tiraxis.
+# Tiraxis 处的“我想兑换格鲁特硬币”选项。
 # Default: 0 (off)
 GrootCoin.ExchangeEnable = 0
 
-# Bazaar Tokens paid per coin. Exchanges are 1, 5 or 10 coins.
+# 每枚硬币支付的集市代币数量。兑换为 1、5 或 10 枚硬币。
 # Default: 100
 GrootCoin.TokensPerCoin = 100
 
-# Largest single award.
+# 单次最大奖励。
 # Default: 25
 GrootCoin.MaxAward = 25
 
-# Pay award requests that a website or bot inserts into the characters table
-# groot_coin_award_queue (see GROOT_COINS.md, "Website / external awards").
-# Needs GrootCoin.Enable = 1 as well. Off: queued rows wait untouched.
+# 支付网站或机器人插入到 characters 表
+# groot_coin_award_queue 中的奖励请求（参见 GROOT_COINS.md，“网站/外部奖励”）。
+# 还需要 GrootCoin.Enable = 1。关闭：排队的行保持原样等待。
 # Default: 0 (off)
 GrootCoin.ExternalAwardsEnable = 0
 
-# Seconds between reads of groot_coin_award_queue (minimum 5).
+# 读取 groot_coin_award_queue 之间的秒数（最小 5）。
 # Default: 60
 GrootCoin.QueuePollInterval = 60

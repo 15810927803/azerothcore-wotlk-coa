@@ -1,5 +1,5 @@
 ## Interface: 30300
-## Title: Crow's Cache
-## Notes: Crow's Cache locations on the world map.
+## Title: 乌鸦的宝库
+## Notes: 世界地图上的乌鸦的宝库位置。
 ## Version: 0.2.0
 CoACrowsCache.lua

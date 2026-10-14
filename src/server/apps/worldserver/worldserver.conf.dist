@@ -384,7 +384,7 @@ Updates.ExceptionShutdownDelay = 10000
 #        说明：网络线程数。
 #         默认：1 - （建议每 1000 个连接 1 个线程）
 
-Network.Threads = 1
+Network.Threads = 2
 
 #
 #    Network.OutKBuff
@@ -521,7 +521,7 @@ TOTPMasterSecret =
 #                     - 世界套接字网络
 #        Default:     2
 
-ThreadPool = 2
+ThreadPool = 4
 
 #
 #    UseProcessors
@@ -990,7 +990,7 @@ GameType = 1
 #                     28 - （QA 服务器 - 任何语言）
 #                     29 - （CN9 - 创建时基本拉丁，登录时任意）
 
-RealmZone = 1
+RealmZone = 16
 
 #
 #    DBC.Locale
@@ -2843,7 +2843,7 @@ Death.SicknessLevel = 11
 #
 #    Death.CorpseReclaimDelay.PvP
 #    Death.CorpseReclaimDelay.PvE
-#        Description: Increase corpse reclaim delay at PvP/PvE deaths.
+#        Description: 增加PvP/PvE死亡时尸体回收延迟。
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled)
 
@@ -2853,8 +2853,8 @@ Death.CorpseReclaimDelay.PvE = 1
 #
 #    Death.Bones.World
 #    Death.Bones.BattlegroundOrArena
-#        Description: Create bones instead of corpses at resurrection in normal zones, instances,
-#                     battleground or arenas.
+#        Description: 在普通区域，实例，复活时制造骨头而不是尸体，
+#                     战场或竞技场。
 #        Default:     1 - (Enabled, Death.Bones.World)
 #                     1 - (Enabled, Death.Bones.BattlegroundOrArena)
 #                     0 - (Disabled)
@@ -3933,23 +3933,23 @@ Battleground.CastDeserter = 1
 
 #
 #    Battleground.QueueAnnouncer.Enable
-#        Description: Announce battleground queue status to chat.
+#        Description: 宣布战场队列状态来聊天。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Battleground.QueueAnnouncer.Enable = 0
+Battleground.QueueAnnouncer.Enable = 1
 
 #
 #    Battleground.QueueAnnouncer.Limit.MinLevel
-#        Description: Limit the QueueAnnouncer starting from a certain level.
-#                     When limited, it announces only if there are at least MinPlayers queued (see below)
-#                     At 80 it only limits RBG, at lower level only limits Warsong Gulch.
-#        Default:     0  - (Disabled, no limits)
-#                     10 - (Enabled for all, because BGs start at 10)
-#                     20 - (Enabled for 20 and higher)
-#                     80 - (Enabled only for 80)
+#        Description: 从某个级别开始限制QueueAnnouncer。
+#                     当受到限制时，只有当至少有MinPlayers排队时，它才会宣布(见下文)
+#                     80级只能限制RBG，更低级的只能限制战歌峡谷。
+#        Default:     0  - (Disabled, 无限制)
+#                     10 - (对所有人启用，因为战场从10开始)
+#                     20 - (为20及更高版本启用)
+#                     80 - (仅适用于80)
 
-Battleground.QueueAnnouncer.Limit.MinLevel = 0
+Battleground.QueueAnnouncer.Limit.MinLevel = 10
 
 #
 #    Battleground.QueueAnnouncer.Limit.MinPlayers
@@ -4243,11 +4243,11 @@ Arena.PreviousOpponentsDiscardTimer = 120000
 
 #
 #    Arena.AutoDistributePoints
-#        Description: Automatically distribute arena points.
+#        Description: 自动分配竞技场点数。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Arena.AutoDistributePoints = 0
+Arena.AutoDistributePoints = 1
 
 #
 #    Arena.AutoDistributeInterval
@@ -4259,18 +4259,18 @@ Arena.AutoDistributeInterval = 7
 
 #
 #    Arena.GamesRequired
-#        Description: Number of arena matches teams must participate in to be eligible for arena point distribution.
+#        Description: 队伍要获得竞技场点数分配资格必须参加的竞技场比赛次数。
 #        Default:     10
 
 Arena.GamesRequired = 10
 
 #
 #    Arena.QueueAnnouncer.Enable
-#        Description: Announce arena queue status to chat.
+#        Description: 向聊天者宣布竞技场队列状态。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Arena.QueueAnnouncer.Enable = 0
+Arena.QueueAnnouncer.Enable = 1
 
 #
 #    Arena.QueueAnnouncer.PlayerOnly
@@ -4420,22 +4420,22 @@ IsPreloadedContinentTransport.Enabled = 0
 # CHAT CHANNEL-聊天频道
 #
 #    StrictChannelNames
-#        Description: Limit channel names to language specific symbol set.
-#                     Prevents charter creation if not allowed symbols are used.
+#        Description: 将频道名称限制为语言特定的符号集。
+#                     如果使用了不允许的符号，则阻止创建章程。
 #        Default:     0 - (Disable, Limited server timezone dependent client check)
 #                     1 - (Enabled, Strictly basic Latin characters)
 #                     2 - (Enabled, Strictly realm zone specific, See RealmZone setting,
-#        Note:        Client needs to have the appropriate fonts installed which support
-#                     the charset. For non-official localization, custom fonts need to be
-#                     placed in clientdir/Fonts.
-#                     3 - (Enabled, Basic Latin characters + server timezone specific)
+#        Note:        客户端需要安装适当的字体，
+#                     以支持字符集。对于非官方本地化，
+#                     自定义字体需要放在clientdir/Fonts中。
+#                     3 - (Enabled, 基本拉丁字符+特定于服务器时区)
 
 StrictChannelNames = 0
 
 #
 #    AddonChannel
-#        Description: Configure the use of the addon channel through the server (some client side
-#                     addons will not work correctly with disabled addon channel)
+#        Description: 通过服务器配置插件通道的使用
+#                     (某些客户端插件无法在禁用的插件通道上正常工作)
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled)
 
@@ -4619,7 +4619,7 @@ ChatFilter.Emote   = 0
 # FACTION INTERACTION-阵营交互
 #
 #    AllowTwoSide.Accounts
-#        Description: Allow creating characters of both factions on the same account.
+#        Description: 允许在同一账号上创建双方阵营的角色。
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled)
 
@@ -4627,64 +4627,64 @@ AllowTwoSide.Accounts = 1
 
 #
 #    AllowTwoSide.Interaction.Calendar
-#        Description: Allow calendar invites between factions.
+#        Description: 允许跨阵营发送日历邀请。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-AllowTwoSide.Interaction.Calendar = 0
+AllowTwoSide.Interaction.Calendar = 1
 
 #
 #    AllowTwoSide.Interaction.Chat
-#        Description: Allow say chat between factions.
+#        Description: 允许跨阵营进行说频道聊天。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-AllowTwoSide.Interaction.Chat = 0
+AllowTwoSide.Interaction.Chat = 1
 
 #
 #    AllowTwoSide.Interaction.Channel
-#        Description: Allow channel chat between factions.
+#        Description: 允许跨阵营进行频道聊天。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-AllowTwoSide.Interaction.Channel = 0
+AllowTwoSide.Interaction.Channel = 1
 
 #
 #    AllowTwoSide.Interaction.Group
-#        Description: Allow group joining between factions.
+#        Description: 允许跨阵营加入队伍。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-AllowTwoSide.Interaction.Group = 0
+AllowTwoSide.Interaction.Group = 1
 
 #
 #    AllowTwoSide.Interaction.Guild
-#        Description: Allow guild joining between factions.
+#        Description: 允许跨阵营加入公会。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-AllowTwoSide.Interaction.Guild = 0
+AllowTwoSide.Interaction.Guild = 1
 
 #
 #    AllowTwoSide.Interaction.Arena
-#        Description: Allow joining arena teams between factions.
+#        Description: 允许跨阵营加入竞技场战队。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-AllowTwoSide.Interaction.Arena = 0
+AllowTwoSide.Interaction.Arena = 1
 
 #
 #    AllowTwoSide.Interaction.Auction
-#        Description: Allow auctions between factions. This flags all auction houses as Neutral,
-#                     and would also take a Neutral auction house cut from auctions.
+#        Description: 允许跨阵营拍卖。这会将所有拍卖行标记为中立，
+#                     并且还会从拍卖中抽取中立拍卖行手续费。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-AllowTwoSide.Interaction.Auction = 0
+AllowTwoSide.Interaction.Auction = 1
 
 #
 #    AllowTwoSide.WhoList
-#        Description: Show characters of both factions in the who list and the friends list.
+#        Description: 在查询列表和好友列表中显示双方阵营的角色。
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled)
 
@@ -4692,8 +4692,8 @@ AllowTwoSide.WhoList = 1
 
 #
 #    TalentsInspecting
-#        Description: Allow inspecting characters from the opposing faction.
-#                     Doesn't affect characters in gamemaster mode.
+#        Description: 允许观察敌对阵营的角色。
+#                     不影响处于游戏管理员模式的角色。
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled)
 
@@ -4701,10 +4701,10 @@ TalentsInspecting = 1
 
 #
 #    ChangeFaction.MaxMoney
-#        Description: Maximum amount of gold allowed on the character to perform a faction change.
+#        Description: 角色进行阵营转换所允许的最大金币数量。
 #        Default:      0 - Disabled
-#                     >0 - Enabled (money in copper)
-#        Example:     If set to 10000, the maximum amount of money allowed on the character would be 1 gold.
+#                     >0 - Enabled （以铜币为单位）
+#        Example:     如果设置为 10000，角色所允许的最大金币数量将为 1 金币。
 
 ChangeFaction.MaxMoney = 0
 
@@ -4715,24 +4715,24 @@ ChangeFaction.MaxMoney = 0
 # RECRUIT A FRIEND-招募好友
 #
 #    RecruitAFriend.MaxLevel
-#        Description: Highest level up to which a character can benefit from the Recruit-A-Friend
-#                     experience multiplier.
+#        Description: 角色能够从战友招募经验倍率中
+#                     获益的最高等级。
 #        Default:     60
 
 RecruitAFriend.MaxLevel = 60
 
 #
 #    RecruitAFriend.MaxDifference
-#        Description: Highest level difference between linked Recruiter and Friend benefit from
-#                     the Recruit-A-Friend experience multiplier.
+#        Description: 关联的招募者和好友能够
+#                     从战友招募经验倍率中获益的最高等级差。
 #        Default:     4
 
 RecruitAFriend.MaxDifference = 4
 
 #
 #    MaxRecruitAFriendBonusDistance
-#        Description: Max distance between character and and group to gain the Recruit-A-Friend
-#                     XP multiplier.
+#        Description: 角色与队伍之间
+#                     获得战友招募经验倍率的最大距离。
 #        Default:     100
 
 MaxRecruitAFriendBonusDistance = 100
@@ -4744,7 +4744,7 @@ MaxRecruitAFriendBonusDistance = 100
 # CALENDAR-日历
 #
 #    Calendar.DeleteOldEventsHour
-#        Description: Hour of the day when the daily deletion of old calendar events occurs.
+#        Description: 每天删除旧日历事件的发生小时。
 #        Range:       0-23
 #        Default:     6 - (06:00 AM)
 
@@ -4757,11 +4757,11 @@ Calendar.DeleteOldEventsHour = 6
 # GAME EVENT-游戏事件
 #
 #    Event.Announce
-#        Description: Announce events.
+#        Description: 公告事件。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Event.Announce = 0
+Event.Announce = 1
 
 #
 ###################################################################################################
@@ -4770,8 +4770,8 @@ Event.Announce = 0
 # WORLD STATE-世界状态
 #
 #    Sunsreach.CounterMax
-#        Description: Counter value to be reached to transition phases
-#                     during the Sun's Reach Reclamation event.
+#        Description: 在太阳之井收复事件期间
+#                     达到的阶段转换计数器值。
 #        Default:     10000
 
 Sunsreach.CounterMax = 10000
@@ -4780,7 +4780,7 @@ Sunsreach.CounterMax = 10000
 #    ScourgeInvasion.CounterFirst
 #    ScourgeInvasion.CounterSecond
 #    ScourgeInvasion.CounterThird
-#        Description: Counter thresholds to be reached to transition phases
+#        Description: 达到阶段转换的计数器阈值
 #        Default:     50  - (ScourgeInvasion.CounterFirst)
 #                     100 - (ScourgeInvasion.CounterSecond)
 #                     150 - (ScourgeInvasion.CounterThird)
@@ -4796,14 +4796,14 @@ ScourgeInvasion.CounterThird  = 150
 # AUCTION HOUSE-拍卖行
 #
 #    AuctionHouse.WorkerThreads
-#        Description: Count of auctionhouse searcher worker threads to spawn
+#        Description: 要生成的拍卖行搜索工作线程数量
 #        Default:     1
 
 AuctionHouse.WorkerThreads = 1
 
 #
 #    LevelReq.Auction
-#        Description: Level requirement for characters to be able to use the auction house.
+#        Description: 角色能够使用拍卖行所需的等级要求。
 #        Default:     1
 
 LevelReq.Auction = 1
@@ -4812,8 +4812,8 @@ LevelReq.Auction = 1
 #    Rate.Auction.Time
 #    Rate.Auction.Deposit
 #    Rate.Auction.Cut
-#        Description: Auction rates (auction time, deposit get at auction start,
-#                     auction cut from price at auction end)
+#        Description: 拍卖费率（拍卖时间、拍卖开始时支付的保证金、
+#                     拍卖结束时从价格中抽取的拍卖手续费）
 #        Default:     1 - (Rate.Auction.Time)
 #                     1 - (Rate.Auction.Deposit)
 #                     1 - (Rate.Auction.Cut)
@@ -4829,14 +4829,14 @@ Rate.Auction.Cut     = 1
 # PLAYER DUMP-玩家转储
 #
 #    PlayerDump.DisallowPaths
-#        Description: Disallow using paths in PlayerDump output files
+#        Description: 禁止在 PlayerDump 输出文件中使用路径
 #        Default:     1
 
 PlayerDump.DisallowPaths = 1
 
 #
 #    PlayerDump.DisallowOverwrite
-#        Description: Disallow overwriting existing files with PlayerDump
+#        Description: 禁止使用 PlayerDump 覆盖现有文件
 #        Default:     1
 
 PlayerDump.DisallowOverwrite = 1
@@ -4849,21 +4849,21 @@ PlayerDump.DisallowOverwrite = 1
 #
 #    ICC.Buff.Alliance
 #    ICC.Buff.Horde
-#        Description: Specify ICC buff
-#        Note:        It is necessary to restart the server after changing the values!
-#        Example:     | Spell IDs | Amount | Faction  |
-#                     |     73762 |     5% | Alliance |
-#                     |     73824 |    10% | Alliance |
-#                     |     73825 |    15% | Alliance |
-#                     |     73826 |    20% | Alliance |
-#                     |     73827 |    25% | Alliance |
-#                     |     73828 |    30% | Alliance |
-#                     |     73816 |     5% |    Horde |
-#                     |     73818 |    10% |    Horde |
-#                     |     73819 |    15% |    Horde |
-#                     |     73820 |    20% |    Horde |
-#                     |     73821 |    25% |    Horde |
-#                     |     73822 |    30% |    Horde |
+#        Description: 指定 ICC 增益
+#        Note:        更改数值后必须重启服务器！
+#        Example:     | Spell IDs |  数值  | 阵营 |
+#                     |     73762 |     5% | 联盟 |
+#                     |     73824 |    10% | 联盟 |
+#                     |     73825 |    15% | 联盟 |
+#                     |     73826 |    20% | 联盟 |
+#                     |     73827 |    25% | 联盟 |
+#                     |     73828 |    30% | 联盟 |
+#                     |     73816 |     5% | 部落 |
+#                     |     73818 |    10% | 部落 |
+#                     |     73819 |    15% | 部落 |
+#                     |     73820 |    20% | 部落 |
+#                     |     73821 |    25% | 部落 |
+#                     |     73822 |    30% | 部落 |
 #        Default:     ICC.Buff.Alliance = 73828
 #                     ICC.Buff.Horde    = 73822
 
@@ -4872,58 +4872,58 @@ ICC.Buff.Horde    = 73822
 
 #
 #    WipeGunshipBlizzlike.Enable
-#       Description: Wipe the gunship fight if no player is on the deck.
+#       Description: 如果甲板上没有玩家，则重置炮舰战斗。
 #       Default:     1 - (Blizzlike)
 
 WipeGunshipBlizzlike.Enable = 1
 
 #
 #    Minigob.Manabonk.Enable
-#        Description: Enable/ Disable Minigob Manabonk
+#        Description: 启用/禁用 Minigob Manabonk
 #        Default:     1
 
 Minigob.Manabonk.Enable = 1
 
 #
 #    Calculate.Creature.Zone.Area.Data
-#        Description: Calculate at loading creature zoneId / areaId and save in creature table
-#                     WARNING: SLOW WORLD SERVER STARTUP. Should only be used for debugging.
+#        Description: 在加载时计算生物 zoneId / areaId 并保存到 creature 表中
+#                     警告：会减慢世界服务器启动速度。应仅用于调试。
 #        Default:     0 - (Do not show)
 
 Calculate.Creature.Zone.Area.Data = 0
 
 #
 #    Calculate.Gameoject.Zone.Area.Data
-#        Description: Calculate at loading gameobject zoneId / areaId and save in gameobject table
-#                     WARNING: SLOW WORLD SERVER STARTUP. Should only be used for debugging.
+#        Description: 在加载时计算游戏对象 zoneId / areaId 并保存到 gameobject 表中
+#                     警告：会减慢世界服务器启动速度。应仅用于调试。
 #        Default:     0 - (Do not show)
 
 Calculate.Gameoject.Zone.Area.Data = 0
 
 #
 #    DailyRBGArenaPoints.MinLevel
-#        Description: Allows gaining arena points on the first RBG win at level 70.
+#        Description: 允许在 70 级首次赢得评级战场时获得竞技场点数。
 #        Default:     71 - (Blizzlike)
 
 DailyRBGArenaPoints.MinLevel = 71
 
 #
 #    MunchingBlizzlike.Enabled
-#        Description: Enable the Blizzlike implementation of munching with e.g. Warrior's Rend or Mage's Ignite
+#        Description: 启用暴雪原版的“吞噬”机制实现，例如战士的撕裂或法师的点燃
 #        Default:     1 - (Blizzlike)
 
 MunchingBlizzlike.Enabled = 1
 
 #
 #    Daze.Enabled
-#        Description: Enable or disable the chance for mob melee attacks to daze the victim.
+#        Description: 启用或禁用怪物近战攻击使受害者眩晕的几率。
 #        Default:     1 - (Blizzlike)
 
 Daze.Enabled = 1
 
 #
 #    InfiniteAmmo.Enabled
-#        Description: Enable or disable ammo consumption for ranged attacks and thrown weapons.
+#        Description: 启用或禁用远程攻击和投掷武器的弹药消耗。
 #        Default:     0 - (Blizzlike)
 
 InfiniteAmmo.Enabled = 0
@@ -4978,7 +4978,7 @@ Respawn.DynamicRateCreature = 1
 
 #
 #    Respawn.DynamicMinimumCreature
-#        Description: The minimum respawn time for a creature under dynamic scaling.
+#        Description: 动态缩放下的生物最小重生时间。
 #        Default:     10 - (10 seconds)
 
 Respawn.DynamicMinimumCreature = 10
@@ -4998,27 +4998,27 @@ Respawn.DynamicRateGameObject = 1
 
 #
 #    Respawn.DynamicMinimumGameObject
-#        Description: The minimum respawn time for a gameobject under dynamic scaling.
+#        Description: 动态缩放下的游戏对象最小重生时间。
 #        Default:     10 - (10 seconds)
 
 Respawn.DynamicMinimumGameObject = 10
 
 #
 #    Respawn.DynamicEscortNPC
-#        Description: Enable dynamic respawn behavior for escort quest NPCs.
-#                     When enabled, escort NPCs in spawn groups flagged as ESCORTQUESTNPC
-#                     will use special respawn handling.
+#        Description: 为护送任务 NPC 启用动态重生行为。
+#                     启用后，标记为 ESCORTQUESTNPC 的刷新组中的护送 NPC
+#                     将使用特殊重生处理。
 #        Default:     0 - (Disabled)
 
 Respawn.DynamicEscortNPC = 0
 
 #
 #    Respawn.ForceCompatibilityMode
-#        Description: Force all spawns to use legacy (compatibility mode) respawn behavior,
-#                     regardless of their spawn group flags. When enabled, creatures and
-#                     gameobjects respawn in-place as they always have in AzerothCore.
-#                     Set to 1 to force legacy behavior for all spawns.
-#        Default:     0 - (Disabled, spawn groups control respawn mode)
+#        Description: 强制所有刷新使用旧版（兼容模式）重生行为，
+#                     无论其刷新组标志如何。启用后，生物和
+#                     游戏对象将像在 AzerothCore 中一样原地重生。
+#                     设置为 1 以强制所有刷新使用旧版行为。
+#        Default:     0 - (Disabled, 刷新组控制重生模式)
 
 Respawn.ForceCompatibilityMode = 0
 

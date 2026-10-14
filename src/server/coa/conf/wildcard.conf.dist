@@ -98,4 +98,4 @@ Wildcard.Synergy.TalentsNeedTarget = 1
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled)
 
-Wildcard.Synergy.LogRolls = 1
+Wildcard.Synergy.LogRolls = 0

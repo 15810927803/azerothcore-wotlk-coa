@@ -36,4 +36,4 @@
 
 DELETE FROM `coa_client_spell_description` WHERE `ID` = 802707;
 INSERT INTO `coa_client_spell_description` (`ID`, `Description`, `ToolTip`) VALUES
-(802707,'Increases your damage dealt and critical strike chance against this target by $s2%, stacking $u times.\r\n\r\nWhile affected, enemies cannot stealth or turn invisible.','The Shadowhunter deals 1% increased damage to you per stack and has a 1% increased chance to critically strike you per stack. Stacks $u times. Cannot stealth or turn invisible.');
+(802707,'使你对目标造成的伤害和暴击几率提高 $s2%，最多叠加 $u 次。\r\n\r\n受影响期间，敌人无法潜行或隐身。','暗影猎手每层对你造成的伤害提高 1%，每层对你的暴击几率提高 1%。最多叠加 $u 次。无法潜行或隐身。');

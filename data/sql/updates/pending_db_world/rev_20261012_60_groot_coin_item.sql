@@ -6,7 +6,7 @@
 -- Refuse to run unless all three allocated ids are ours or absent: item_template 910001 named 'Groot Coin',
 -- item_dbc 910001 as written below (any of the two coin displays), itemdisplayinfo_dbc 990001 with our icon.
 -- A foreign row makes the SELECT evaluate a two-row subquery, which fails this file before anything changes.
-SELECT IF(EXISTS (SELECT 1 FROM `item_template` WHERE `entry` = 910001 AND `name` <> 'Groot Coin')
+SELECT IF(EXISTS (SELECT 1 FROM `item_template` WHERE `entry` = 910001 AND `name` <> '格鲁特硬币')
     OR EXISTS (SELECT 1 FROM `item_dbc` WHERE `ID` = 910001 AND NOT (`ClassID` = 15 AND `SubclassID` = 0
         AND `Sound_Override_Subclassid` = -1 AND `Material` = 4 AND `DisplayInfoID` IN (30015, 990001)
         AND `InventoryType` = 0 AND `SheatheType` = 0))
@@ -18,8 +18,8 @@ INSERT INTO `item_template` (`entry`, `class`, `subclass`, `SoundOverrideSubclas
     `ItemLevel`, `RequiredLevel`, `maxcount`, `stackable`, `bonding`, `description`, `Material`, `sheath`,
     `RandomProperty`, `RandomSuffix`, `BagFamily`, `duration`, `ItemLimitCategory`, `ScriptName`)
 VALUES
-(910001, 15, 0, -1, 'Groot Coin', 990001, 4, 0, 0, 1, 0, 0, 0, -1, -1, 1, 0, 0, 1000, 1,
-    'Awarded for helping improve Conquest of Azeroth. Exchange with Tiraxis for Bazaar Tokens.', 4, 0, 0, 0, 0, 0, 0,
+(910001, 15, 0, -1, '格鲁特硬币', 990001, 4, 0, 0, 1, 0, 0, 0, -1, -1, 1, 0, 0, 1000, 1,
+    '因帮助改进《艾泽拉斯征服》而授予。与提拉西斯交换以获得集市代币。', 4, 0, 0, 0, 0, 0, 0,
     '')
 ON DUPLICATE KEY UPDATE `class` = VALUES(`class`), `subclass` = VALUES(`subclass`),
     `SoundOverrideSubclass` = VALUES(`SoundOverrideSubclass`), `displayid` = VALUES(`displayid`),

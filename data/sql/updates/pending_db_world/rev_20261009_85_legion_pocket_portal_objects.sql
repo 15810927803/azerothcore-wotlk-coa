@@ -16,9 +16,9 @@ INSERT INTO `gameobject_template` (
     `Data15`, `Data16`, `Data17`, `Data18`, `Data19`, `Data20`, `Data21`, `Data22`, `Data23`, `AIName`, `ScriptName`,
     `VerifiedBuild`
 ) VALUES
-(100575, 22, 8948, 'Portal to Blasted Lands', '', '', '', 1, 966369, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+(100575, 22, 8948, '通往诅咒之地的传送门', '', '', '', 1, 966369, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, '', '', 0),
-(100576, 22, 8948, 'Portal to Blasted Lands', '', '', '', 1, 966369, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+(100576, 22, 8948, '通往诅咒之地的传送门', '', '', '', 1, 966369, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, '', '', 0)
 ON DUPLICATE KEY UPDATE
     `type` = VALUES(`type`), `displayId` = VALUES(`displayId`), `name` = VALUES(`name`),

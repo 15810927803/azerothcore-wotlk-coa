@@ -18,7 +18,7 @@
 UPDATE `creature_template` SET `faction` = 14 WHERE `entry` = 254015;
 
 UPDATE `creature` SET `position_x` = -94.136, `position_y` = -4290.211, `position_z` = 61.294, `orientation` = 3.578,
-    `Comment` = 'CoA Sakari: Burning Blade Coven, middle hall near Thazz''ril''s Pick (in-game .gps by the reporter)'
+    `Comment` = 'CoA 萨卡里：燃烧之刃集会，靠近萨兹瑞尔的镐的中间大厅（游戏内 .gps 由报告者提供）'
 WHERE `guid` = 9012551 AND `id` = 254015;
 
 UPDATE `quest_poi_points` SET `X` = -94, `Y` = -4290 WHERE `QuestID` = 254009 AND `Idx1` = 1 AND `Idx2` = 0;

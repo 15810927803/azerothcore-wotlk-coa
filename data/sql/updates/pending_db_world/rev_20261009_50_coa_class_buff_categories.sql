@@ -82,9 +82,9 @@ INSERT INTO `spell_group` (`id`, `spell_id`) VALUES
 (2110006, 561242);
 DELETE FROM `spell_group_stack_rules` WHERE `group_id` BETWEEN 2110001 AND 2110006;
 INSERT INTO `spell_group_stack_rules` (`group_id`, `stack_rule`, `description`) VALUES
-(2110001, 1, 'CoA class buffs: agility'),
-(2110002, 1, 'CoA class buffs: stamina'),
-(2110003, 1, 'CoA class buffs: attack power'),
-(2110004, 1, 'CoA class buffs: armor and all attributes'),
-(2110005, 1, 'CoA class buffs: spirit'),
-(2110006, 1, 'CoA class buffs: all attributes percent');
+(2110001, 1, 'CoA 职业增益：敏捷'),
+(2110002, 1, 'CoA 职业增益：耐力'),
+(2110003, 1, 'CoA 职业增益：攻击强度'),
+(2110004, 1, 'CoA 职业增益：护甲和所有属性'),
+(2110005, 1, 'CoA 职业增益：精神'),
+(2110006, 1, 'CoA 职业增益：所有属性百分比');

@@ -22,12 +22,12 @@ INSERT INTO `quest_template` (`ID`, `QuestType`, `QuestLevel`, `MinLevel`, `Ques
   `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredItemId1`, `RequiredItemId2`,
   `RequiredItemCount1`, `RequiredItemCount2`)
 VALUES
-(255078, 2, 13, 9, 17, 255079, 5, 600, 405, 8, 375250, 100, 1397885, 1, 76, 5, 'Play It by Ear', 'Raj’iri wants to dance with her sister, but Naj’iri isn’t in the mood. Maybe some music will help get her off her feet. Collect a centaur windflute from Kolkar Wranglers, and Kolkar Stormers.', 'Ahh, I be feelin’ it in me bones today, mon! De spirits got me feet tappin’ and me heart drummin!$B$BBut me poor sister…she been broodin’ in de shade since sunrise. Won’t smile, won’t sway, won’t even hum a tune. It ain’t right.$B$BWhat we need be music!$B$BI been thinkin’…dem centaur camps nearby? Dey always got dem lightning-callin’ mages chantin’ and stompin’ through de day. Surely dey got an instrument or two lyin’ about.', '', 'Return to Raj''iri at the Crossroads.', 0, 0, 0, 0, 0, 0, 355118, 0, 1, 0),
-(255079, 2, 15, 11, 17, 255080, 5, -300, 0, 8, 375250, 100, 1397885, 1, 76, 5, 'Finding the Rhythm', 'Maybe a flute was the wrong instrument. Gather 5 Hecklefang Hyena skins, 1 Barrens Giraffe Leather, and 3 silver. Then deliver it to Unah to make a drum.', 'Ahh…so de flute weren’t enough to stir her spirit. Shame, mon. It sang sweet, but her heart still be heavy.$B$BStill-we ain’t givin’ up! No, no, we just need somethin’ stronger. Somethin’ louder...a drum! Yes, dat be it!$B$BRhuna, de leatherworker, could stitch one together for us if she had de right materials...would you be willin'' to do dat for me poor old sister?', '', 'Bring the materials to Rhuna in the Barrens along with 3 Silver as payment.', 0, 0, 0, 0, 0, 0, 355119, 355120, 5, 1),
-(255080, 2, 15, 11, 17, 0, 4, 600, 405, 8, 375250, 100, 1397885, 1, 76, 4, 'Dancing to the Beat', 'There’s been a party in the tauren lodge for a while with lots of dancing. Ask the drummer Brumbof, if he has an extra stick he can spare. Acquire the drumstick and deliver it to Taz’iri along with the drum.', 'This drum may be the finest in all of Kalimdor, but without a stick or mallet to strike it with...$B$BBefore you leave, check the lodge across the road, the drummer might have an extra stick lying around.', '', 'Return to Taz''iri at the Crossroads.', 0, 0, 0, 0, 0, 0, 355122, 0, 1, 0),
-(255081, 2, 11, 7, 17, 0, 5, 600, 405, 8, 375250, 100, 1397885, 1, 76, 5, 'Understanding the Scriptures', 'Hearing of the power of the Burning Blade cult, Martin asks you to retrieve some of their demonic scriptures from Burning Blade Acolytes, and Burning Blade Bruisers so he can study them and perhaps learn something of their power.', 'Ah! What opportune timing!$B$BI am in dire need of a capable assistant! Yes, yes… you’ll do nicely.$B$BThe Burning Blade cultists have taken refuge upon the mountain just north of here, I wish to decode their scripture!$B$BI don''t care how you get it, bring me their writings so I-we may harness their power for our own!', '', 'Return to Martin Lesterfield at the Crossroads.', 0, 0, 0, 0, 0, 0, 355123, 0, 8, 0),
-(255082, 2, 14, 10, 17, 255083, 5, 600, 405, 8, 375250, 100, 1397885, 1, 76, 5, 'Killing the Competition', 'Voltzix Sprocketpop wants you to kill Venture Co. forces at the sludge field to the north.', 'Ya know what ain''t good for business? Other goblins also doin'' business!$B$BEspecially in a perfectly good sludge field I was TRYING to use!$B$BVenture ain''t on good terms with the Horde anyways. Or anyone really. Not sure how they''re actually gettin'' money the way they go around makin'' enemies.$B$BWhy don''t ya go take ''em out, I get the sludge field, you all get less hostile forces around your town, and everyone''s happy!', '', 'Return to Voltzix Sprocketpop at the Crossroads.', 3282, 3284, 3285, 6, 6, 6, 0, 0, 0, 0),
-(255083, 2, 16, 12, 17, 0, 5, 600, 405, 8, 375250, 100, 1397885, 1, 76, 5, 'Annihilating the Competition', 'Voltzix Sprocketpop wants you to kill Venture Co. forces at the Boulder Lode Mine to the north.', 'Problem with Venture, they get everywhere!$B$BNow they''re in my mines too! Perfectly good, mines full of very valuable gems, and they decided to help themselves!$B$BYou''ve proven good at takin'' those loses down a peg, go over to that mine and just do what you did last time!', '', 'Return to Voltzix Sprocketpop at the Crossroads.', 3283, 3286, 0, 8, 8, 0, 0, 0, 0, 0)
+(255078, 2, 13, 9, 17, 255079, 5, 600, 405, 8, 375250, 100, 1397885, 1, 76, 5, '凭感觉演奏', '拉吉里想和她的姐妹跳舞，但纳吉里没有心情。也许来点音乐会让她站起来。从科尔卡牧马者和科尔卡风暴者那里收集一根半人马风笛。', '啊，今天我感觉到了骨头里的节奏，兄弟！灵魂让我的脚在轻敲，让我的心在打鼓！$B$B但我可怜的姐妹……她从日出起就在阴影里郁郁寡欢。不笑，不摇，连哼都不哼一声。这不对啊。$B$B我们需要的是音乐！$B$B我一直在想……附近那些半人马营地？他们总是有那些召唤闪电的法师整天吟唱、跺脚。他们肯定有乐器放在那里。', '', '返回十字路口找拉吉里。', 0, 0, 0, 0, 0, 0, 355118, 0, 1, 0),
+(255079, 2, 15, 11, 17, 255080, 5, -300, 0, 8, 375250, 100, 1397885, 1, 76, 5, '寻找节奏', '也许笛子是错误的乐器。收集 5 张刺鬃鬣狗皮、1 张贫瘠之地长颈鹿皮和 3 银币。然后把它们交给乌娜制作一面鼓。', '啊……所以笛子还不够激发她的精神。遗憾啊，兄弟。它唱得甜美，但她的心依然沉重。$B$B不过——我们不会放弃！不，不，我们只是需要更强的东西。更响亮的东西……一面鼓！对，就是这样！$B$B制皮匠鲁娜如果能拿到合适的材料，就能帮我们缝制一面……你愿意为我可怜的老姐妹做这件事吗？', '', '把材料连同 3 银币作为报酬交给贫瘠之地的鲁娜。', 0, 0, 0, 0, 0, 0, 355119, 355120, 5, 1),
+(255080, 2, 15, 11, 17, 0, 4, 600, 405, 8, 375250, 100, 1397885, 1, 76, 4, '跟着节拍起舞', '牛头人旅店里已经开了一段时间的派对，很多人都在跳舞。问问鼓手布伦博夫是否有备用的鼓槌。获取鼓槌并连同鼓一起交给塔兹里。', '这面鼓可能是整个卡利姆多最好的，但没有鼓槌或木槌敲击它……$B$B在你离开之前，看看路对面的旅店，鼓手可能有多余的鼓槌放在那里。', '', '返回十字路口找塔兹里。', 0, 0, 0, 0, 0, 0, 355122, 0, 1, 0),
+(255081, 2, 11, 7, 17, 0, 5, 600, 405, 8, 375250, 100, 1397885, 1, 76, 5, '理解经文', '听闻灼刃教派的力量后，马丁要求你从灼刃侍僧和灼刃打手那里取回一些他们的恶魔经文，以便他研究并或许能学到一些他们力量的东西。', '啊！多么及时的时机！$B$B我急需一位能干的助手！对，对……你正合适。$B$B灼刃教徒已经躲到了北边的那座山上，我想解读他们的经文！$B$B我不在乎你怎么弄到手，把他们的文字带给我，这样我——我们就能为已所用，驾驭他们的力量！', '', '返回十字路口找马丁·莱斯特菲尔德。', 0, 0, 0, 0, 0, 0, 355123, 0, 8, 0),
+(255082, 2, 14, 10, 17, 255083, 5, 600, 405, 8, 375250, 100, 1397885, 1, 76, 5, '消灭竞争对手', '沃兹克斯·斯普洛克波普想让你杀死北边淤泥场的热砂财团势力。', '你知道什么对生意不好吗？其他地精也在做生意！$B$B尤其是在一块我正想用的完美淤泥场上！$B$B热砂财团本来就和部落关系不好。其实和谁都关系不好。我都不知道他们到处树敌是怎么赚到钱的。$B$B你为什么不去把他们干掉，我得到淤泥场，你们的城镇周围少了敌对势力，大家都开心！', '', '返回十字路口找沃兹克斯·斯普洛克波普。', 3282, 3284, 3285, 6, 6, 6, 0, 0, 0, 0),
+(255083, 2, 16, 12, 17, 0, 5, 600, 405, 8, 375250, 100, 1397885, 1, 76, 5, '歼灭竞争对手', '沃兹克斯·斯普洛克波普想让你杀死北边巨石矿洞的热砂财团势力。', '热砂财团的问题在于，他们无处不在！$B$B现在他们跑到我的矿洞里了！一块完美的、充满珍贵宝石的矿洞，他们居然决定据为己有！$B$B你已经证明了你很擅长把那些人打压下去，去那个矿洞，像上次那样干就对了！', '', '返回十字路口找沃兹克斯·斯普洛克波普。', 3283, 3286, 0, 8, 8, 0, 0, 0, 0, 0)
 ON DUPLICATE KEY UPDATE `QuestType` = VALUES(`QuestType`), `QuestLevel` = VALUES(`QuestLevel`),
     `MinLevel` = VALUES(`MinLevel`), `QuestSortID` = VALUES(`QuestSortID`),
     `RewardNextQuest` = VALUES(`RewardNextQuest`), `RewardXPDifficulty` = VALUES(`RewardXPDifficulty`),
@@ -53,18 +53,18 @@ INSERT INTO `quest_template_addon` (`ID`, `PrevQuestID`) VALUES
 
 DELETE FROM `quest_offer_reward` WHERE `ID` IN (255082,255083);
 INSERT INTO `quest_offer_reward` (`ID`, `RewardText`) VALUES
-(255082, 'They''re dead? Good! Knew I could count on ya!'),
-(255083, 'Sounds like that''s the last of ''em! Actually, I heard they''re packin'' up and heading back to...somewhere, I didn''t pay much attention.$B$BWhat matters is they''re leaving, something about hazard expenses.');
+(255082, '他们死了？很好！我就知道能指望你！'),
+(255083, '听起来那是最后一批了！其实，我听说他们正在打包回……某个地方，我没太注意。$B$B重要的是他们离开了，说什么危险开支之类的。');
 
 INSERT INTO `creature_template` (`entry`, `name`, `subname`, `npcflag`, `type`, `type_flags`, `HealthModifier`,
   `ManaModifier`)
 VALUES
-(41719, 'Raj''iri', NULL, 2, 7, 0, 1.032, 1),
-(741719, 'Naj''iri', NULL, 0, 7, 0, 0.99072, 1),
-(41739, 'Rhuna', 'Leatherworking Trainer', 2, 7, 134217728, 1.136, 1),
-(741722, 'Martin Lesterfield', 'Scrolls and Oddities', 2, 7, 0, 1.136, 1),
-(753513, 'Brumbof Bramstum', NULL, 0, 7, 0, 2.048, 1),
-(753524, 'Voltzix Sprocketpop', 'Engineering Trainer', 2, 7, 0, 2.048, 1)
+(41719, '拉吉里', NULL, 2, 7, 0, 1.032, 1),
+(741719, '纳吉里', NULL, 0, 7, 0, 0.99072, 1),
+(41739, '鲁娜', '制皮训练师', 2, 7, 134217728, 1.136, 1),
+(741722, '马丁·莱斯特菲尔德', '卷轴与奇物', 2, 7, 0, 1.136, 1),
+(753513, '布伦博夫·布拉姆斯图姆', NULL, 0, 7, 0, 2.048, 1),
+(753524, '沃兹克斯·斯普洛克波普', '工程学训练师', 2, 7, 0, 2.048, 1)
 ON DUPLICATE KEY UPDATE `name` = VALUES(`name`), `subname` = VALUES(`subname`), `npcflag` = VALUES(`npcflag`),
     `type` = VALUES(`type`), `type_flags` = VALUES(`type_flags`), `HealthModifier` = VALUES(`HealthModifier`),
     `ManaModifier` = VALUES(`ManaModifier`);
@@ -113,10 +113,10 @@ VALUES
 
 DELETE FROM `creature_text` WHERE `CreatureID` IN (41719,741719);
 INSERT INTO `creature_text` (`CreatureID`, `GroupID`, `ID`, `Text`, `Type`, `Probability`, `comment`) VALUES
-(41719, 0, 0, 'Feel like dancin'' now?', 12, 100, 'Raj''iri - ask Naj''iri to dance'),
-(41719, 1, 0, 'How about now mon?', 12, 100, 'Raj''iri - ask Naj''iri again'),
-(741719, 0, 0, 'Not really mon...', 12, 100, 'Naj''iri - decline'),
-(741719, 1, 0, 'Alright, just for a bit...', 12, 100, 'Naj''iri - agree');
+(41719, 0, 0, '现在想跳舞了吗？', 12, 100, '拉吉里 - 邀请纳吉里跳舞'),
+(41719, 1, 0, '现在怎么样，老兄？', 12, 100, '拉吉里 - 再次邀请纳吉里'),
+(741719, 0, 0, '不太想，老兄……', 12, 100, '纳吉里 - 拒绝'),
+(741719, 1, 0, '好吧，就跳一会儿……', 12, 100, '纳吉里 - 同意');
 
 DELETE FROM `creature_loot_template` WHERE `Item` IN (355118,355119,355120,355123);
 INSERT INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES
@@ -129,7 +129,7 @@ INSERT INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `Q
 
 DELETE FROM `npc_text` WHERE `ID` = 9010700;
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `Probability0`) VALUES
-(9010700, 'The beat never stops in this lodge, $c.', 'The beat never stops in this lodge, $c.', 0, 1);
+(9010700, '这间旅店里的节拍永不停歇，$c。', '这间旅店里的节拍永不停歇，$c。', 0, 1);
 
 DELETE FROM `gossip_menu` WHERE `MenuID` = 9010700;
 INSERT INTO `gossip_menu` (`MenuID`, `TextID`) VALUES
@@ -137,7 +137,7 @@ INSERT INTO `gossip_menu` (`MenuID`, `TextID`) VALUES
 
 DELETE FROM `gossip_menu_option` WHERE `MenuID` = 9010700;
 INSERT INTO `gossip_menu_option` (`MenuID`, `OptionID`, `OptionIcon`, `OptionText`, `OptionBroadcastTextID`, `OptionType`, `OptionNpcFlag`, `ActionMenuID`, `ActionPoiID`, `BoxCoded`, `BoxMoney`, `BoxText`, `BoxBroadcastTextID`) VALUES
-(9010700, 0, 0, 'Do you have an extra drumstick you can spare?', 0, 1, 1, 0, 0, 0, 0, '', 0);
+(9010700, 0, 0, '你有多余的鼓槌可以匀给我吗？', 0, 1, 1, 0, 0, 0, 0, '', 0);
 
 DELETE FROM `conditions` WHERE `SourceTypeOrReferenceId` = 15 AND `SourceGroup` = 9010700;
 INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorType`, `ErrorTextId`, `ScriptName`, `Comment`) VALUES

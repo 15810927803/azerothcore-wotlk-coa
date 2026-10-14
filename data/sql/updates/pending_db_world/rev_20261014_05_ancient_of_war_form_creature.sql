@@ -4,7 +4,7 @@
 -- 111213 (creature 346852); the NPC display 1461 used until now has client scale 3.0.
 INSERT INTO `creature_template` (`entry`, `name`, `minlevel`, `maxlevel`,
 `faction`, `unit_class`, `type`) VALUES
-(346922, 'Ancient of War', 1, 1, 35, 1, 7)
+(346922, '战争古树', 1, 1, 35, 1, 7)
 ON DUPLICATE KEY UPDATE `name` = VALUES(`name`), `minlevel` = VALUES(`minlevel`), `maxlevel` = VALUES(`maxlevel`),
 `faction` = VALUES(`faction`), `unit_class` = VALUES(`unit_class`), `type` = VALUES(`type`);
 DELETE FROM `creature_template_model` WHERE `CreatureID` = 346922;

@@ -1464,1407 +1464,1407 @@ INSERT INTO `item_enchantment_template` (`entry`, `ench`, `chance`) VALUES
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 727 AND `RandomProperty` = 5168 AND `RandomSuffix` = 0
-  AND `name` = 'Notched Shortsword' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '缺口短剑' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 789 AND `RandomProperty` = 5197 AND `RandomSuffix` = 0
-  AND `name` = 'Stout Battlehammer' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '结实的战锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 790 AND `RandomProperty` = 5196 AND `RandomSuffix` = 0
-  AND `name` = 'Forester''s Axe' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '护林者之斧' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 862 AND `RandomProperty` = 3253 AND `RandomSuffix` = 0
-  AND `name` = 'Runed Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '符文戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 863 AND `RandomProperty` = 5241 AND `RandomSuffix` = 0
-  AND `name` = 'Gloom Reaper' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '幽暗收割者' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 864 AND `RandomProperty` = 5240 AND `RandomSuffix` = 0
-  AND `name` = 'Knightly Longsword' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '骑士长剑' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 865 AND `RandomProperty` = 5224 AND `RandomSuffix` = 0
-  AND `name` = 'Leaden Mace' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '铅制钉锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 1207 AND `RandomProperty` = 5242 AND `RandomSuffix` = 0
-  AND `name` = 'Murphstar' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '莫夫斯塔' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 1608 AND `RandomProperty` = 5269 AND `RandomSuffix` = 0
-  AND `name` = 'Skullcrusher Mace' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '碎颅锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 1994 AND `RandomProperty` = 5268 AND `RandomSuffix` = 0
-  AND `name` = 'Ebonclaw Reaver' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '黑爪掠夺者' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 2073 AND `RandomProperty` = 5169 AND `RandomSuffix` = 0
-  AND `name` = 'Dwarven Hatchet' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '矮人短斧' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 2075 AND `RandomProperty` = 5170 AND `RandomSuffix` = 0
-  AND `name` = 'Priest''s Mace' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '牧师钉锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 2078 AND `RandomProperty` = 5177 AND `RandomSuffix` = 0
-  AND `name` = 'Northern Shortsword' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '北方短剑' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 2079 AND `RandomProperty` = 5179 AND `RandomSuffix` = 0
-  AND `name` = 'Sergeant''s Warhammer' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '中士的战锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 2080 AND `RandomProperty` = 5232 AND `RandomSuffix` = 0
-  AND `name` = 'Hillborne Axe' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '山地斧' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 4561 AND `RandomProperty` = 5169 AND `RandomSuffix` = 0
-  AND `name` = 'Scalping Tomahawk' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '剥皮战斧' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 4568 AND `RandomProperty` = 5187 AND `RandomSuffix` = 0
-  AND `name` = 'Grunt Axe' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '步兵斧' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 4569 AND `RandomProperty` = 5170 AND `RandomSuffix` = 0
-  AND `name` = 'Staunch Hammer' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '坚固的锤子' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 6542 AND `RandomProperty` = 959 AND `RandomSuffix` = 0
-  AND `name` = 'Willow Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '柳木披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 6564 AND `RandomProperty` = 961 AND `RandomSuffix` = 0
-  AND `name` = 'Shimmering Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '微光披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 6575 AND `RandomProperty` = 1003 AND `RandomSuffix` = 0
-  AND `name` = 'Defender Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '防御者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 6585 AND `RandomProperty` = 982 AND `RandomSuffix` = 0
-  AND `name` = 'Scouting Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '斥候披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 6593 AND `RandomProperty` = 1005 AND `RandomSuffix` = 0
-  AND `name` = 'Battleforge Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '战铸披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 6604 AND `RandomProperty` = 984 AND `RandomSuffix` = 0
-  AND `name` = 'Dervish Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '苦行僧披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 6614 AND `RandomProperty` = 964 AND `RandomSuffix` = 0
-  AND `name` = 'Sage''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '智者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 7356 AND `RandomProperty` = 964 AND `RandomSuffix` = 0
-  AND `name` = 'Elder''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '长者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 7411 AND `RandomProperty` = 986 AND `RandomSuffix` = 0
-  AND `name` = 'Infiltrator Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '渗透者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 7419 AND `RandomProperty` = 1006 AND `RandomSuffix` = 0
-  AND `name` = 'Phalanx Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '方阵披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 7436 AND `RandomProperty` = 966 AND `RandomSuffix` = 0
-  AND `name` = 'Twilight Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '暮光披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 7446 AND `RandomProperty` = 987 AND `RandomSuffix` = 0
-  AND `name` = 'Sentinel Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '哨兵披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 7460 AND `RandomProperty` = 1008 AND `RandomSuffix` = 0
-  AND `name` = 'Knight''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '骑士披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 7474 AND `RandomProperty` = 968 AND `RandomSuffix` = 0
-  AND `name` = 'Regal Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '皇家披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 7483 AND `RandomProperty` = 989 AND `RandomSuffix` = 0
-  AND `name` = 'Ranger Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '游侠披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 7492 AND `RandomProperty` = 1009 AND `RandomSuffix` = 0
-  AND `name` = 'Captain''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '队长披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 7524 AND `RandomProperty` = 969 AND `RandomSuffix` = 0
-  AND `name` = 'Gossamer Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '薄纱披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 7533 AND `RandomProperty` = 990 AND `RandomSuffix` = 0
-  AND `name` = 'Cabalist Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '秘法师披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 7544 AND `RandomProperty` = 1011 AND `RandomSuffix` = 0
-  AND `name` = 'Champion''s Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '勇士披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 8194 AND `RandomProperty` = 5251 AND `RandomSuffix` = 0
-  AND `name` = 'Goblin Nutcracker' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '地精碎果器' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 8196 AND `RandomProperty` = 5258 AND `RandomSuffix` = 0
-  AND `name` = 'Ebon Scimitar' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '黑檀弯刀' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 9461 AND `RandomProperty` = 3481 AND `RandomSuffix` = 0
-  AND `name` = 'Charged Gear' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '充能齿轮' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 9770 AND `RandomProperty` = 961 AND `RandomSuffix` = 0
-  AND `name` = 'Greenweave Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '绿纹披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 9779 AND `RandomProperty` = 981 AND `RandomSuffix` = 0
-  AND `name` = 'Bandit Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '强盗披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 9786 AND `RandomProperty` = 1002 AND `RandomSuffix` = 0
-  AND `name` = 'Raider''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '掠夺者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 9794 AND `RandomProperty` = 963 AND `RandomSuffix` = 0
-  AND `name` = 'Ivycloth Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '常春藤披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 9805 AND `RandomProperty` = 983 AND `RandomSuffix` = 0
-  AND `name` = 'Superior Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '高级披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 9812 AND `RandomProperty` = 1004 AND `RandomSuffix` = 0
-  AND `name` = 'Fortified Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '强化披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 9822 AND `RandomProperty` = 964 AND `RandomSuffix` = 0
-  AND `name` = 'Durable Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '耐久披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 9831 AND `RandomProperty` = 985 AND `RandomSuffix` = 0
-  AND `name` = 'Scaled Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '鳞片披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 9838 AND `RandomProperty` = 1006 AND `RandomSuffix` = 0
-  AND `name` = 'Banded Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '条纹披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 9847 AND `RandomProperty` = 965 AND `RandomSuffix` = 0
-  AND `name` = 'Conjurer''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '咒术师披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 9860 AND `RandomProperty` = 987 AND `RandomSuffix` = 0
-  AND `name` = 'Archer''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '弓箭手披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 9867 AND `RandomProperty` = 1007 AND `RandomSuffix` = 0
-  AND `name` = 'Renegade Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '叛徒披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 9877 AND `RandomProperty` = 967 AND `RandomSuffix` = 0
-  AND `name` = 'Sorcerer Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '巫师披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 9890 AND `RandomProperty` = 988 AND `RandomSuffix` = 0
-  AND `name` = 'Huntsman''s Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '猎人披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 9898 AND `RandomProperty` = 1009 AND `RandomSuffix` = 0
-  AND `name` = 'Jazeraint Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '碧玉披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 9908 AND `RandomProperty` = 969 AND `RandomSuffix` = 0
-  AND `name` = 'Royal Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '皇家披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 9919 AND `RandomProperty` = 990 AND `RandomSuffix` = 0
-  AND `name` = 'Tracker''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '追踪者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 9929 AND `RandomProperty` = 1010 AND `RandomSuffix` = 0
-  AND `name` = 'Brigade Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '旅团披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 9938 AND `RandomProperty` = 970 AND `RandomSuffix` = 0
-  AND `name` = 'Abjurer''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '驱魔师披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 9951 AND `RandomProperty` = 991 AND `RandomSuffix` = 0
-  AND `name` = 'Chieftain''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '酋长披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 9959 AND `RandomProperty` = 1011 AND `RandomSuffix` = 0
-  AND `name` = 'Warmonger''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '战争使者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 10060 AND `RandomProperty` = 971 AND `RandomSuffix` = 0
-  AND `name` = 'Duskwoven Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '暮织披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 10071 AND `RandomProperty` = 992 AND `RandomSuffix` = 0
-  AND `name` = 'Righteous Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '正义披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 10079 AND `RandomProperty` = 1012 AND `RandomSuffix` = 0
-  AND `name` = 'Lord''s Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '领主披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 10098 AND `RandomProperty` = 972 AND `RandomSuffix` = 0
-  AND `name` = 'Councillor''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '议员披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 10108 AND `RandomProperty` = 993 AND `RandomSuffix` = 0
-  AND `name` = 'Wanderer''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '流浪者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 10120 AND `RandomProperty` = 1014 AND `RandomSuffix` = 0
-  AND `name` = 'Ornate Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '华丽披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 10138 AND `RandomProperty` = 974 AND `RandomSuffix` = 0
-  AND `name` = 'High Councillor''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '大议员的披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 10148 AND `RandomProperty` = 995 AND `RandomSuffix` = 0
-  AND `name` = 'Mighty Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '强力披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 10159 AND `RandomProperty` = 1016 AND `RandomSuffix` = 0
-  AND `name` = 'Mercurial Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '水银披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 10174 AND `RandomProperty` = 972 AND `RandomSuffix` = 0
-  AND `name` = 'Mystical Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '神秘披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 10185 AND `RandomProperty` = 992 AND `RandomSuffix` = 0
-  AND `name` = 'Swashbuckler''s Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '剑客披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 10194 AND `RandomProperty` = 1013 AND `RandomSuffix` = 0
-  AND `name` = 'Crusader''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '十字军披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 10212 AND `RandomProperty` = 973 AND `RandomSuffix` = 0
-  AND `name` = 'Elegant Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '优雅披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 10224 AND `RandomProperty` = 994 AND `RandomSuffix` = 0
-  AND `name` = 'Nightshade Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '夜影披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 10231 AND `RandomProperty` = 1015 AND `RandomSuffix` = 0
-  AND `name` = 'Engraved Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '雕花披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 10249 AND `RandomProperty` = 975 AND `RandomSuffix` = 0
-  AND `name` = 'Master''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '大师披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 10258 AND `RandomProperty` = 995 AND `RandomSuffix` = 0
-  AND `name` = 'Adventurer''s Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '冒险者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 10267 AND `RandomProperty` = 1017 AND `RandomSuffix` = 0
-  AND `name` = 'Masterwork Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '杰作披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 10298 AND `RandomProperty` = 3476 AND `RandomSuffix` = 0
-  AND `name` = 'Gnomeregan Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '诺莫瑞根指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 10299 AND `RandomProperty` = 3506 AND `RandomSuffix` = 0
-  AND `name` = 'Gnomeregan Amulet' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '诺莫瑞根护符' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 10795 AND `RandomProperty` = 3486 AND `RandomSuffix` = 0
-  AND `name` = 'Drakeclaw Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '龙爪指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 11118 AND `RandomProperty` = 3484 AND `RandomSuffix` = 0
-  AND `name` = 'Archaedic Stone' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '考古石' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 11934 AND `RandomProperty` = 3256 AND `RandomSuffix` = 0
-  AND `name` = 'Emperor''s Seal' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '皇帝之印' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 11945 AND `RandomProperty` = 3484 AND `RandomSuffix` = 0
-  AND `name` = 'Dark Iron Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '黑铁戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 11946 AND `RandomProperty` = 3513 AND `RandomSuffix` = 0
-  AND `name` = 'Fire Opal Necklace' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '火焰蛋白石项链' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 11965 AND `RandomProperty` = 3295 AND `RandomSuffix` = 0
-  AND `name` = 'Quartz Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '石英戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 11967 AND `RandomProperty` = 3296 AND `RandomSuffix` = 0
-  AND `name` = 'Zircon Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '锆石指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 11968 AND `RandomProperty` = 3297 AND `RandomSuffix` = 0
-  AND `name` = 'Amber Hoop' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '琥珀耳环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 11969 AND `RandomProperty` = 3298 AND `RandomSuffix` = 0
-  AND `name` = 'Jacinth Circle' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '红锆石指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 11970 AND `RandomProperty` = 3300 AND `RandomSuffix` = 0
-  AND `name` = 'Spinel Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '尖晶石戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 11971 AND `RandomProperty` = 3301 AND `RandomSuffix` = 0
-  AND `name` = 'Amethyst Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '紫水晶指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 11972 AND `RandomProperty` = 3302 AND `RandomSuffix` = 0
-  AND `name` = 'Carnelian Loop' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '红玉髓指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 11973 AND `RandomProperty` = 3303 AND `RandomSuffix` = 0
-  AND `name` = 'Hematite Link' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '赤铁矿链环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 11974 AND `RandomProperty` = 3304 AND `RandomSuffix` = 0
-  AND `name` = 'Aquamarine Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '海蓝宝石戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 11975 AND `RandomProperty` = 3305 AND `RandomSuffix` = 0
-  AND `name` = 'Topaz Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '黄玉戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 11976 AND `RandomProperty` = 3306 AND `RandomSuffix` = 0
-  AND `name` = 'Sardonyx Knuckle' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '缠丝玛瑙指节环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 11977 AND `RandomProperty` = 3307 AND `RandomSuffix` = 0
-  AND `name` = 'Serpentine Loop' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '蛇纹石指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 11978 AND `RandomProperty` = 3308 AND `RandomSuffix` = 0
-  AND `name` = 'Jasper Link' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '碧玉链环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 11979 AND `RandomProperty` = 3309 AND `RandomSuffix` = 0
-  AND `name` = 'Peridot Circle' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '橄榄石指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 11980 AND `RandomProperty` = 3310 AND `RandomSuffix` = 0
-  AND `name` = 'Opal Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '蛋白石戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 11981 AND `RandomProperty` = 3241 AND `RandomSuffix` = 0
-  AND `name` = 'Lead Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '铅制指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 11982 AND `RandomProperty` = 3242 AND `RandomSuffix` = 0
-  AND `name` = 'Viridian Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '铬绿指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 11983 AND `RandomProperty` = 3243 AND `RandomSuffix` = 0
-  AND `name` = 'Chrome Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '铬制戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 11984 AND `RandomProperty` = 3244 AND `RandomSuffix` = 0
-  AND `name` = 'Cobalt Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '钴蓝戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 11985 AND `RandomProperty` = 3246 AND `RandomSuffix` = 0
-  AND `name` = 'Cerulean Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '蔚蓝戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 11986 AND `RandomProperty` = 3247 AND `RandomSuffix` = 0
-  AND `name` = 'Thallium Hoop' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '铊制耳环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 11987 AND `RandomProperty` = 3249 AND `RandomSuffix` = 0
-  AND `name` = 'Iridium Circle' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '铱制指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 11988 AND `RandomProperty` = 3250 AND `RandomSuffix` = 0
-  AND `name` = 'Tellurium Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '碲制指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 11989 AND `RandomProperty` = 3251 AND `RandomSuffix` = 0
-  AND `name` = 'Vanadium Loop' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '钒制指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 11990 AND `RandomProperty` = 3253 AND `RandomSuffix` = 0
-  AND `name` = 'Selenium Loop' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '硒制指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 11991 AND `RandomProperty` = 3254 AND `RandomSuffix` = 0
-  AND `name` = 'Quicksilver Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '水银戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 11992 AND `RandomProperty` = 3255 AND `RandomSuffix` = 0
-  AND `name` = 'Vermilion Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '朱红指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 11993 AND `RandomProperty` = 3259 AND `RandomSuffix` = 0
-  AND `name` = 'Clay Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '陶土戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 11994 AND `RandomProperty` = 3260 AND `RandomSuffix` = 0
-  AND `name` = 'Coral Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '珊瑚指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 11995 AND `RandomProperty` = 3261 AND `RandomSuffix` = 0
-  AND `name` = 'Ivory Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '象牙指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 11996 AND `RandomProperty` = 3263 AND `RandomSuffix` = 0
-  AND `name` = 'Basalt Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '玄武岩戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 11997 AND `RandomProperty` = 3264 AND `RandomSuffix` = 0
-  AND `name` = 'Greenstone Circle' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '绿石指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 11998 AND `RandomProperty` = 3265 AND `RandomSuffix` = 0
-  AND `name` = 'Jet Loop' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '黑玉指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 11999 AND `RandomProperty` = 3267 AND `RandomSuffix` = 0
-  AND `name` = 'Lodestone Hoop' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '磁石耳环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 12001 AND `RandomProperty` = 3268 AND `RandomSuffix` = 0
-  AND `name` = 'Onyx Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '缟玛瑙戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 12002 AND `RandomProperty` = 3269 AND `RandomSuffix` = 0
-  AND `name` = 'Marble Circle' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '大理石指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12004 AND `RandomProperty` = 3271 AND `RandomSuffix` = 0
-  AND `name` = 'Obsidian Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '黑曜石指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12005 AND `RandomProperty` = 3272 AND `RandomSuffix` = 0
-  AND `name` = 'Granite Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '花岗岩戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 12006 AND `RandomProperty` = 2123 AND `RandomSuffix` = 0
-  AND `name` = 'Meadow Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '草甸戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 12007 AND `RandomProperty` = 2124 AND `RandomSuffix` = 0
-  AND `name` = 'Prairie Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '草原戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 12008 AND `RandomProperty` = 2125 AND `RandomSuffix` = 0
-  AND `name` = 'Savannah Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '稀树草原戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 12009 AND `RandomProperty` = 2126 AND `RandomSuffix` = 0
-  AND `name` = 'Tundra Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '苔原指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 12010 AND `RandomProperty` = 2128 AND `RandomSuffix` = 0
-  AND `name` = 'Fen Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '沼泽戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 12011 AND `RandomProperty` = 2129 AND `RandomSuffix` = 0
-  AND `name` = 'Forest Hoop' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '森林耳环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 12012 AND `RandomProperty` = 2130 AND `RandomSuffix` = 0
-  AND `name` = 'Marsh Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '湿地戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 12013 AND `RandomProperty` = 2132 AND `RandomSuffix` = 0
-  AND `name` = 'Desert Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '沙漠戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 12014 AND `RandomProperty` = 2133 AND `RandomSuffix` = 0
-  AND `name` = 'Arctic Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '极地戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12015 AND `RandomProperty` = 2134 AND `RandomSuffix` = 0
-  AND `name` = 'Swamp Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '沼泽戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12016 AND `RandomProperty` = 2136 AND `RandomSuffix` = 0
-  AND `name` = 'Jungle Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '丛林戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12017 AND `RandomProperty` = 3461 AND `RandomSuffix` = 0
-  AND `name` = 'Prismatic Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '棱彩指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 12019 AND `RandomProperty` = 2030 AND `RandomSuffix` = 0
-  AND `name` = 'Cerulean Talisman' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '蔚蓝护符' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 12020 AND `RandomProperty` = 2036 AND `RandomSuffix` = 0
-  AND `name` = 'Thallium Choker' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '铊制项圈' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 12022 AND `RandomProperty` = 2048 AND `RandomSuffix` = 0
-  AND `name` = 'Iridium Chain' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '铱制链环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 12023 AND `RandomProperty` = 2054 AND `RandomSuffix` = 0
-  AND `name` = 'Tellurium Necklace' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '碲制项链' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 12024 AND `RandomProperty` = 2066 AND `RandomSuffix` = 0
-  AND `name` = 'Vanadium Talisman' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '钒制护符' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 12025 AND `RandomProperty` = 2072 AND `RandomSuffix` = 0
-  AND `name` = 'Selenium Chain' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '硒制链环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12026 AND `RandomProperty` = 2084 AND `RandomSuffix` = 0
-  AND `name` = 'Quicksilver Pendant' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '水银坠饰' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12027 AND `RandomProperty` = 2090 AND `RandomSuffix` = 0
-  AND `name` = 'Vermilion Necklace' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '朱红项链' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 12028 AND `RandomProperty` = 3281 AND `RandomSuffix` = 0
-  AND `name` = 'Basalt Necklace' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '玄武岩项链' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 12029 AND `RandomProperty` = 3282 AND `RandomSuffix` = 0
-  AND `name` = 'Greenstone Talisman' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '绿石护符' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 12030 AND `RandomProperty` = 3283 AND `RandomSuffix` = 0
-  AND `name` = 'Jet Chain' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '黑玉链环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 12031 AND `RandomProperty` = 3285 AND `RandomSuffix` = 0
-  AND `name` = 'Lodestone Necklace' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '磁石项链' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 12032 AND `RandomProperty` = 3286 AND `RandomSuffix` = 0
-  AND `name` = 'Onyx Choker' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '缟玛瑙项圈' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 12034 AND `RandomProperty` = 3288 AND `RandomSuffix` = 0
-  AND `name` = 'Marble Necklace' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '大理石项链' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12035 AND `RandomProperty` = 3289 AND `RandomSuffix` = 0
-  AND `name` = 'Obsidian Pendant' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '黑曜石坠饰' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12036 AND `RandomProperty` = 3291 AND `RandomSuffix` = 0
-  AND `name` = 'Granite Necklace' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '花岗岩项链' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 12039 AND `RandomProperty` = 3539 AND `RandomSuffix` = 0
-  AND `name` = 'Tundra Necklace' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '苔原项链' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 12040 AND `RandomProperty` = 3541 AND `RandomSuffix` = 0
-  AND `name` = 'Forest Pendant' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '森林坠饰' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 12042 AND `RandomProperty` = 3542 AND `RandomSuffix` = 0
-  AND `name` = 'Marsh Chain' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '沼泽链环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 12043 AND `RandomProperty` = 3544 AND `RandomSuffix` = 0
-  AND `name` = 'Desert Choker' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '沙漠项圈' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 12044 AND `RandomProperty` = 3545 AND `RandomSuffix` = 0
-  AND `name` = 'Arctic Pendant' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '极地坠饰' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 12045 AND `RandomProperty` = 3547 AND `RandomSuffix` = 0
-  AND `name` = 'Swamp Pendant' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '沼泽坠饰' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12046 AND `RandomProperty` = 3548 AND `RandomSuffix` = 0
-  AND `name` = 'Jungle Necklace' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '丛林项链' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 12047 AND `RandomProperty` = 3463 AND `RandomSuffix` = 0
-  AND `name` = 'Spectral Necklace' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '幽灵项链' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12048 AND `RandomProperty` = 3462 AND `RandomSuffix` = 0
-  AND `name` = 'Prismatic Pendant' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '棱彩坠饰' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12527 AND `RandomProperty` = 5304 AND `RandomSuffix` = 0
-  AND `name` = 'Ribsplitter' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '裂肋者' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 12926 AND `RandomProperty` = 3248 AND `RandomSuffix` = 0
-  AND `name` = 'Flaming Band' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '烈焰指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 14123 AND `RandomProperty` = 960 AND `RandomSuffix` = 0
-  AND `name` = 'Ritual Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '仪式披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 14161 AND `RandomProperty` = 960 AND `RandomSuffix` = 0
-  AND `name` = 'Pagan Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '异教披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 14167 AND `RandomProperty` = 961 AND `RandomSuffix` = 0
-  AND `name` = 'Buccaneer''s Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '海盗披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 14179 AND `RandomProperty` = 962 AND `RandomSuffix` = 0
-  AND `name` = 'Watcher''s Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '守望者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 14188 AND `RandomProperty` = 963 AND `RandomSuffix` = 0
-  AND `name` = 'Raincaller Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '唤雨者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 14198 AND `RandomProperty` = 965 AND `RandomSuffix` = 0
-  AND `name` = 'Thistlefur Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '蓟毛披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 14210 AND `RandomProperty` = 965 AND `RandomSuffix` = 0
-  AND `name` = 'Vital Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '活力披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 14219 AND `RandomProperty` = 966 AND `RandomSuffix` = 0
-  AND `name` = 'Geomancer''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '地卜师披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 14229 AND `RandomProperty` = 966 AND `RandomSuffix` = 0
-  AND `name` = 'Embersilk Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '烬丝披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 14239 AND `RandomProperty` = 967 AND `RandomSuffix` = 0
-  AND `name` = 'Darkmist Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '暗雾披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 14251 AND `RandomProperty` = 968 AND `RandomSuffix` = 0
-  AND `name` = 'Lunar Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '月华披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 14261 AND `RandomProperty` = 969 AND `RandomSuffix` = 0
-  AND `name` = 'Bloodwoven Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '血织披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 14270 AND `RandomProperty` = 969 AND `RandomSuffix` = 0
-  AND `name` = 'Gaea''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '盖亚披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 14280 AND `RandomProperty` = 970 AND `RandomSuffix` = 0
-  AND `name` = 'Opulent Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '华丽披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 14292 AND `RandomProperty` = 971 AND `RandomSuffix` = 0
-  AND `name` = 'Arachnidian Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '蛛丝披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 14300 AND `RandomProperty` = 972 AND `RandomSuffix` = 0
-  AND `name` = 'Bonecaster''s Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '骨法师披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 14313 AND `RandomProperty` = 972 AND `RandomSuffix` = 0
-  AND `name` = 'Celestial Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '天界披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 14321 AND `RandomProperty` = 973 AND `RandomSuffix` = 0
-  AND `name` = 'Resplendent Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '辉煌披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 14331 AND `RandomProperty` = 974 AND `RandomSuffix` = 0
-  AND `name` = 'Eternal Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '永恒披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15114 AND `RandomProperty` = 982 AND `RandomSuffix` = 0
-  AND `name` = 'Rigid Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '硬直披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15124 AND `RandomProperty` = 984 AND `RandomSuffix` = 0
-  AND `name` = 'Robust Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '强壮披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15135 AND `RandomProperty` = 985 AND `RandomSuffix` = 0
-  AND `name` = 'Cutthroat''s Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '割喉者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15147 AND `RandomProperty` = 986 AND `RandomSuffix` = 0
-  AND `name` = 'Ghostwalker Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '幽灵行者披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15153 AND `RandomProperty` = 988 AND `RandomSuffix` = 0
-  AND `name` = 'Nocturnal Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '夜行披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15165 AND `RandomProperty` = 989 AND `RandomSuffix` = 0
-  AND `name` = 'Imposing Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '威严披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15173 AND `RandomProperty` = 991 AND `RandomSuffix` = 0
-  AND `name` = 'Potent Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '强力披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15183 AND `RandomProperty` = 992 AND `RandomSuffix` = 0
-  AND `name` = 'Praetorian Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '禁卫军披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15190 AND `RandomProperty` = 994 AND `RandomSuffix` = 0
-  AND `name` = 'Grand Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '宏大披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 15210 AND `RandomProperty` = 5177 AND `RandomSuffix` = 0
-  AND `name` = 'Raider Shortsword' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '掠夺者短剑' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15211 AND `RandomProperty` = 5195 AND `RandomSuffix` = 0
-  AND `name` = 'Militant Shortsword' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '好战者短剑' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15213 AND `RandomProperty` = 5231 AND `RandomSuffix` = 0
-  AND `name` = 'Mercenary Blade' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '佣兵之刃' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15214 AND `RandomProperty` = 5249 AND `RandomSuffix` = 0
-  AND `name` = 'Nobles Brand' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '贵族烙印' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15216 AND `RandomProperty` = 5276 AND `RandomSuffix` = 0
-  AND `name` = 'Rune Sword' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '符文剑' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15217 AND `RandomProperty` = 5285 AND `RandomSuffix` = 0
-  AND `name` = 'Widow Blade' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '寡妇之刃' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 15218 AND `RandomProperty` = 5294 AND `RandomSuffix` = 0
-  AND `name` = 'Crystal Sword' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '水晶剑' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 15219 AND `RandomProperty` = 5303 AND `RandomSuffix` = 0
-  AND `name` = 'Dimensional Blade' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '次元之刃' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15222 AND `RandomProperty` = 5188 AND `RandomSuffix` = 0
-  AND `name` = 'Barbed Club' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '倒刺短棒' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15223 AND `RandomProperty` = 5197 AND `RandomSuffix` = 0
-  AND `name` = 'Jagged Star' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '锯齿星锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15224 AND `RandomProperty` = 5206 AND `RandomSuffix` = 0
-  AND `name` = 'Battlesmasher' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '战斗粉碎者' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15225 AND `RandomProperty` = 5224 AND `RandomSuffix` = 0
-  AND `name` = 'Sequoia Hammer' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '红杉锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15226 AND `RandomProperty` = 5242 AND `RandomSuffix` = 0
-  AND `name` = 'Giant Club' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '巨人短棒' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15227 AND `RandomProperty` = 5278 AND `RandomSuffix` = 0
-  AND `name` = 'Diamond-Tip Bludgeon' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '钻石尖头棍' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15228 AND `RandomProperty` = 5287 AND `RandomSuffix` = 0
-  AND `name` = 'Smashing Star' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '粉碎星锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15229 AND `RandomProperty` = 5296 AND `RandomSuffix` = 0
-  AND `name` = 'Blesswind Hammer' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '祝福之风锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15230 AND `RandomProperty` = 5205 AND `RandomSuffix` = 0
-  AND `name` = 'Ridge Cleaver' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '山脊劈斧' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15231 AND `RandomProperty` = 5223 AND `RandomSuffix` = 0
-  AND `name` = 'Splitting Hatchet' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '分裂短斧' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15232 AND `RandomProperty` = 5223 AND `RandomSuffix` = 0
-  AND `name` = 'Hacking Cleaver' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '劈砍利斧' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15233 AND `RandomProperty` = 5241 AND `RandomSuffix` = 0
-  AND `name` = 'Savage Axe' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '野蛮之斧' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15234 AND `RandomProperty` = 5250 AND `RandomSuffix` = 0
-  AND `name` = 'Greater Scythe' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '强效镰刀' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15235 AND `RandomProperty` = 5268 AND `RandomSuffix` = 0
-  AND `name` = 'Crescent Edge' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '新月之刃' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15236 AND `RandomProperty` = 5286 AND `RandomSuffix` = 0
-  AND `name` = 'Moon Cleaver' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '月牙劈斧' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15237 AND `RandomProperty` = 5295 AND `RandomSuffix` = 0
-  AND `name` = 'Corpse Harvester' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '尸体收割者' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 15238 AND `RandomProperty` = 5304 AND `RandomSuffix` = 0
-  AND `name` = 'Warlord''s Axe' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '督军之斧' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 15239 AND `RandomProperty` = 5313 AND `RandomSuffix` = 0
-  AND `name` = 'Felstone Reaver' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '魔石掠夺者' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 15240 AND `RandomProperty` = 5322 AND `RandomSuffix` = 0
-  AND `name` = 'Demon''s Claw' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '恶魔之爪' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 15309 AND `RandomProperty` = 980 AND `RandomSuffix` = 0
-  AND `name` = 'Feral Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '野性斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15333 AND `RandomProperty` = 983 AND `RandomSuffix` = 0
-  AND `name` = 'Wrangler''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '牧马人斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15340 AND `RandomProperty` = 984 AND `RandomSuffix` = 0
-  AND `name` = 'Pathfinder Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '探路者斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15354 AND `RandomProperty` = 986 AND `RandomSuffix` = 0
-  AND `name` = 'Headhunter''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '猎头者斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15364 AND `RandomProperty` = 987 AND `RandomSuffix` = 0
-  AND `name` = 'Trickster''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '欺诈者斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15371 AND `RandomProperty` = 989 AND `RandomSuffix` = 0
-  AND `name` = 'Wolf Rider''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '狼骑兵斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15382 AND `RandomProperty` = 990 AND `RandomSuffix` = 0
-  AND `name` = 'Rageclaw Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '怒爪斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15392 AND `RandomProperty` = 992 AND `RandomSuffix` = 0
-  AND `name` = 'Jadefire Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '碧火斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15427 AND `RandomProperty` = 993 AND `RandomSuffix` = 0
-  AND `name` = 'Peerless Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '无双斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 15437 AND `RandomProperty` = 996 AND `RandomSuffix` = 0
-  AND `name` = 'Supreme Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '至高披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15501 AND `RandomProperty` = 1002 AND `RandomSuffix` = 0
-  AND `name` = 'Outrunner''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '奔行者斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15508 AND `RandomProperty` = 1003 AND `RandomSuffix` = 0
-  AND `name` = 'Grunt''s Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '步兵披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15519 AND `RandomProperty` = 1004 AND `RandomSuffix` = 0
-  AND `name` = 'Spiked Chain Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '尖刺链甲斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 15526 AND `RandomProperty` = 1004 AND `RandomSuffix` = 0
-  AND `name` = 'Sentry''s Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '哨兵披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15537 AND `RandomProperty` = 1006 AND `RandomSuffix` = 0
-  AND `name` = 'Wicked Chain Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '邪恶链甲斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15547 AND `RandomProperty` = 1006 AND `RandomSuffix` = 0
-  AND `name` = 'Thick Scale Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '厚鳞斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15559 AND `RandomProperty` = 1007 AND `RandomSuffix` = 0
-  AND `name` = 'Pillager''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '掠夺者斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15568 AND `RandomProperty` = 1007 AND `RandomSuffix` = 0
-  AND `name` = 'Marauder''s Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '劫掠者斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 15579 AND `RandomProperty` = 1008 AND `RandomSuffix` = 0
-  AND `name` = 'Sparkleshell Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '闪壳斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15594 AND `RandomProperty` = 1009 AND `RandomSuffix` = 0
-  AND `name` = 'Steadfast Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '坚定斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15603 AND `RandomProperty` = 1010 AND `RandomSuffix` = 0
-  AND `name` = 'Ancient Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '古代斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15611 AND `RandomProperty` = 1011 AND `RandomSuffix` = 0
-  AND `name` = 'Bonelink Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '骨链披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15624 AND `RandomProperty` = 1011 AND `RandomSuffix` = 0
-  AND `name` = 'Gryphon Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '狮鹫斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 15632 AND `RandomProperty` = 1012 AND `RandomSuffix` = 0
-  AND `name` = 'Formidable Cape' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '威严披风' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15643 AND `RandomProperty` = 1013 AND `RandomSuffix` = 0
-  AND `name` = 'Ironhide Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '铁皮斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15652 AND `RandomProperty` = 1013 AND `RandomSuffix` = 0
-  AND `name` = 'Merciless Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '无情斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15661 AND `RandomProperty` = 1014 AND `RandomSuffix` = 0
-  AND `name` = 'Impenetrable Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '坚不可摧斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12400, `RandomSuffix` = 0
 WHERE `entry` = 15671 AND `RandomProperty` = 1015 AND `RandomSuffix` = 0
-  AND `name` = 'Magnificent Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '华丽斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 15681 AND `RandomProperty` = 1016 AND `RandomSuffix` = 0
-  AND `name` = 'Triumphant Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '凯旋斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 15941 AND `RandomProperty` = 2092 AND `RandomSuffix` = 0
-  AND `name` = 'High Councillor''s Scepter' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '高阶议员的权杖' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 23;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 15942 AND `RandomProperty` = 2092 AND `RandomSuffix` = 0
-  AND `name` = 'Master''s Rod' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '大师之杖' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 23;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 15988 AND `RandomProperty` = 2086 AND `RandomSuffix` = 0
-  AND `name` = 'Resplendent Orb' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '辉煌宝珠' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 23;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 15989 AND `RandomProperty` = 2092 AND `RandomSuffix` = 0
-  AND `name` = 'Eternal Rod' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '永恒之杖' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 23;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 18382 AND `RandomProperty` = 3458 AND `RandomSuffix` = 0
-  AND `name` = 'Fluctuating Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '波动斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12500, `RandomSuffix` = 0
 WHERE `entry` = 18684 AND `RandomProperty` = 3306 AND `RandomSuffix` = 0
-  AND `name` = 'Dimly Opalescent Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '暗淡乳白戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 17200, `RandomSuffix` = 0
 WHERE `entry` = 21768 AND `RandomProperty` = 3461 AND `RandomSuffix` = 0
-  AND `name` = 'Sapphire Signet' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '蓝宝石印章戒指' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12600, `RandomSuffix` = 0
 WHERE `entry` = 25031 AND `RandomProperty` = 0 AND `RandomSuffix` = 66
-  AND `name` = 'Silvermoon Royal Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '银月皇家斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12600, `RandomSuffix` = 0
 WHERE `entry` = 25034 AND `RandomProperty` = 0 AND `RandomSuffix` = 66
-  AND `name` = 'Elementalist Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '元素师斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12600, `RandomSuffix` = 0
 WHERE `entry` = 25117 AND `RandomProperty` = 0 AND `RandomSuffix` = 87
-  AND `name` = 'Flanged Battle Mace' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '凸缘战锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12700, `RandomSuffix` = 0
 WHERE `entry` = 25120 AND `RandomProperty` = 0 AND `RandomSuffix` = 87
-  AND `name` = 'Rockshard Club' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '岩片短棒' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 25127 AND `RandomProperty` = 0 AND `RandomSuffix` = 87
-  AND `name` = 'Knight''s War Hammer' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '骑士战锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12600, `RandomSuffix` = 0
 WHERE `entry` = 25144 AND `RandomProperty` = 0 AND `RandomSuffix` = 89
-  AND `name` = 'Skettis Curved Blade' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '斯克提斯弯刀' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12700, `RandomSuffix` = 0
 WHERE `entry` = 25147 AND `RandomProperty` = 0 AND `RandomSuffix` = 89
-  AND `name` = 'Skystrider Katana' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '天行者武士刀' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12700, `RandomSuffix` = 0
 WHERE `entry` = 25151 AND `RandomProperty` = 0 AND `RandomSuffix` = 89
-  AND `name` = 'Assassins'' Short Blade' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '刺客短刃' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12700, `RandomSuffix` = 0
 WHERE `entry` = 25152 AND `RandomProperty` = 0 AND `RandomSuffix` = 89
-  AND `name` = 'Howling Sword' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '呼啸之剑' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 25154 AND `RandomProperty` = 0 AND `RandomSuffix` = 89
-  AND `name` = 'Blood Groove Blade' AND `class` = 2 AND `subclass` = 7
+  AND `name` = '血槽之刃' AND `class` = 2 AND `subclass` = 7
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12600, `RandomSuffix` = 0
 WHERE `entry` = 25185 AND `RandomProperty` = 0 AND `RandomSuffix` = 93
-  AND `name` = 'Thrasher Blades' AND `class` = 2 AND `subclass` = 13
+  AND `name` = '痛击之刃' AND `class` = 2 AND `subclass` = 13
   AND `InventoryType` = 22;
 UPDATE `item_template`
 SET `RandomProperty` = 12600, `RandomSuffix` = 0
 WHERE `entry` = 25186 AND `RandomProperty` = 0 AND `RandomSuffix` = 93
-  AND `name` = 'Vampiric Handscythes' AND `class` = 2 AND `subclass` = 13
+  AND `name` = '吸血鬼手镰' AND `class` = 2 AND `subclass` = 13
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12700, `RandomSuffix` = 0
 WHERE `entry` = 25191 AND `RandomProperty` = 0 AND `RandomSuffix` = 93
-  AND `name` = 'Dread Fangs' AND `class` = 2 AND `subclass` = 13
+  AND `name` = '恐惧之牙' AND `class` = 2 AND `subclass` = 13
   AND `InventoryType` = 22;
 UPDATE `item_template`
 SET `RandomProperty` = 12700, `RandomSuffix` = 0
 WHERE `entry` = 25195 AND `RandomProperty` = 0 AND `RandomSuffix` = 93
-  AND `name` = 'Diamond Tipped Claws' AND `class` = 2 AND `subclass` = 13
+  AND `name` = '钻石尖爪' AND `class` = 2 AND `subclass` = 13
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 25196 AND `RandomProperty` = 0 AND `RandomSuffix` = 93
-  AND `name` = 'Boneshredder Claws' AND `class` = 2 AND `subclass` = 13
+  AND `name` = '碎骨利爪' AND `class` = 2 AND `subclass` = 13
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12000, `RandomSuffix` = 0
 WHERE `entry` = 25211 AND `RandomProperty` = 0 AND `RandomSuffix` = 92
-  AND `name` = 'Rockbiter Cutter' AND `class` = 2 AND `subclass` = 0
+  AND `name` = '岩石切割者' AND `class` = 2 AND `subclass` = 0
   AND `InventoryType` = 13;
 UPDATE `item_template`
 SET `RandomProperty` = 12600, `RandomSuffix` = 0
 WHERE `entry` = 25314 AND `RandomProperty` = 0 AND `RandomSuffix` = 84
-  AND `name` = 'Ceremonial Hammer' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '仪式之锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12700, `RandomSuffix` = 0
 WHERE `entry` = 25321 AND `RandomProperty` = 0 AND `RandomSuffix` = 84
-  AND `name` = 'Divine Hammer' AND `class` = 2 AND `subclass` = 4
+  AND `name` = '神圣之锤' AND `class` = 2 AND `subclass` = 4
   AND `InventoryType` = 21;
 UPDATE `item_template`
 SET `RandomProperty` = 12600, `RandomSuffix` = 0
 WHERE `entry` = 28532 AND `RandomProperty` = 0 AND `RandomSuffix` = 95
-  AND `name` = 'Silver Throwing Knives' AND `class` = 2 AND `subclass` = 16
+  AND `name` = '银质飞刀' AND `class` = 2 AND `subclass` = 16
   AND `InventoryType` = 25;
 UPDATE `item_template`
 SET `RandomProperty` = 12600, `RandomSuffix` = 0
 WHERE `entry` = 28533 AND `RandomProperty` = 0 AND `RandomSuffix` = 95
-  AND `name` = 'Wooden Boomerang' AND `class` = 2 AND `subclass` = 16
+  AND `name` = '木质回旋镖' AND `class` = 2 AND `subclass` = 16
   AND `InventoryType` = 25;
 UPDATE `item_template`
 SET `RandomProperty` = 12600, `RandomSuffix` = 0
 WHERE `entry` = 28534 AND `RandomProperty` = 0 AND `RandomSuffix` = 95
-  AND `name` = 'Fel Tipped Dart' AND `class` = 2 AND `subclass` = 16
+  AND `name` = '邪能飞镖' AND `class` = 2 AND `subclass` = 16
   AND `InventoryType` = 25;
 UPDATE `item_template`
 SET `RandomProperty` = 12700, `RandomSuffix` = 0
 WHERE `entry` = 28537 AND `RandomProperty` = 0 AND `RandomSuffix` = 95
-  AND `name` = 'Wildhammer Throwing Axe' AND `class` = 2 AND `subclass` = 16
+  AND `name` = '蛮锤飞斧' AND `class` = 2 AND `subclass` = 16
   AND `InventoryType` = 25;
 UPDATE `item_template`
 SET `RandomProperty` = 12700, `RandomSuffix` = 0
 WHERE `entry` = 28538 AND `RandomProperty` = 0 AND `RandomSuffix` = 95
-  AND `name` = 'Forked Shuriken' AND `class` = 2 AND `subclass` = 16
+  AND `name` = '叉状手里剑' AND `class` = 2 AND `subclass` = 16
   AND `InventoryType` = 25;
 UPDATE `item_template`
 SET `RandomProperty` = 12700, `RandomSuffix` = 0
 WHERE `entry` = 31201 AND `RandomProperty` = 0 AND `RandomSuffix` = 66
-  AND `name` = 'Illidari Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '伊利达雷斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12300, `RandomSuffix` = 0
 WHERE `entry` = 51992 AND `RandomProperty` = 0 AND `RandomSuffix` = 381
-  AND `name` = 'Tumultuous Ring' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '动荡指环' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 11;
 UPDATE `item_template`
 SET `RandomProperty` = 12100, `RandomSuffix` = 0
 WHERE `entry` = 51994 AND `RandomProperty` = 0 AND `RandomSuffix` = 381
-  AND `name` = 'Tumultuous Cloak' AND `class` = 4 AND `subclass` = 1
+  AND `name` = '动荡斗篷' AND `class` = 4 AND `subclass` = 1
   AND `InventoryType` = 16;
 UPDATE `item_template`
 SET `RandomProperty` = 12200, `RandomSuffix` = 0
 WHERE `entry` = 51996 AND `RandomProperty` = 0 AND `RandomSuffix` = 381
-  AND `name` = 'Tumultuous Necklace' AND `class` = 4 AND `subclass` = 0
+  AND `name` = '动荡项链' AND `class` = 4 AND `subclass` = 0
   AND `InventoryType` = 2;
 
 -- Apply the final native pool selection policies.

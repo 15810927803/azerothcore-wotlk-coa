@@ -26,8 +26,8 @@ local function Enter(self)
         WorldMapPOI_OnEnter(self)
     end
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:SetText("Crow's Cache", 1, 0.82, 0)
-    GameTooltip:AddLine("High-Risk 60 PvP Event", 1, 1, 1, true)
+    GameTooltip:SetText("鸦巢", 1, 0.82, 0)
+    GameTooltip:AddLine("高风险 60 级 PvP 事件", 1, 1, 1, true)
     GameTooltip:Show()
 end
 
@@ -39,8 +39,8 @@ local function Button(index)
     button:SetWidth(80)
     button:SetHeight(80)
     button:SetFrameLevel(WorldMapButton:GetFrameLevel() + 20)
-    button.name = "Crow's Cache"
-    button.description = "High-Risk 60 PvP Event"
+    button.name = "鸦巢"
+    button.description = "高风险 60 级 PvP 事件"
     button:SetScript("OnEnter", Enter)
     button:SetScript("OnLeave", Leave)
     button:SetScript("OnHide", Leave)

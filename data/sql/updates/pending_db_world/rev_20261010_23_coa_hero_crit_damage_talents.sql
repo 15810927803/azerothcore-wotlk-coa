@@ -18,4 +18,4 @@ INSERT INTO `spell_group` (`id`, `spell_id`) VALUES
 
 DELETE FROM `spell_group_stack_rules` WHERE `group_id` = 2106089;
 INSERT INTO `spell_group_stack_rules` (`group_id`, `stack_rule`, `description`) VALUES
-(2106089, 3, 'Critical damage talents: only the highest bonus counts');
+(2106089, 3, '暴击伤害天赋：只有最高的加成生效');

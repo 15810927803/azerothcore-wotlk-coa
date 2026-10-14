@@ -5,8 +5,8 @@ DELETE FROM `spell_dbc` WHERE `ID` = 9977999;
 INSERT INTO `spell_dbc` (`ID`, `Attributes`, `AttributesEx2`, `Targets`, `CastingTimeIndex`, `InterruptFlags`,
     `RangeIndex`, `EquippedItemClass`, `Effect_1`, `ImplicitTargetA_1`, `SpellVisualID_1`, `SpellIconID`,
     `Name_Lang_enUS`, `Description_Lang_enUS`, `SchoolMask`) VALUES
-(9977999, 272, 8192, 16, 14, 31, 1, -1, 3, 26, 3220, 17922, 'Bloodforge',
-    'Convert the selected item into Normal Bloodforged gear. This conversion is irreversible.', 1);
+(9977999, 272, 8192, 16, 14, 31, 1, -1, 3, 26, 3220, 17922, '血铸',
+    '将选中的物品转换为普通血铸装备。此转换不可逆。', 1);
 
 DELETE FROM `spell_script_names` WHERE `spell_id` = 9977999;
 INSERT INTO `spell_script_names` (`spell_id`, `ScriptName`) VALUES
