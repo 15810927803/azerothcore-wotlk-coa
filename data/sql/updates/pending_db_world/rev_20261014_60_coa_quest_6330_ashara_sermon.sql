@@ -13,11 +13,11 @@
 DELETE FROM `creature_text` WHERE `CreatureID` = 162847;
 INSERT INTO `creature_text` (`CreatureID`, `GroupID`, `ID`, `Text`, `Type`, `Probability`, `comment`)
 VALUES
-(162847, 0, 0, 'Sit, $N. The living fill their chapels to beg the Light for comfort. We gather here to remember that it never answered us.', 12, 100, 'Dark Priestess Ashara - sermon 0 (INFERRED)'),
-(162847, 1, 0, 'When the plague took us, the Light did not stir. What raised us from the Scourge was our own will, and the shadow that remembered us when the Light forgot.', 12, 100, 'Dark Priestess Ashara - sermon 1 (INFERRED)'),
-(162847, 2, 0, 'The Cult of the Forgotten Shadow keeps Three Virtues. You will learn them in time, if you endure long enough to deserve them.', 12, 100, 'Dark Priestess Ashara - sermon 2 (INFERRED)'),
-(162847, 3, 0, 'Until then, remember this: the dead owe nothing to those who abandoned them. Our faith is what we make of ourselves.', 12, 100, 'Dark Priestess Ashara - sermon 3 (INFERRED)'),
-(162847, 4, 0, 'You have listened longer than most. Go now, $N, and say goodbye before you leave.', 12, 100, 'Dark Priestess Ashara - sermon 4 (INFERRED)');
+(162847, 0, 0, '坐下，$N。生者挤满他们的礼拜堂，向圣光乞求慰藉。我们聚集于此，是为了记住它从未回应过我们。', 12, 100, '黑暗女祭司阿莎拉 - 布道 0（推断）'),
+(162847, 1, 0, '当瘟疫夺走我们时，圣光毫无动静。将我们从天灾军团中唤醒的，是我们自己的意志，以及那在圣光遗忘我们时仍记得我们的暗影。', 12, 100, '黑暗女祭司阿莎拉 - 布道 1（推断）'),
+(162847, 2, 0, '被遗忘的暗影教派恪守三种美德。如果你能坚持足够久，配得上它们，你终将学到。', 12, 100, '黑暗女祭司阿莎拉 - 布道 2（推断）'),
+(162847, 3, 0, '在那之前，记住这一点：死者不欠那些抛弃他们的人任何东西。我们的信仰就是我们对自身的造就。', 12, 100, '黑暗女祭司阿莎拉 - 布道 3（推断）'),
+(162847, 4, 0, '你比大多数人听得更久。现在去吧，$N，在离开前道别。', 12, 100, '黑暗女祭司阿莎拉 - 布道 4（推断）');
 
 DELETE FROM `smart_scripts` WHERE `entryorguid` = 162847 AND `source_type` = 0;
 INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `event_param6`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_param4`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`)

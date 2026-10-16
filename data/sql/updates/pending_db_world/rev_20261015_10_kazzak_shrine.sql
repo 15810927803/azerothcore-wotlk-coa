@@ -5,19 +5,19 @@
 -- instance_template row, so the server treated it as an invalid map and refused every teleport there.
 DELETE FROM `gameobject_template` WHERE `entry` = 280137;
 INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `IconName`, `castBarCaption`, `unk1`, `size`, `Data0`, `Data1`, `Data2`, `Data3`, `AIName`, `ScriptName`, `VerifiedBuild`) VALUES
-(280137, 2, 4076, 'Shrine of Lord Kazzak', '', '', '', 1.5, 0, 0, 0, 9780137, 'SmartGameObjectAI', '', 0);
+(280137, 2, 4076, '卡扎克领主的神龛', '', '', '', 1.5, 0, 0, 0, 9780137, 'SmartGameObjectAI', '', 0);
 
 DELETE FROM `npc_text` WHERE `ID` = 9780137;
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `BroadcastTextID0`, `lang0`, `Probability0`) VALUES
-(9780137, 'The shrine seems to notice your presence as you place your hand on its surface to attune to its power.', '', 0, 0, 1);
+(9780137, '当你把手放在神龛表面以与其力量协调时，神龛似乎察觉到了你的存在。', '', 0, 0, 1);
 
 DELETE FROM `gossip_menu` WHERE `MenuID` = 9780137;
 INSERT INTO `gossip_menu` (`MenuID`, `TextID`) VALUES (9780137, 9780137);
 
 DELETE FROM `gossip_menu_option` WHERE `MenuID` = 9780137;
 INSERT INTO `gossip_menu_option` (`MenuID`, `OptionID`, `OptionIcon`, `OptionText`, `OptionBroadcastTextID`, `OptionType`, `OptionNpcFlag`, `ActionMenuID`, `ActionPoiID`, `BoxCoded`, `BoxMoney`, `BoxText`, `BoxBroadcastTextID`, `VerifiedBuild`) VALUES
-(9780137, 0, 9, 'Challenge Kazzak', 0, 1, 1, 0, 0, 0, 0, '', 0, 0),
-(9780137, 1, 0, 'Take your hands off the shrine.', 0, 1, 1, 0, 0, 0, 0, '', 0, 0);
+(9780137, 0, 9, '挑战卡扎克', 0, 1, 1, 0, 0, 0, 0, '', 0, 0),
+(9780137, 1, 0, '把手从神龛上拿开。', 0, 1, 1, 0, 0, 0, 0, '', 0, 0);
 
 DELETE FROM `smart_scripts` WHERE `entryorguid` = 280137 AND `source_type` = 1;
 INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `event_param6`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_param4`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`) VALUES

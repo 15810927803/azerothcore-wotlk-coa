@@ -5,31 +5,31 @@
 -- Request and reward texts of The Rookery and Lost Secrets: video KfIRjSeLn4Y at 04:22-04:24 and 04:54-04:56.
 DELETE FROM `quest_request_items` WHERE `ID` IN (254070,254071);
 INSERT INTO `quest_request_items` (`ID`, `EmoteOnComplete`, `EmoteOnIncomplete`, `CompletionText`, `VerifiedBuild`) VALUES
-(254070, 0, 0, 'Have you dealt with the orc? More importantly, do you have my missing page? I can feel its absence like a splinter in my spine. If you carry it now, bring it forth at once. If not, then what exactly are you waiting for?', 0),
-(254071, 0, 0, 'Have you gotten an egg yet? Jasper is still fast asleep, so it doesn''t look like there''s any rush.', 0);
+(254070, 0, 0, '你处理掉那个兽人了吗？更重要的是，你找到我丢失的书页了吗？我能感觉到它的缺失，就像一根刺扎在我的脊椎里。如果你现在带着它，立刻拿出来。如果没有，那你到底在等什么？', 0),
+(254071, 0, 0, '你拿到蛋了吗？贾斯珀还在熟睡，所以看起来并不着急。', 0);
 
 DELETE FROM `quest_offer_reward` WHERE `ID` IN (254070,254071);
 INSERT INTO `quest_offer_reward` (`ID`, `Emote1`, `Emote2`, `Emote3`, `Emote4`, `EmoteDelay1`, `EmoteDelay2`,
   `EmoteDelay3`, `EmoteDelay4`, `RewardText`, `VerifiedBuild`) VALUES
-(254070, 0, 0, 0, 0, 0, 0, 0, 0, 'I am whole once more!$B$BYou have done me a great service, and so it is only fair I reward you with a small portion of my secrets, but only a taste, for now. You are inexperienced yet, and I do not wish to damage your mind.$B$BWe shall meet again, perhaps not soon, for I have much left to share with the others of this tower, but the time will come, of that I am now certain.', 0),
-(254071, 0, 0, 0, 0, 0, 0, 0, 0, 'Yes, that will work perfectly. You have a good eye.$B$BJasper woke up briefly but he fell asleep again before I could get halfway through explaining the basic principles of Arcane Missiles.$B$BThe only good thing about having such a lazy student is that it gives me plenty of time for my own research, as long as I can focus through his snoring.', 0);
+(254070, 0, 0, 0, 0, 0, 0, 0, 0, '我又完整了！$B$B你为我做了件大事，所以我理应奖励你一小部分我的秘密，但现在只能让你尝一点。你还经验不足，我不想损害你的心智。$B$B我们会再见的，也许不会很快，因为我还有很多东西要分享给这座塔里的其他人，但时机终会到来，对此我现在确信不疑。', 0),
+(254071, 0, 0, 0, 0, 0, 0, 0, 0, '是的，那会非常完美。你很有眼光。$B$B贾斯珀短暂地醒了一下，但我还没来得及讲解奥术飞弹的基本原理，他就又睡着了。$B$B有这样一个懒惰的学生唯一的好处就是，只要我能在他打鼾声中集中注意力，我就有充足的时间做自己的研究。', 0);
 
 -- Gossip texts: videos hTDhaiodOwE (Red Mage Tower, 00:02-02:32), _wYlrKFtuNw (Magistrate Solomon, 01:16) and
 -- y03LWvmfnXM (Lady Idelia Solomon 03:22, Luca Tyndall 04:34). Solomon's text keeps his quest greeting's wording
 -- with the video's 'Lakeshire'.
 DELETE FROM `npc_text` WHERE `ID` BETWEEN 60072 AND 60082;
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `Probability0`) VALUES
-(60072, 'Does Jasper think magic just happens because he naps through it all? Does the power of a mage simply appear in his dreams, perhaps? I can hardly get through a single incantation without hearing the sound of snoring. It''s as if the very mention of ''mana'' induces a deep slumber!$B$BI''ve tried every method - enchantments, gentle encouragement, even a well-timed splash of cold water. Nothing works!$B$BHow can anyone be so blissfully unaware while I''m trying to instill the secrets of the arcane into their thick skull?', 'Does Jasper think magic just happens because he naps through it all? Does the power of a mage simply appear in his dreams, perhaps? I can hardly get through a single incantation without hearing the sound of snoring. It''s as if the very mention of ''mana'' induces a deep slumber!$B$BI''ve tried every method - enchantments, gentle encouragement, even a well-timed splash of cold water. Nothing works!$B$BHow can anyone be so blissfully unaware while I''m trying to instill the secrets of the arcane into their thick skull?', 1),
-(60073, 'Do you see it? That''s the famous Archmage Minervia, the one who defended Lakeshire from a dragon attack when I was just a child!$B$BI''ve read so many scrolls and tomes about her achievements, but standing before her likeness... it''s like I can feel the echoes of her power still lingering in the air.$B$BImagine being able to weave magic with such precision, to command arcane energies as if they were mere tools! Her feats are the stuff of legends, and yet—here, in this quiet moment—I can''t help but wonder if I will ever reach such heights.', 'Do you see it? That''s the famous Archmage Minervia, the one who defended Lakeshire from a dragon attack when I was just a child!$B$BI''ve read so many scrolls and tomes about her achievements, but standing before her likeness... it''s like I can feel the echoes of her power still lingering in the air.$B$BImagine being able to weave magic with such precision, to command arcane energies as if they were mere tools! Her feats are the stuff of legends, and yet—here, in this quiet moment—I can''t help but wonder if I will ever reach such heights.', 1),
-(60074, 'Please... don''t encourage him.', 'Please... don''t encourage him.', 1),
-(60075, '<Jasper slouches in the chair, his eyes wide and unblinking as he stares vacantly at the wall. His mouth hangs slightly open, the silence broken only by the sudden eruption of a deafening snore that shakes his body.>$B$BIt might be best to leave him undisturbed.', '<Jasper slouches in the chair, his eyes wide and unblinking as he stares vacantly at the wall. His mouth hangs slightly open, the silence broken only by the sudden eruption of a deafening snore that shakes his body.>$B$BIt might be best to leave him undisturbed.', 1),
-(60076, '<Jasper doesn''t respond. The only sound that fills the room is the faint rustling of breath.>', '<Jasper doesn''t respond. The only sound that fills the room is the faint rustling of breath.>', 1),
-(60077, 'Ah, another curious soul.$B$BDo you feel the pulse of the world''s magic, the way it shifts and ebbs like the tides? I spend my days tracking these subtle currents, seeking out wellsprings of arcane energy that will fuel my studies and strengthen my craft.$B$BIt''s a never-ending journey, one that requires focus and patience... something my students could use a bit more of. Don''t get me wrong, they have potential, but some of them have the attention span of a firefly on a summer night.$B$BStill, their chaos is a small price to pay for the knowledge we''re uncovering here.', 'Ah, another curious soul.$B$BDo you feel the pulse of the world''s magic, the way it shifts and ebbs like the tides? I spend my days tracking these subtle currents, seeking out wellsprings of arcane energy that will fuel my studies and strengthen my craft.$B$BIt''s a never-ending journey, one that requires focus and patience... something my students could use a bit more of. Don''t get me wrong, they have potential, but some of them have the attention span of a firefly on a summer night.$B$BStill, their chaos is a small price to pay for the knowledge we''re uncovering here.', 1),
-(60078, 'Let me guess, Alexandria asked you?$B$BI''ll tell you the same thing I told her. I got my start here training under Minervia, she was always a bit odd, I guess we all are to be here.$B$BAfter that attack on Lakeshire, she was never quite the same, she shut herself in research for days on end until one day she just wasn''t there anymore.$B$BOh, I did learn something rather odd about her, apparently she had a son in Lakeshire, she never seemed like the type to settle down with a family, I guess she didn''t in the end. I never did get his name, felt a bit intrusive to pry into her family matters like this. Still, I doubt Alexandria will drop this until she gets some answers, so maybe you can find him.', 'Let me guess, Alexandria asked you?$B$BI''ll tell you the same thing I told her. I got my start here training under Minervia, she was always a bit odd, I guess we all are to be here.$B$BAfter that attack on Lakeshire, she was never quite the same, she shut herself in research for days on end until one day she just wasn''t there anymore.$B$BOh, I did learn something rather odd about her, apparently she had a son in Lakeshire, she never seemed like the type to settle down with a family, I guess she didn''t in the end. I never did get his name, felt a bit intrusive to pry into her family matters like this. Still, I doubt Alexandria will drop this until she gets some answers, so maybe you can find him.', 1),
-(60079, 'Who is this $c who goes before the Court of Lakeshire in the Kingdom of Stormwind? State your business within this township, $r. The orc threat to the Kingdom is far too great to squander time in idle conversation.', 'Who is this $c who goes before the Court of Lakeshire in the Kingdom of Stormwind? State your business within this township, $r. The orc threat to the Kingdom is far too great to squander time in idle conversation.', 1),
-(60080, 'My husband has been kept busy with the orc threat as of late... I had to convert the lower levels of our house into a makeshift barracks to house them all. It''s not much, but it''s the best building we have here.', 'My husband has been kept busy with the orc threat as of late... I had to convert the lower levels of our house into a makeshift barracks to house them all. It''s not much, but it''s the best building we have here.', 1),
-(60081, 'I got all my recipes from Miss. Boughman over northside... <Luca sighs> One day I''ll find out what it is...', 'I got all my recipes from Miss. Boughman over northside... <Luca sighs> One day I''ll find out what it is...', 1),
-(60082, '<Though your voice grows louder, more insistent, there is still nothing. Jasper''s chest rises and falls in a slow, rhythmic motion, his mouth slightly ajar.>$B$B<A single, rumbling snore breaks the silence, as if to answer the call with nothing but pure disregard.>$B$BIt''s clear: waking him will take more than just a few shouts.', '<Though your voice grows louder, more insistent, there is still nothing. Jasper''s chest rises and falls in a slow, rhythmic motion, his mouth slightly ajar.>$B$B<A single, rumbling snore breaks the silence, as if to answer the call with nothing but pure disregard.>$B$BIt''s clear: waking him will take more than just a few shouts.', 1);
+(60072, '贾斯珀难道以为魔法是因为他全程打瞌睡就自己发生了吗？法师的力量难道会凭空出现在他的梦里？我连念完一个咒语都难，总是听到打鼾声。就好像只要提到“法力”这个词就会引发深度昏睡！$B$B我试过各种方法——附魔、温和的鼓励，甚至适时泼一盆冷水。全都没用！$B$B当我试图把奥术的秘密灌输进他那颗榆木脑袋时，怎么会有人能如此无忧无虑地浑然不觉？', '贾斯珀难道以为魔法是因为他全程打瞌睡就自己发生了吗？法师的力量难道会凭空出现在他的梦里？我连念完一个咒语都难，总是听到打鼾声。就好像只要提到“法力”这个词就会引发深度昏睡！$B$B我试过各种方法——附魔、温和的鼓励，甚至适时泼一盆冷水。全都没用！$B$B当我试图把奥术的秘密灌输进他那颗榆木脑袋时，怎么会有人能如此无忧无虑地浑然不觉？', 1),
+(60073, '你看到了吗？那就是著名的大法师米涅瓦，在我还是个孩子的时候，她曾抵御巨龙袭击，保卫了湖畔镇！$B$B我读过那么多关于她成就的卷轴和典籍，但站在她的画像前……就像我能感觉到她的力量回响仍萦绕在空气中。$B$B想象一下，能够以如此精准的手法编织魔法，像操控工具一样驾驭奥术能量！她的事迹堪称传奇，然而——在这个安静的时刻——我不禁怀疑自己是否也能达到那样的高度。', '你看到了吗？那就是著名的大法师米涅瓦，在我还是个孩子的时候，她曾抵御巨龙袭击，保卫了湖畔镇！$B$B我读过那么多关于她成就的卷轴和典籍，但站在她的画像前……就像我能感觉到她的力量回响仍萦绕在空气中。$B$B想象一下，能够以如此精准的手法编织魔法，像操控工具一样驾驭奥术能量！她的事迹堪称传奇，然而——在这个安静的时刻——我不禁怀疑自己是否也能达到那样的高度。', 1),
+(60074, '拜托……别鼓励他。', '拜托……别鼓励他。', 1),
+(60075, '<贾斯珀瘫坐在椅子上，眼睛睁得大大的，一眨不眨地茫然盯着墙壁。他的嘴微微张开，寂静中只有突然爆发的一阵震耳欲聋的鼾声，震得他身体直晃。>$B$B最好还是别打扰他。', '<贾斯珀瘫坐在椅子上，眼睛睁得大大的，一眨不眨地茫然盯着墙壁。他的嘴微微张开，寂静中只有突然爆发的一阵震耳欲聋的鼾声，震得他身体直晃。>$B$B最好还是别打扰他。', 1),
+(60076, '<贾斯珀没有回应。房间里唯一的声音是微弱的呼吸声。>', '<贾斯珀没有回应。房间里唯一的声音是微弱的呼吸声。>', 1),
+(60077, '啊，又一个好奇的灵魂。$B$B你能感受到世界魔法的脉动吗？它像潮汐一样起伏涨落。我日复一日地追踪这些微妙的暗流，寻找奥术能量的源泉，用来滋养我的研究、增强我的技艺。$B$B这是一段永无止境的旅程，需要专注和耐心……我的学生们在这方面还得多练练。别误会，他们有潜力，但有些人注意力短得就像夏夜里的萤火虫。$B$B不过，比起我们在这里揭示的知识，他们的混乱只是小小的代价。', '啊，又一个好奇的灵魂。$B$B你能感受到世界魔法的脉动吗？它像潮汐一样起伏涨落。我日复一日地追踪这些微妙的暗流，寻找奥术能量的源泉，用来滋养我的研究、增强我的技艺。$B$B这是一段永无止境的旅程，需要专注和耐心……我的学生们在这方面还得多练练。别误会，他们有潜力，但有些人注意力短得就像夏夜里的萤火虫。$B$B不过，比起我们在这里揭示的知识，他们的混乱只是小小的代价。', 1),
+(60078, '让我猜猜，是亚历山德里亚让你来的？$B$B我会告诉你我和她说过的一样的话。我是在这里跟随米涅瓦训练起步的，她总是有点古怪，我猜我们在这里的人都有点怪。$B$B在湖畔镇那场袭击之后，她就完全变了，她把自己关起来连续研究好几天，直到有一天她就不在那里了。$B$B哦，我确实了解到一件关于她的怪事，据说她在湖畔镇有一个儿子，她看起来不像是会成家安定下来的人，我猜她最终也没有。我一直没打听到他的名字，觉得这样打探她的家事有点冒犯。不过，我怀疑亚历山德里亚得不到答案是不会罢休的，所以也许你可以找到他。', '让我猜猜，是亚历山德里亚让你来的？$B$B我会告诉你我和她说过的一样的话。我是在这里跟随米涅瓦训练起步的，她总是有点古怪，我猜我们在这里的人都有点怪。$B$B在湖畔镇那场袭击之后，她就完全变了，她把自己关起来连续研究好几天，直到有一天她就不在那里了。$B$B哦，我确实了解到一件关于她的怪事，据说她在湖畔镇有一个儿子，她看起来不像是会成家安定下来的人，我猜她最终也没有。我一直没打听到他的名字，觉得这样打探她的家事有点冒犯。不过，我怀疑亚历山德里亚得不到答案是不会罢休的，所以也许你可以找到他。', 1),
+(60079, '这位来到暴风王国湖畔镇法庭前的 $c 是谁？说明你在这个镇上的来意，$r。王国面临的兽人威胁如此之大，不能把时间浪费在闲谈上。', '这位来到暴风王国湖畔镇法庭前的 $c 是谁？说明你在这个镇上的来意，$r。王国面临的兽人威胁如此之大，不能把时间浪费在闲谈上。', 1),
+(60080, '我丈夫最近一直忙于应对兽人威胁……我不得不把我们房子的下层改造成临时兵营，好让他们都住下。地方不大，但这是我们这里最好的建筑了。', '我丈夫最近一直忙于应对兽人威胁……我不得不把我们房子的下层改造成临时兵营，好让他们都住下。地方不大，但这是我们这里最好的建筑了。', 1),
+(60081, '我所有的配方都是从北边的鲍曼小姐那里拿的…… <卢卡叹了口气> 总有一天我会弄清楚那是什么……', '我所有的配方都是从北边的鲍曼小姐那里拿的…… <卢卡叹了口气> 总有一天我会弄清楚那是什么……', 1),
+(60082, '<尽管你的声音越来越大、越来越坚持，依然毫无反应。贾斯珀的胸膛缓慢而有节奏地起伏着，他的嘴微微张开。>$B$B<一声低沉的鼾声打破了寂静，仿佛在回应召唤，却只有纯粹的无视。>$B$B很明显：叫醒他可不只是喊几声就行的。', '<尽管你的声音越来越大、越来越坚持，依然毫无反应。贾斯珀的胸膛缓慢而有节奏地起伏着，他的嘴微微张开。>$B$B<一声低沉的鼾声打破了寂静，仿佛在回应召唤，却只有纯粹的无视。>$B$B很明显：叫醒他可不只是喊几声就行的。', 1);
 
 DELETE FROM `gossip_menu` WHERE `MenuID` BETWEEN 60072 AND 60082;
 INSERT INTO `gossip_menu` (`MenuID`, `TextID`) VALUES
@@ -49,13 +49,13 @@ DELETE FROM `gossip_menu_option` WHERE `MenuID` BETWEEN 60072 AND 60082;
 INSERT INTO `gossip_menu_option` (`MenuID`, `OptionID`, `OptionIcon`, `OptionText`, `OptionBroadcastTextID`,
   `OptionType`, `OptionNpcFlag`, `ActionMenuID`, `ActionPoiID`, `BoxCoded`, `BoxMoney`, `BoxText`,
   `BoxBroadcastTextID`, `VerifiedBuild`) VALUES
-(60075, 0, 0, 'Call his name.', 0, 1, 1, 60076, 0, 0, 0, '', 0, 0),
-(60075, 1, 0, 'Disturb him. Violently.', 0, 1, 1, 0, 0, 0, 0, '', 0, 0),
-(60076, 0, 0, 'Call his name. LOUDER.', 0, 1, 1, 60082, 0, 0, 0, '', 0, 0),
-(60082, 0, 0, 'JASPERRRRRRR!!!', 0, 1, 1, 0, 0, 0, 0, '', 0, 0),
-(60077, 0, 0, 'I''m looking into Archmage Minervia, do you happen to know anything?', 0, 1, 1, 60078, 0, 0, 0, '', 0, 0),
-(60078, 0, 0, 'Thank you, I''ll look into him.', 0, 1, 1, 0, 0, 0, 0, '', 0, 0),
-(60079, 0, 0, 'I''m looking into an Archmage Minervia, supposedly she''d saved this town some years back?', 0, 1, 1, 0, 0, 0, 0, '', 0, 0);
+(60075, 0, 0, '叫他的名字。', 0, 1, 1, 60076, 0, 0, 0, '', 0, 0),
+(60075, 1, 0, '粗暴地打扰他。', 0, 1, 1, 0, 0, 0, 0, '', 0, 0),
+(60076, 0, 0, '叫他的名字。更大声。', 0, 1, 1, 60082, 0, 0, 0, '', 0, 0),
+(60082, 0, 0, '贾斯珀尔尔尔尔！！！', 0, 1, 1, 0, 0, 0, 0, '', 0, 0),
+(60077, 0, 0, '我正在调查大法师米涅瓦，你碰巧知道些什么吗？', 0, 1, 1, 60078, 0, 0, 0, '', 0, 0),
+(60078, 0, 0, '谢谢你，我会去调查他。', 0, 1, 1, 0, 0, 0, 0, '', 0, 0),
+(60079, 0, 0, '我正在调查一位大法师米涅瓦，据说她几年前救过这个镇子？', 0, 1, 1, 0, 0, 0, 0, '', 0, 0);
 
 -- Lady Idelia Solomon and Luca Tyndall keep their quests next to the gossip.
 UPDATE `creature_template` SET `npcflag` = 3, `gossip_menu_id` = 60072, `AIName` = 'SmartAI' WHERE `entry` = 991474;
@@ -102,20 +102,20 @@ UPDATE `creature_template` SET `minlevel` = 10, `maxlevel` = 10 WHERE `entry` IN
 -- estimated. Jasper keeps his chair and gets the Cosmetic - Sleep Zzz aura the videos show above him.
 DELETE FROM `acore_string` WHERE `entry` = 991475;
 INSERT INTO `acore_string` (`entry`, `content_default`) VALUES
-(991475, 'JASPERRRRR!!!');
+(991475, '贾斯珀尔尔尔尔！！！');
 
 DELETE FROM `creature_text` WHERE `CreatureID` IN (991474,991475,991482);
 INSERT INTO `creature_text` (`CreatureID`, `GroupID`, `ID`, `Text`, `Type`, `Language`, `Probability`, `Emote`,
   `Duration`, `Sound`, `BroadcastTextId`, `TextRange`, `comment`) VALUES
-(991474, 0, 0, 'Jasper, would you mind helping me with- Oh. You''re asleep....again. *Sighs* Sometimes I''m not sure why I even bother...', 12, 0, 100, 0, 0, 0, 0, 0, 'Meria Crastlor - Out of Combat'),
-(991474, 1, 0, 'Oh FINALLY...!', 12, 0, 100, 0, 0, 0, 0, 0, 'Meria Crastlor - Jasper Gilleon woken'),
-(991474, 2, 0, 'Please, we all know you weren''t ''meditating''.', 12, 0, 100, 0, 0, 0, 0, 0, 'Meria Crastlor - Jasper Gilleon disturbed'),
-(991475, 0, 0, 'Huh? What- what''s going on? Did I miss something? Was I supposed to be doing something?', 12, 0, 100, 0, 0, 0, 0, 0, 'Jasper Gilleon - Woken'),
-(991475, 1, 0, 'OW! What was that for?!', 12, 0, 100, 0, 0, 0, 0, 0, 'Jasper Gilleon - Disturbed'),
-(991475, 2, 0, 'Can''t a guy meditate in peace around here?', 12, 0, 100, 0, 0, 0, 0, 0, 'Jasper Gilleon - Disturbed'),
-(991482, 0, 0, 'Will you stop...', 12, 0, 100, 0, 0, 0, 0, 0, 'Corwin Branwick - Jasper Gilleon disturbed'),
-(991482, 1, 0, 'Don''t do it!', 12, 0, 100, 0, 0, 0, 0, 0, 'Corwin Branwick - Out of Combat'),
-(991482, 1, 1, 'I can''t take this anymore...', 12, 0, 100, 0, 0, 0, 0, 0, 'Corwin Branwick - Out of Combat');
+(991474, 0, 0, '贾斯珀，你介意帮我一下——哦。你又睡着了……又。*叹气* 有时候我都不确定自己为什么还要费这个心……', 12, 0, 100, 0, 0, 0, 0, 0, 'Meria Crastlor - Out of Combat'),
+(991474, 1, 0, '哦，终于……！', 12, 0, 100, 0, 0, 0, 0, 0, 'Meria Crastlor - Jasper Gilleon woken'),
+(991474, 2, 0, '拜托，我们都知道你可不是在“冥想”。', 12, 0, 100, 0, 0, 0, 0, 0, 'Meria Crastlor - Jasper Gilleon disturbed'),
+(991475, 0, 0, '哈？什么——发生什么事了？我错过了什么吗？我是不是该做什么事？', 12, 0, 100, 0, 0, 0, 0, 0, 'Jasper Gilleon - Woken'),
+(991475, 1, 0, '嗷！那是干什么？！', 12, 0, 100, 0, 0, 0, 0, 0, 'Jasper Gilleon - Disturbed'),
+(991475, 2, 0, '这里就不能让人安安静静地冥想吗？', 12, 0, 100, 0, 0, 0, 0, 0, 'Jasper Gilleon - Disturbed'),
+(991482, 0, 0, '你能不能停下……', 12, 0, 100, 0, 0, 0, 0, 0, 'Corwin Branwick - Jasper Gilleon disturbed'),
+(991482, 1, 0, '别这么做！', 12, 0, 100, 0, 0, 0, 0, 0, 'Corwin Branwick - Out of Combat'),
+(991482, 1, 1, '我再也受不了了……', 12, 0, 100, 0, 0, 0, 0, 0, 'Corwin Branwick - Out of Combat');
 
 UPDATE `creature_addon` SET `auras` = '55474' WHERE `guid` = 9950405;
 
@@ -171,12 +171,12 @@ INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entr
   `skinloot`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `HoverHeight`,
   `HealthModifier`, `ManaModifier`, `ArmorModifier`, `ExperienceModifier`, `RacialLeader`, `movementId`,
   `RegenHealth`, `CreatureImmunitiesId`, `flags_extra`, `ScriptName`, `VerifiedBuild`) VALUES
-(991478, 0, 0, 0, 0, 0, 'Enchanter Veridan', 'Enchanting Trainer', NULL, 4161, 30, 30, 0, 12, 81, 1, 1.14286, 1, 1, 18, 0, 0, 1, 2000, 2000, 1, 1, 1, 512, 2048, 0, 0, 7, 134217728, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 2, '', 0),
-(991479, 0, 0, 0, 0, 0, 'Silas Figner', 'Mage Adept', NULL, 0, 25, 25, 0, 12, 0, 1, 1.14286, 1, 1, 18, 0, 0, 1, 2000, 2000, 1, 1, 1, 512, 2048, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'SmartAI', 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 2, '', 0),
-(991480, 0, 0, 0, 0, 0, 'Dorian Firehart', 'Mage Adept', NULL, 0, 25, 25, 0, 12, 0, 1, 1.14286, 1, 1, 18, 0, 0, 1, 2000, 2000, 1, 1, 1, 512, 2048, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'SmartAI', 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 2, '', 0),
-(991481, 0, 0, 0, 0, 0, 'Roland Branwick', 'Novice Mage', NULL, 0, 15, 15, 0, 12, 0, 1, 1.14286, 1, 1, 18, 0, 0, 1, 2000, 2000, 1, 1, 1, 512, 2048, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 2, '', 0),
-(254978, 0, 0, 0, 0, 0, 'Tirig', 'Blackrock Dragon Tender', NULL, 0, 18, 20, 0, 40, 0, 1, 1.14286, 1, 1, 20, 0, 0, 1, 2000, 2000, 1, 1, 1, 0, 2048, 0, 0, 7, 0, 254978, 0, 0, 0, 0, 0, 0, '', 0, 1, 3, 1, 1, 1, 0, 0, 1, 0, 0, '', 0),
-(255205, 0, 0, 0, 0, 0, 'Adelise', NULL, NULL, 0, 25, 25, 0, 12, 0, 1, 1.14286, 1, 1, 18, 0, 0, 1, 2000, 2000, 1, 1, 1, 512, 2048, 0, 0, 7, 134217728, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1.312, 1, 1, 1, 0, 0, 1, 0, 2, '', 0)
+(991478, 0, 0, 0, 0, 0, '附魔师维里丹', '附魔训练师', NULL, 4161, 30, 30, 0, 12, 81, 1, 1.14286, 1, 1, 18, 0, 0, 1, 2000, 2000, 1, 1, 1, 512, 2048, 0, 0, 7, 134217728, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 2, '', 0),
+(991479, 0, 0, 0, 0, 0, '塞拉斯·菲格纳', '法师学徒', NULL, 0, 25, 25, 0, 12, 0, 1, 1.14286, 1, 1, 18, 0, 0, 1, 2000, 2000, 1, 1, 1, 512, 2048, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'SmartAI', 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 2, '', 0),
+(991480, 0, 0, 0, 0, 0, '多里安·火心', '法师学徒', NULL, 0, 25, 25, 0, 12, 0, 1, 1.14286, 1, 1, 18, 0, 0, 1, 2000, 2000, 1, 1, 1, 512, 2048, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'SmartAI', 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 2, '', 0),
+(991481, 0, 0, 0, 0, 0, '罗兰·布兰威克', '新手法师', NULL, 0, 15, 15, 0, 12, 0, 1, 1.14286, 1, 1, 18, 0, 0, 1, 2000, 2000, 1, 1, 1, 512, 2048, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 2, '', 0),
+(254978, 0, 0, 0, 0, 0, '提里格', '黑石龙兽饲养员', NULL, 0, 18, 20, 0, 40, 0, 1, 1.14286, 1, 1, 20, 0, 0, 1, 2000, 2000, 1, 1, 1, 0, 2048, 0, 0, 7, 0, 254978, 0, 0, 0, 0, 0, 0, '', 0, 1, 3, 1, 1, 1, 0, 0, 1, 0, 0, '', 0),
+(255205, 0, 0, 0, 0, 0, '阿德丽丝', NULL, NULL, 0, 25, 25, 0, 12, 0, 1, 1.14286, 1, 1, 18, 0, 0, 1, 2000, 2000, 1, 1, 1, 512, 2048, 0, 0, 7, 134217728, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1.312, 1, 1, 1, 0, 0, 1, 0, 2, '', 0)
 ON DUPLICATE KEY UPDATE `difficulty_entry_1` = VALUES(`difficulty_entry_1`),
   `difficulty_entry_2` = VALUES(`difficulty_entry_2`), `difficulty_entry_3` = VALUES(`difficulty_entry_3`),
   `KillCredit1` = VALUES(`KillCredit1`), `KillCredit2` = VALUES(`KillCredit2`), `name` = VALUES(`name`),

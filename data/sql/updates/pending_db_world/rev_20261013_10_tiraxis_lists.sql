@@ -76,4 +76,4 @@ INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Exte
 -- "How do I get Bazaar Tokens?"
 DELETE FROM `npc_text` WHERE `ID` = 900012;
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `Probability0`) VALUES
-(900012, 'Bazaar Tokens come from the creatures you slay and the quests you complete, more from dungeon and raid bosses. Other travelers sell them in the auction house.', 'Bazaar Tokens come from the creatures you slay and the quests you complete, more from dungeon and raid bosses. Other travelers sell them in the auction house.', 1);
+(900012, '集市徽记来自你击杀的生物和完成的任务，地下城和团队副本首领掉落更多。其他旅行者在拍卖行出售它们。', '集市徽记来自你击杀的生物和完成的任务，地下城和团队副本首领掉落更多。其他旅行者在拍卖行出售它们。', 1);

@@ -1,5 +1,5 @@
 ## Interface: 30300
-## Title: Ancient Enchanting Altars
-## Notes: Outland map locations for Ancient Enchanting Altars.
+## Title: 远古附魔祭坛
+## Notes: 外域地图上的远古附魔祭坛位置。
 ## Version: 1.0.0
 OutlandAltarPOIs.lua

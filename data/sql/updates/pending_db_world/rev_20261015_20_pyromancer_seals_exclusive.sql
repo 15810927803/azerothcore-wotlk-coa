@@ -8,4 +8,4 @@ INSERT INTO `spell_group` (`id`, `spell_id`) VALUES
 
 DELETE FROM `spell_group_stack_rules` WHERE `group_id` = 2110008;
 INSERT INTO `spell_group_stack_rules` (`group_id`, `stack_rule`, `description`) VALUES
-(2110008, 2, 'Pyromancer seals: one seal per Pyromancer on each target');
+(2110008, 2, '炎术师印记：每个目标上每个炎术师只能有一个印记');

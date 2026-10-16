@@ -1,7 +1,7 @@
 -- Ancient Enchanting Altars: four existing Azeroth map markers and three Outland locations.
 -- These services are primarily used by Free Pick and Bronzebeard realms.
 INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `size`, `Data1`)
-SELECT 80148, 4, 8304, 'Ancient Enchanting Altar', 2, 45004
+SELECT 80148, 4, 8304, '远古附魔祭坛', 2, 45004
 ON DUPLICATE KEY UPDATE `type` = VALUES(`type`), `displayId` = VALUES(`displayId`),
 `name` = VALUES(`name`), `size` = VALUES(`size`), `Data1` = VALUES(`Data1`);
 

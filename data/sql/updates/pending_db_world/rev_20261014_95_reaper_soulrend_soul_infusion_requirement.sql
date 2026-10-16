@@ -13,12 +13,12 @@
 
 DELETE FROM `coa_client_spell_description` WHERE `ID` IN (573316, 802731, 573317, 573318, 573319, 573321, 573322, 572341, 572342);
 INSERT INTO `coa_client_spell_description` (`ID`,`Description`) VALUES
-(573316,'$?a803031[|cffffffff][|cffff3232]Requires Soul Infusion|r (Consumes 3 Reaped Souls)\r\nRend an enemies soul, dealing ${$m1+0+$AP*.36+$sps*.297} Shadow damage and generates Runic Power.'),
-(802731,'$?a803031[|cffffffff][|cffff3232]Requires Soul Infusion|r (Consumes 3 Reaped Souls)\r\nRend an enemies soul, dealing ${$m1+0+$AP*.36+$sps*.297} Shadow Damage, causing your attacks to ignore $573320s1% of their Armor for $573320d, and generates Runic Power.'),
-(573317,'$?a803031[|cffffffff][|cffff3232]Requires Soul Infusion|r (Consumes 3 Reaped Souls)\r\nRend an enemies soul, dealing ${$m1+0+$AP*.36+$sps*.297} Shadow damage, generating Runic Power and causing your attacks to ignore $573320s1% of their Armor for $573320d.'),
-(573318,'$?a803031[|cffffffff][|cffff3232]Requires Soul Infusion|r (Consumes 3 Reaped Souls)\r\nRend an enemies soul, dealing ${$m1+0+$AP*.36+$sps*.297} Shadow damage, generating Runic Power and causing your attacks to ignore $573320s1% of their Armor for $573320d.'),
-(573319,'$?a803031[|cffffffff][|cffff3232]Requires Soul Infusion|r (Consumes 3 Reaped Souls)\r\nRend an enemies soul, dealing ${$m1+0+$AP*.36+$sps*.297} Shadow damage, generating Runic Power and causing your attacks to ignore $573320s1% of their Armor for $573320d.'),
-(573321,'$?a803031[|cffffffff][|cffff3232]Requires Soul Infusion|r (Consumes 3 Reaped Souls)\r\nRend an enemies soul, dealing ${$m1+0+$AP*.36+$sps*.297} Shadow damage, generating Runic Power and causing your attacks to ignore $573320s1% of their Armor for $573320d.'),
-(573322,'$?a803031[|cffffffff][|cffff3232]Requires Soul Infusion|r (Consumes 3 Reaped Souls)\r\nRend an enemies soul, dealing ${$m1+0+$AP*.36+$sps*.297} Shadow damage, generating Runic Power and causing your attacks to ignore $573320s1% of their Armor for $573320d.'),
-(572341,'$?a803031[|cffffffff][|cffff3232]Requires Soul Infusion|r (Consumes 3 Reaped Souls)\r\nRend an enemies soul, dealing ${$m1+0+$AP*.36+$sps*.297} Shadow damage, generating Runic Power and causing your attacks to ignore $573320s1% of their Armor for $573320d.'),
-(572342,'$?a803031[|cffffffff][|cffff3232]Requires Soul Infusion|r (Consumes 3 Reaped Souls)\r\nRend an enemies soul, dealing ${$m1+0+$AP*.36+$sps*.297} Shadow damage, generating Runic Power and causing your attacks to ignore $573320s1% of their Armor for $573320d.');
+(573316,'$?a803031[|cffffffff][|cffff3232]需要灵魂灌注|r (消耗 3 个收割的灵魂)\r\n撕裂敌人的灵魂，造成 ${$m1+0+$AP*.36+$sps*.297} 点暗影伤害，并产生符文能量。'),
+(802731,'$?a803031[|cffffffff][|cffff3232]需要灵魂灌注|r (消耗 3 个收割的灵魂)\r\n撕裂敌人的灵魂，造成 ${$m1+0+$AP*.36+$sps*.297} 点暗影伤害，使你的攻击无视其 $573320s1% 的护甲，持续 $573320d，并产生符文能量。'),
+(573317,'$?a803031[|cffffffff][|cffff3232]需要灵魂灌注|r (消耗 3 个收割的灵魂)\r\n撕裂敌人的灵魂，造成 ${$m1+0+$AP*.36+$sps*.297} 点暗影伤害，产生符文能量，并使你的攻击无视其 $573320s1% 的护甲，持续 $573320d。'),
+(573318,'$?a803031[|cffffffff][|cffff3232]需要灵魂灌注|r (消耗 3 个收割的灵魂)\r\n撕裂敌人的灵魂，造成 ${$m1+0+$AP*.36+$sps*.297} 点暗影伤害，产生符文能量，并使你的攻击无视其 $573320s1% 的护甲，持续 $573320d。'),
+(573319,'$?a803031[|cffffffff][|cffff3232]需要灵魂灌注|r (消耗 3 个收割的灵魂)\r\n撕裂敌人的灵魂，造成 ${$m1+0+$AP*.36+$sps*.297} 点暗影伤害，产生符文能量，并使你的攻击无视其 $573320s1% 的护甲，持续 $573320d。'),
+(573321,'$?a803031[|cffffffff][|cffff3232]需要灵魂灌注|r (消耗 3 个收割的灵魂)\r\n撕裂敌人的灵魂，造成 ${$m1+0+$AP*.36+$sps*.297} 点暗影伤害，产生符文能量，并使你的攻击无视其 $573320s1% 的护甲，持续 $573320d。'),
+(573322,'$?a803031[|cffffffff][|cffff3232]需要灵魂灌注|r (消耗 3 个收割的灵魂)\r\n撕裂敌人的灵魂，造成 ${$m1+0+$AP*.36+$sps*.297} 点暗影伤害，产生符文能量，并使你的攻击无视其 $573320s1% 的护甲，持续 $573320d。'),
+(572341,'$?a803031[|cffffffff][|cffff3232]需要灵魂灌注|r (消耗 3 个收割的灵魂)\r\n撕裂敌人的灵魂，造成 ${$m1+0+$AP*.36+$sps*.297} 点暗影伤害，产生符文能量，并使你的攻击无视其 $573320s1% 的护甲，持续 $573320d。'),
+(572342,'$?a803031[|cffffffff][|cffff3232]需要灵魂灌注|r (消耗 3 个收割的灵魂)\r\n撕裂敌人的灵魂，造成 ${$m1+0+$AP*.36+$sps*.297} 点暗影伤害，产生符文能量，并使你的攻击无视其 $573320s1% 的护甲，持续 $573320d。');

@@ -9,7 +9,7 @@
 UPDATE `gameobject_template` SET `displayId` = 980926, `size` = 1 WHERE `entry` = 1673;
 
 INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `size`, `Data0`)
-VALUES (661673, 5, 425, 'Fel Cone', 2.5, 43)
+VALUES (661673, 5, 425, '邪能松果', 2.5, 43)
 ON DUPLICATE KEY UPDATE `type` = VALUES(`type`), `displayId` = VALUES(`displayId`), `name` = VALUES(`name`),
     `size` = VALUES(`size`), `Data0` = VALUES(`Data0`);
 

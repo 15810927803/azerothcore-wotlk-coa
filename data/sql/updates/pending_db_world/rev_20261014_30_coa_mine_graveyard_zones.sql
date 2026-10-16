@@ -9,10 +9,10 @@ DELETE FROM `graveyard_zone` WHERE `GhostZone` IN (10124, 10125, 10126, 10130, 1
 INSERT INTO `graveyard_zone` (`ID`, `GhostZone`, `Faction`, `Comment`)
 SELECT `gz`.`ID`, `m`.`mine`, `gz`.`Faction`, `m`.`name`
 FROM `graveyard_zone` `gz`
-JOIN (SELECT 10124 AS `mine`, 12 AS `parent`, 'Fargodeep Mine - Elwynn Forest graveyards' AS `name`
-      UNION ALL SELECT 10125, 12, 'Fargodeep Mine - Elwynn Forest graveyards'
-      UNION ALL SELECT 10126, 12, 'Jasperlode Mine - Elwynn Forest graveyards'
-      UNION ALL SELECT 10130, 10138, 'Echo Ridge Mine - Northshire Valley graveyard'
-      UNION ALL SELECT 10136, 40, 'Gold Coast Quarry - Westfall graveyards'
-      UNION ALL SELECT 10137, 40, 'Jangolode Mine - Westfall graveyards') `m` ON `m`.`parent` = `gz`.`GhostZone`
+JOIN (SELECT 10124 AS `mine`, 12 AS `parent`, '法戈第矿洞 - 艾尔文森林墓地' AS `name`
+      UNION ALL SELECT 10125, 12, '法戈第矿洞 - 艾尔文森林墓地'
+      UNION ALL SELECT 10126, 12, '碧玉矿洞 - 艾尔文森林墓地'
+      UNION ALL SELECT 10130, 10138, '回音山矿洞 - 北郡山谷墓地'
+      UNION ALL SELECT 10136, 40, '黄金海岸采石场 - 西部荒野墓地'
+      UNION ALL SELECT 10137, 40, '詹戈洛德矿洞 - 西部荒野墓地') `m` ON `m`.`parent` = `gz`.`GhostZone`
 WHERE `gz`.`ID` <> 105 OR `m`.`parent` <> 12;

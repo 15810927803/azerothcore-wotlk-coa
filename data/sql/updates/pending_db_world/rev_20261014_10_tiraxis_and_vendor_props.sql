@@ -3,16 +3,16 @@
 -- 9500200/9500201: model 7089 at sizes 3.5 and 2; 9500202-9500205: Ethereal props; 9500209-9500211: supplies;
 -- 9500213: small brazier at 0.9.
 INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `IconName`, `castBarCaption`, `unk1`, `size`) VALUES
-(9500200, 5, 7089, 'Ethereal Containment Cylinder', '', '', '', 3.5),
-(9500201, 5, 7089, 'Ethereal Containment Cylinder', '', '', '', 2.0),
-(9500202, 5, 7088, 'Ethereal Technology', '', '', '', 1.0),
-(9500203, 5, 7089, 'Ethereal Technology', '', '', '', 1.0),
-(9500204, 5, 7137, 'Ethereal Distiller', '', '', '', 1.0),
-(9500205, 5, 7166, 'Ethereal Repair Kit', '', '', '', 1.0),
-(9500209, 5, 1013843, 'Clan Supplies', '', '', '', 1.0),
-(9500210, 5, 1013842, 'Clan Supplies', '', '', '', 1.0),
-(9500211, 5, 1011027, 'Earthen Supplies', '', '', '', 1.0),
-(9500213, 5, 351, 'Small Brazier', '', '', '', 0.9) ON DUPLICATE KEY UPDATE `type` = VALUES(`type`), `displayId` = VALUES(`displayId`), `name` = VALUES(`name`), `size` = VALUES(`size`);
+(9500200, 5, 7089, '虚灵收容圆筒', '', '', '', 3.5),
+(9500201, 5, 7089, '虚灵收容圆筒', '', '', '', 2.0),
+(9500202, 5, 7088, '虚灵科技', '', '', '', 1.0),
+(9500203, 5, 7089, '虚灵科技', '', '', '', 1.0),
+(9500204, 5, 7137, '虚灵蒸馏器', '', '', '', 1.0),
+(9500205, 5, 7166, '虚灵修理包', '', '', '', 1.0),
+(9500209, 5, 1013843, '氏族补给品', '', '', '', 1.0),
+(9500210, 5, 1013842, '氏族补给品', '', '', '', 1.0),
+(9500211, 5, 1011027, '土灵补给品', '', '', '', 1.0),
+(9500213, 5, 351, '小型火盆', '', '', '', 0.9) ON DUPLICATE KEY UPDATE `type` = VALUES(`type`), `displayId` = VALUES(`displayId`), `name` = VALUES(`name`), `size` = VALUES(`size`);
 
 DELETE FROM `gameobject_template_addon` WHERE `entry` IN (9500200, 9500201, 9500202, 9500203, 9500204, 9500205, 9500209, 9500210, 9500211, 9500213);
 INSERT INTO `gameobject_template_addon` (`entry`, `faction`, `flags`) VALUES

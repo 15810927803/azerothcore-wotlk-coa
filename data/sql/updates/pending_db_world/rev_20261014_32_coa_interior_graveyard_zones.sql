@@ -6,8 +6,8 @@ DELETE FROM `graveyard_zone` WHERE `GhostZone` IN (10135, 10127, 3569, 3446, 102
 INSERT INTO `graveyard_zone` (`ID`, `GhostZone`, `Faction`, `Comment`)
 SELECT `gz`.`ID`, `m`.`interior`, `gz`.`Faction`, `m`.`name`
 FROM `graveyard_zone` `gz`
-JOIN (SELECT 10135 AS `interior`, 40 AS `parent`, 'The Deadmines entrance - Westfall graveyards' AS `name`
-      UNION ALL SELECT 10127, 3433, 'Amani Catacombs - Ghostlands graveyards'
-      UNION ALL SELECT 3569, 3524, 'Tides Hollow - Azuremyst Isle graveyards'
-      UNION ALL SELECT 3446, 1377, 'Twilight Run - Silithus graveyards'
-      UNION ALL SELECT 10239, 357, 'Depthbreaker Hollow - Feralas graveyards') `m` ON `m`.`parent` = `gz`.`GhostZone`;
+JOIN (SELECT 10135 AS `interior`, 40 AS `parent`, '死亡矿井入口 - 西部荒野墓地' AS `name`
+      UNION ALL SELECT 10127, 3433, '阿曼尼地下墓穴 - 幽魂之地墓地'
+      UNION ALL SELECT 3569, 3524, '潮汐谷 - 秘蓝岛墓地'
+      UNION ALL SELECT 3446, 1377, '暮光小径 - 希利苏斯墓地'
+      UNION ALL SELECT 10239, 357, '破渊者洞穴 - 菲拉斯墓地') `m` ON `m`.`parent` = `gz`.`GhostZone`;
