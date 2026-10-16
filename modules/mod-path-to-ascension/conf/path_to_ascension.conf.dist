@@ -64,7 +64,8 @@ PathToAscension.Tracking.Enable = 1
 PathToAscension.LegacyContent.Enable = 0
 
 #    PathToAscension.StarterMountBridge.Enable
-#        描述：骑术训练师在角色学会初级骑术后，一次性交给它其种族的初始坐骑，
-#                     以便初始坐骑教程可以完成。
+#        Description: 骑术训练师会在角色学会学徒骑术后，向其发放一次该种族的初始坐骑，
+#                     以便可以完成初始坐骑教程。禁用时，他们的新手骑手任务
+#                     (4420430-4420439) 将不会提供。
 #        Default:     0 - (Disabled)
 PathToAscension.StarterMountBridge.Enable = 0
