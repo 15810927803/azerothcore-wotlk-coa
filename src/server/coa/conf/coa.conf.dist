@@ -7,10 +7,14 @@
 # 启用兼容性数据包过滤器。
 CoA.Enable = 1
 
-# 制造物品最大升级次数：0 禁用升级套件，1 允许精制，
-# 2 允许精良，3 允许杰作。默认：2。数值被限制在 0-3。
-# 在启动和配置重载时应用；已有的升级物品保持不变。
-# 衬衣、背包/箭袋、奥术扳手以及被排除的模糊家族无法升级。
+# 按下一次 /s .rotation 会尝试对选中的目标施放一个已学会的攻击或治疗技能。
+# 使用 CoA 专精优先级，并为其他构筑提供基础回退逻辑。
+CoA.RotationAssist.Enable = 1
+
+# 制造物品升级的最大步数：0 禁用升级套件，1 允许精制，
+# 2 允许精良，3 允许大师级。默认：2。数值会被限制在 0-3。
+# 在启动和配置重载时生效；已升级的物品保持不变。
+# 衬衣、背包/箭袋、奥术扳手以及被排除的歧义物品系列无法升级。
 CoA.Crafting.MaxUpgradeSteps = 2
 
 # 将 Ascension 协议设置应用于远程连接以及回环连接
@@ -476,6 +480,33 @@ Ascension.CallboardCache.GoldMax = 15
 #        Default:     1
 
 CoA.DungeonTuning.Enable = 0
+
+#
+#    CoA.DungeonNormal.Enable
+#        Description: Normal tuning of the Ascension boss kits in 5-man dungeons. The kit spells listed
+#                     in coa_dungeon_normal_spell_damage deal Ascension's Normal rank damage (casters
+#                     below level 50) or the Heroic damage / 1.66 * 0.85, without the dungeon creature
+#                     damage scaling, and their repeat timers run longer.
+#        Default:     1
+
+CoA.DungeonNormal.Enable = 1
+
+#
+#    CoA.DungeonNormal.RepeatFactor
+#        Description: How much longer a boss kit spell takes to come back on Normal (1.1 = 10% longer).
+#        Default:     1.1
+
+CoA.DungeonNormal.RepeatFactor = 1.1
+
+#
+#    CoA.DungeonNormal.AreaHitCapPct
+#    CoA.DungeonNormal.TargetHitCapPct
+#        Description: On Normal no single hit of a boss kit spell deals more than this share of the
+#                     player's maximum health: area spells / single target spells. 0 turns a cap off.
+#        Default:     25, 40
+
+CoA.DungeonNormal.AreaHitCapPct = 25
+CoA.DungeonNormal.TargetHitCapPct = 40
 
 #
 #    CoA.TestZoneBonus.AnnounceIntervalMinutes

@@ -61,15 +61,15 @@ DestinyWeaver.Scaling.Offset = 4
 DestinyWeaver.Scaling.WorldMaps = "0 1"
 
 #    DestinyWeaver.Scaling.DungeonIds
-#        Description: 地下城查找器条目（LFGDungeons.dbc ID），其地下城会缩放，
-#                     按其普通难度。地下城中的生物站在角色自身等级，
-#                     并保持在条目的 TargetLevelMin-MaxLevel 区间内；
-#                     等级超出1-60 的条目使用 15-59，被多个条目列出的地图会覆盖所有条目。
-#                     未列出的地下城保留其原有等级。
-#        Default:     "1 4 6 8 10 12 14 16 18 20 22 24 26 28 163 164 165 272 273"
+#        Description: 地下城查找器条目（LFGDungeons.dbc 的 id）对应的地下城会在其常规难度下缩放。
+#                     地下城中的生物等级与角色等级一致，并限制在该条目的 TargetLevelMin-MaxLevel 区间内；
+#                     若某条目的等级范围超出 1-60，则改用 15-59；
+#                     若同一地图被多个条目列出，则覆盖这些条目的全部范围。
+#                     未列出的地下城保持其原始设定等级。
+#        Default:     "1 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 44 51 54 163 164 165 272 273 274 276 601"
 #        Reloadable:  yes (.reload config)
 
-DestinyWeaver.Scaling.DungeonIds = "1 4 6 8 10 12 14 16 18 20 22 24 26 28 163 164 165 272 273"
+DestinyWeaver.Scaling.DungeonIds = "1 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 44 51 54 163 164 165 272 273 274 276 601"
 
 #    DestinyWeaver.ExperienceBonusControl
 #        说明：经验奖励控制服务是否根本存在。开启它的角色
