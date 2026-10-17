@@ -370,7 +370,7 @@ void AddCoAScripts()
 {
     AddAscensionStockCoefficientScripts();
     AddAscensionScalingBaseScripts();
-    AddAscensionManastormScripts();
+    AddAscensionManastormItemScripts();
     AddSC_AscensionReaperDirge();
     AddAscensionTinkerOverloadScripts();
     AddAscensionCompatScripts();
