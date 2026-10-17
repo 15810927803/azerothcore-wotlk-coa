@@ -26,4 +26,4 @@ CREATE TABLE IF NOT EXISTS `coa_client_spell_description` (
 
 DELETE FROM `coa_client_spell_description` WHERE `ID` = 704823;
 INSERT INTO `coa_client_spell_description` (`ID`,`Description`) VALUES
-(704823,'Your |cffff7f7fEmber|r spenders are now instant and have a $h% chance to refund their cost and increases your chance to critically strike by 30% for $d.');
+(704823,'你的 |cffff7f7f余烬|r 消耗技能现在变为瞬发，并有 $h% 的几率返还其消耗，同时使你的爆击几率提高 30%，持续 $d。');

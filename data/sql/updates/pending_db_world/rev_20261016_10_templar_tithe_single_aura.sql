@@ -17,5 +17,5 @@ INSERT INTO `spell_group` (`id`, `spell_id`) VALUES
 
 DELETE FROM `spell_group_stack_rules` WHERE `group_id` = 2110009;
 INSERT INTO `spell_group_stack_rules` (`group_id`, `stack_rule`, `description`) VALUES
-(2110009, 2, 'Templar Tithe auras: one Tithe per Templar on each target (#7857)');
+(2110009, 2, '圣殿骑士什一税光环：每个目标上每个圣殿骑士只能有一个什一税 (#7857)');
 COMMIT;

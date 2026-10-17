@@ -13,4 +13,4 @@
 -- ToolTip here means "keep DBC", so this channel cannot clear it.
 DELETE FROM `coa_client_spell_description` WHERE `ID` = 574328;
 INSERT INTO `coa_client_spell_description` (`ID`,`Description`) VALUES
-(574328,'|cffffffffDrains $574329s1% Maximum Mana|r\nQuickly heal an ally with Elune''s touch$?s574329[ for ${($m1+$POWER1*0.08+$SP*0.2+$RAP*.1)*((100+$887014ppl3)/100)}][], scaling with maximum mana.$?s800386[\r\n\r\n|cffffffffLunar Eclipse|r: This spell is instant and refunds its mana cost and 1 stack of |cffffffffLunar Phase|r.][]');
+(574328,'|cffffffff吸取 $574329s1% 最大法力值|r\n用艾露恩之触快速治疗一名盟友$?s574329[，治疗量为 ${($m1+$POWER1*0.08+$SP*0.2+$RAP*.1)*((100+$887014ppl3)/100)}][]，随最大法力值缩放。$?s800386[\r\n\r\n|cffffffff月蚀|r：该法术变为瞬发，并返还其法力消耗和 1 层 |cffffffff月相|r。][]');

@@ -120,9 +120,9 @@ BindIP = "0.0.0.0"
 #                     "127.0.0.1;3306;acore;acore;acore_world"      - (WorldDatabaseInfo)
 #                     "127.0.0.1;3306;acore;acore;acore_characters" - (CharacterDatabaseInfo)
 
-LoginDatabaseInfo     = "127.0.0.1;3306;acore;A112233a;acore_auth"
-WorldDatabaseInfo     = "127.0.0.1;3306;acore;A112233a;acore_world"
-CharacterDatabaseInfo = "127.0.0.1;3306;acore;A112233a;acore_characters"
+LoginDatabaseInfo     = "127.0.0.1;3306;root;A112233a!;acore_auth"
+WorldDatabaseInfo     = "127.0.0.1;3306;root;A112233a!;acore_world"
+CharacterDatabaseInfo = "127.0.0.1;3306;root;A112233a!;acore_characters"
 
 #
 #    LoginDatabase.WorkerThreads
@@ -204,7 +204,7 @@ Database.Reconnect.Attempts = 20
 #        Example:     "@prefix@\home\youruser\azerothcore\data"
 #        Default:     "."
 
-DataDir = "/root/azerothcore-coa/env/dist/bin/data"
+DataDir = "/root/azerothcore-wotlk-coa/env/dist/bin/data"
 
 #
 #    LogsDir
@@ -214,7 +214,7 @@ DataDir = "/root/azerothcore-coa/env/dist/bin/data"
 #        Example:     "/home/youruser/azerothcore/logs"
 #        Default:     "" - (日志文件将存储在 current 路径中)
 
-LogsDir = "/root/azerothcore-coa/env/dist/logs"
+LogsDir = "/root/azerothcore-wotlk-coa/env/dist/logs"
 
 #
 #    TempDir
@@ -224,7 +224,7 @@ LogsDir = "/root/azerothcore-coa/env/dist/logs"
 #        Example:     "/home/youruser/azerothcore/temp"
 #        Default:     "" - (临时文件将存储在 current 路径中)
 
-TempDir = "/root/azerothcore-coa/env/dist/temp"
+TempDir = "/root/azerothcore-wotlk-coa/env/dist/temp"
 
 #
 #    CMakeCommand
@@ -252,7 +252,7 @@ BuildDirectory = ""
 #        Example:     "../azerothcore-wotlk"
 #        Default:     ""
 
-SourceDirectory = "/root/azerothcore-coa"
+SourceDirectory = "/root/azerothcore-wotlk-coa"
 
 #
 #    MySQLExecutable

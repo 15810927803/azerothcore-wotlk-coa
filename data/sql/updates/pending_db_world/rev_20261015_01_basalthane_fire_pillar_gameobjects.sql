@@ -29,12 +29,12 @@ UPDATE `creature` SET `position_x` = -238.38716, `position_y` =  22.310553, `pos
 UPDATE `creature` SET `position_x` = -204.22008, `position_y` = -50.77867,  `position_z` = -76.75303 WHERE `guid` = 9650003; -- Searing Pillar
 
 INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `IconName`, `castBarCaption`, `unk1`, `size`, `AIName`, `ScriptName`, `VerifiedBuild`) VALUES
-(348503, 5, 763459, 'Fire Pillar', '', '', '', 2.12, '', '', 0),
-(348504, 5, 763458, 'Fire Pillar', '', '', '', 2.12, '', '', 0),
-(348505, 5, 1063458, 'Fire Pillar', '', '', '', 2.12, '', '', 0),
-(348506, 5, 763460, 'Fire Pillar', '', '', '', 2.12, '', '', 0),
-(348507, 5, 763460, 'Fire Pillar', '', '', '', 2.12, '', '', 0),
-(348508, 5, 763460, 'Fire Pillar', '', '', '', 2.12, '', '', 0) ON DUPLICATE KEY UPDATE `type` = VALUES(`type`), `displayId` = VALUES(`displayId`), `name` = VALUES(`name`), `size` = VALUES(`size`);
+(348503, 5, 763459, '火柱', '', '', '', 2.12, '', '', 0),
+(348504, 5, 763458, '火柱', '', '', '', 2.12, '', '', 0),
+(348505, 5, 1063458, '火柱', '', '', '', 2.12, '', '', 0),
+(348506, 5, 763460, '火柱', '', '', '', 2.12, '', '', 0),
+(348507, 5, 763460, '火柱', '', '', '', 2.12, '', '', 0),
+(348508, 5, 763460, '火柱', '', '', '', 2.12, '', '', 0) ON DUPLICATE KEY UPDATE `type` = VALUES(`type`), `displayId` = VALUES(`displayId`), `name` = VALUES(`name`), `size` = VALUES(`size`);
 
 DELETE FROM `gameobject` WHERE `guid` IN (9650101, 9650102, 9650103, 9650104, 9650105, 9650106);
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `ScriptName`, `VerifiedBuild`, `Comment`) VALUES

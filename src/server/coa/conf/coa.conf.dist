@@ -483,17 +483,17 @@ CoA.DungeonTuning.Enable = 0
 
 #
 #    CoA.DungeonNormal.Enable
-#        Description: Normal tuning of the Ascension boss kits in 5-man dungeons. The kit spells listed
-#                     in coa_dungeon_normal_spell_damage deal Ascension's Normal rank damage (casters
-#                     below level 50) or the Heroic damage / 1.66 * 0.85, without the dungeon creature
-#                     damage scaling, and their repeat timers run longer.
+#        Description: 5人地下城中飞升首领套件的普通难度调整。
+#                     coa_dungeon_normal_spell_damage 中列出的
+#                     套件法术造成飞升普通难度伤害（50级以下的施法者）或英雄伤害 /1.66 * 0.85，
+#                     不包含地下城生物伤害缩放，且其重复计时器运行更久。
 #        Default:     1
 
 CoA.DungeonNormal.Enable = 1
 
 #
 #    CoA.DungeonNormal.RepeatFactor
-#        Description: How much longer a boss kit spell takes to come back on Normal (1.1 = 10% longer).
+#        Description: 普通难度下首领套件法术的冷却时间延长多少（1.1 = 延长 10%）。
 #        Default:     1.1
 
 CoA.DungeonNormal.RepeatFactor = 1.1
@@ -501,8 +501,8 @@ CoA.DungeonNormal.RepeatFactor = 1.1
 #
 #    CoA.DungeonNormal.AreaHitCapPct
 #    CoA.DungeonNormal.TargetHitCapPct
-#        Description: On Normal no single hit of a boss kit spell deals more than this share of the
-#                     player's maximum health: area spells / single target spells. 0 turns a cap off.
+#        Description: 普通难度下，首领套件法术的任何单次命中造成的伤害不超过玩家最大生命值的该比例：
+#                     范围法术 / 单体法术。0 表示关闭上限。
 #        Default:     25, 40
 
 CoA.DungeonNormal.AreaHitCapPct = 25

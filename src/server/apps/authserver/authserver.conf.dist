@@ -41,7 +41,7 @@
 #        Example:     "/home/youruser/azerothcore/logs"
 #        Default:     "" - (日志文件将存储在 current 路径中)
 
-LogsDir = "/root/azerothcore-coa/env/dist/log"
+LogsDir = "/root/azerothcore-wotlk-coa/env/dist/logs"
 
 #
 #    MaxPingTime
@@ -171,7 +171,7 @@ StrictVersionCheck = 0
 #        Default:     ""
 #
 
-SourceDirectory = "/root/azerothcore-coa"
+SourceDirectory = "/root/azerothcore-wotlk-coa"
 
 #
 #    MySQLExecutable
@@ -193,7 +193,7 @@ MySQLExecutable = ""
 #        Example:     "/home/youruser/azerothcore/temp"
 #        Default:     "" - (临时文件将存储在 current 路径中)
 
-TempDir = "/root/azerothcore-coa/env/dist/temp"
+TempDir = "/root/azerothcore-wotlk-coa/env/dist/temp"
 
 #
 #    IPLocationFile
@@ -229,7 +229,7 @@ AllowLoggingIPAddressesInDatabase = 1
 #                                                                           使用 Unix 套接字)
 #        Default:     "127.0.0.1;3306;acore;acore;acore_auth"
 
-LoginDatabaseInfo = "127.0.0.1;3306;acore;A112233a;acore_auth"
+LoginDatabaseInfo = "127.0.0.1;3306;root;A112233a!;acore_auth"
 
 #
 #    Database.Reconnect.Seconds
