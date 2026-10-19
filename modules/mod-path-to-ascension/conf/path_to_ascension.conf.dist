@@ -28,7 +28,7 @@ PathToAscension.Enable = 1
 #                     此处提供但客户端自身服务器类型（CoA.RealmType）
 #                     隐藏的教程会在登录时对客户端可见。
 #        Default:     3 - (PTR)
-PathToAscension.RealmProfile = 3
+PathToAscension.RealmProfile = 1
 
 #    PathToAscension.Expansion
 #        Description: 本服务器提供的教程变体所属的资料片。其他资料片的教程
@@ -62,10 +62,3 @@ PathToAscension.Tracking.Enable = 1
 #                     它们的目标和奖励保持不变。
 #        Default:     0 - (Disabled)
 PathToAscension.LegacyContent.Enable = 0
-
-#    PathToAscension.StarterMountBridge.Enable
-#        Description: 骑术训练师会在角色学会学徒骑术后，向其发放一次该种族的初始坐骑，
-#                     以便可以完成初始坐骑教程。禁用时，他们的新手骑手任务
-#                     (4420430-4420439) 将不会提供。
-#        Default:     0 - (Disabled)
-PathToAscension.StarterMountBridge.Enable = 0

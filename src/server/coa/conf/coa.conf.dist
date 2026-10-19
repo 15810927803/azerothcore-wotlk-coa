@@ -330,6 +330,55 @@ RatedSoloArena.Title.Rival = 2000
 RatedSoloArena.Title.Duelist = 2300
 RatedSoloArena.Title.Gladiator = 2600
 
+#    HighRisk.FelCommutation.Enable
+#        Description: 邪能置换。高风险角色开启此功能后，在邪能置换传送门（物件 8000053）的窗口中
+#                     选择要投保的装备栏位。开启期间，若角色携带的金币足以支付所有费用，
+#                     因高风险死亡而本会掉落的投保栏位物品将被保留，费用则存入死亡宝箱。
+#                     若金币不足，角色保留金币，物品照常掉落。正常的金币损失
+#                     （HighRisk.GoldChance）仍会在此基础上生效，
+#                     从扣除费用后剩余的金币中计算；
+#                     死亡消息会分别显示这两部分。
+#        Default:     0 - (Disabled)
+#                     1 - (Enabled)
+
+HighRisk.FelCommutation.Enable = 1
+
+#    HighRisk.FelCommutation.FeeMultiplier
+#        Description: 应用于每件物品费用的倍数。物品的基础费用为其物品等级乘以
+#                     该等级对应的客户端费率区间（例如 179 x 2750 铜币）。
+#        Default:     1.0
+
+HighRisk.FelCommutation.FeeMultiplier = 1.0
+
+#    HighRisk.FelCommutation.MaxSlots
+#        Description: 一个角色一次可投保的装备栏位数量。0 表示无限制。
+#        Default:     3
+
+HighRisk.FelCommutation.MaxSlots = 3
+
+#    HighRisk.FelCommutation.AltarRange
+#        Description: 传送门必须处于多少码范围内，才会接受该开关。
+#        Default:     20
+
+HighRisk.FelCommutation.AltarRange = 20
+
+#    HighRisk.FelCommutation.ToggleAnywhere
+#        Description: 允许在附近没有传送门时接受该开关（例如通过同伴）。
+#        Default:     0 - (Disabled)
+#                     1 - (Enabled)
+
+HighRisk.FelCommutation.ToggleAnywhere = 0
+
+#    HighRisk.FelCommutation.ClickToggle
+#        Description: 在邪能置换窗口中显示一个激活/停用按钮，用于为所有已装备的装备切换邪能置换状态。
+#                     使用传送门只会打开或关闭该窗口。原版客户端在使用传送门时
+#                     仍会自行发送该开关（其 Extensions.dll 会触发
+#                     GAMEOBJECT_USED，其 Lua 会发送开关数据包）。
+#        Default:     0 - (Disabled)
+#                     1 - (Enabled)
+
+HighRisk.FelCommutation.ClickToggle = 0
+
 #    PvpPower.Enable
 #        说明：名为“PvP Power (+N)”的物品法术在 60 级时缩放伤害和治疗，上限为
 #                     495 点。对玩家（以及开放世界中高风险攻击者对不受控
@@ -339,16 +388,17 @@ RatedSoloArena.Title.Gladiator = 2600
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-PvpPower.Enable = 0
+PvpPower.Enable = 1
 
 #    Bloodforged.Enable
-#        说明：为 15 级及以上的高风险玩家，向符合条件的开放世界生物尸体
-#                     添加一次独立的 Bloodforged 掷骰，从 coa_bloodforged_catalogue
-#                     中经过审查的目录中抽取。需要 PvpPower.Enable。
+#        Description: 为 15 级及以上的高风险玩家，在符合条件的开放世界生物尸体上增加一次独立的血铸掷骰，
+#                     从 coa_bloodforged_catalogue 中经过审核的目录里抽取。
+#                     物品和概率区间跟随玩家等级；
+#                     对玩家显示为灰色的生物不提供掷骰。需要启用 PvpPower.Enable。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Bloodforged.Enable = 0
+Bloodforged.Enable = 1
 
 #    Bloodforged.Rates15
 #    Bloodforged.Rates25
@@ -416,20 +466,27 @@ Ascension.PrestigiousCache.TbcStages = 0
 
 #
 #    Ascension.CallboardCache.ReleaseStage
-#        Description: 服务器当前的内容进度阶段，0-7，按照以下顺序：
-#                     Callboard 宝库发布：英雄和史诗地下城、祖尔格拉布、
-#                     熔火之心、奥妮克希亚的巢穴、黑翼之巢、安其拉废墟、
-#                     安其拉神殿、纳克萨玛斯。一个通用的 Callboard 宝库会解析为
-#                     等于或低于该阶段的层级。
-#                     同一阶段也会限制经典团队副本：高于该阶段的团队副本将被关闭，
-#                     进入时会显示“副本已关闭”，而登录时位于其中的角色
-#                     将被移出（0 关闭所有团队副本，2 开启祖尔格拉布和熔火之心）。
-#                     游戏管理员仍可进入；其他地图不受影响。
-#                     在 .reload config 时应用。
-#        Default:     7
+#        Description: 服务器当前的内容进度阶段，0-8。
+#                     每个阶段也会同时开放其之前的所有阶段：
+#                     0 - 仅普通地下城
+#                     1 - 英雄地下城
+#                     2 - 史诗地下城
+#                     3 - 熔火之心
+#                     4 - 祖尔格拉布
+#                     5 - 奥妮克希亚的巢穴
+#                     6 - 黑翼之巢
+#                     7 - 安其拉废墟和安其拉神殿
+#                     8 - 纳克萨玛斯
+#                     高于该阶段的团队副本或地下城难度将处于关闭状态：
+#                     进入时会显示“副本已关闭”，
+#                     若角色在副本内登录则会被移出。游戏管理员仍可进入；其他地图不受影响。
+#                     客户端只有在英雄和史诗难度开放后才会列出它们。
+#                     公告板缓存遵循相同的阶段：只有已开放的缓存才会被获得，
+#                     通用公告板缓存会解析为已开放的层级。
+#                     通过 .reload config 应用；客户端的难度列表在下次登录时更新。
+#        Default:     3
 
-Ascension.CallboardCache.ReleaseStage = 7
-
+Ascension.CallboardCache.ReleaseStage = 0
 #
 #    Ascension.CallboardCache.PreviousStageOnly
 #        说明：将每个通用 Callboard Cache 保持在已发布阶段低一个阶段。
@@ -538,3 +595,13 @@ CrowsCache.Barrens.X = -763.6296
 CrowsCache.Barrens.Y = -3191.6892
 CrowsCache.Barrens.Z = 91.666626
 CrowsCache.Barrens.O = 2.3004022
+
+# 可选共享客户端经验热点。独立于职业或服务器规则集。
+# MaxContinent: 0 = 艾泽拉斯，1 = 艾泽拉斯和外域，2 = 全部三个大陆。
+# 有效上限永远不会超过世界服务器的 Expansion 设置。
+# MaxContinent = 0 时，地图 530 上的艾泽拉斯起始区域仍然符合条件。
+# 地图显示和 GM 编辑器需要客户端 FrameXML 扩展。
+XPHotspots.Enable = 0
+XPHotspots.MaxContinent = 2
+XPHotspots.ActiveCount = 3
+XPHotspots.BuffSpell = 993945
