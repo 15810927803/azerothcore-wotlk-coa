@@ -7,7 +7,7 @@
 
 INSERT IGNORE INTO `creature_template`
 (`entry`, `name`, `minlevel`, `maxlevel`, `faction`, `type`, `unit_class`, `AIName`, `ScriptName`, `VerifiedBuild`)
-VALUES (320977, 'Millhouse Manastorm', 1, 1, 35, 7, 1, '', '', 0);
+VALUES (320977, '米尔豪斯·法力风暴', 1, 1, 35, 7, 1, '', '', 0);
 
 INSERT IGNORE INTO `creature_template_model`
 (`CreatureID`, `Idx`, `CreatureDisplayID`, `DisplayScale`, `Probability`, `VerifiedBuild`)

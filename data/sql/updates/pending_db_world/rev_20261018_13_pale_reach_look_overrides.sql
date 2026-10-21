@@ -231,4 +231,4 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 -- Mine And Fuel for the Fire (175330) turn-in text, from NIs_cJRD9YE 0:18.5-0:19.5.
 DELETE FROM `quest_offer_reward` WHERE `ID` = 175330;
 INSERT INTO `quest_offer_reward` (`ID`, `RewardText`) VALUES
-(175330, 'That blasted dwarf again?$B$B<The moment he takes the scroll, he tosses it aside without even opening it.>$B$BAbout the excavation, I suppose. I already told him no. A mine in this region would only throw more fuel on the Ealdir fire.');
+(175330, '又是那个该死的矮人？$B$B<他一接过卷轴，连打开都没打开就把它扔到一边。>$B$B我猜是关于挖掘的事。我已经跟他说过不行了。在这个地区开矿，只会给埃尔德尔这把火添更多柴。');

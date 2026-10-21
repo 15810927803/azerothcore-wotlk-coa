@@ -10,4 +10,4 @@
 
 INSERT IGNORE INTO `gameobject_template`
 (`entry`, `type`, `displayId`, `name`, `size`, `VerifiedBuild`)
-VALUES (245006, 10, 1029671, 'Mechanical Mystic Altar', 1, 0);
+VALUES (245006, 10, 1029671, '机械秘法祭坛', 1, 0);

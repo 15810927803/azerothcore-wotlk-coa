@@ -9,7 +9,7 @@
 INSERT IGNORE INTO `creature_template`
 (`entry`, `name`, `minlevel`, `maxlevel`, `faction`, `type`, `unit_class`,
  `unit_flags`, `flags_extra`, `AIName`, `ScriptName`, `VerifiedBuild`)
-VALUES (900027, 'Empty Heart Container', 1, 1, 35, 10, 1,
+VALUES (900027, '空心脏容器', 1, 1, 35, 10, 1,
 33555206, 128, '', 'npc_manastorm_empty_heart', 0);
 
 UPDATE `creature_template` SET `AIName` = '', `ScriptName` = 'npc_manastorm_empty_heart',

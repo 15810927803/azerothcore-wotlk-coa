@@ -2,6 +2,6 @@
 -- trainer the concoction must hit is Kragar the Reanimator (502925, Necromancer Trainer; name and subname from
 -- creaturecache 502925, SOURCED-CACHE). No creature is called Nekai, so the text now names the NPC the player sees.
 UPDATE `quest_template` SET
-    `ObjectiveText2` = 'Kragar the Reanimator',
-    `QuestDescription` = REPLACE(`QuestDescription`, 'Nekai the Reanimator', 'Kragar the Reanimator')
+    `ObjectiveText2` = '复生者克拉加尔',
+    `QuestDescription` = REPLACE(`QuestDescription`, '复生者内凯', '复生者克拉加尔')
 WHERE `ID` = 200026;

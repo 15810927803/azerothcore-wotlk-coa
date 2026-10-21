@@ -6,7 +6,7 @@ DELETE FROM `gameobject` WHERE `guid` = 9920684 AND `id` = 517233;
 -- #4: the quest cauldron is visible only while the sisters' chain needs it; everyone else sees a non-selectable copy.
 INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `IconName`, `castBarCaption`, `unk1`, `size`, `Data0`, `Data1`, `Data2`, `Data3`, `Data4`, `Data5`, `AIName`, `ScriptName`, `VerifiedBuild`)
 VALUES
-(2309001, 5, 300518, 'The Three Sisters', '', '', '', 1, 0, 0, 0, 0, 0, 0, '', '', 0)
+(2309001, 5, 300518, '三姐妹', '', '', '', 1, 0, 0, 0, 0, 0, 0, '', '', 0)
 ON DUPLICATE KEY UPDATE `type` = VALUES(`type`), `displayId` = VALUES(`displayId`), `name` = VALUES(`name`), `size` = VALUES(`size`), `Data0` = VALUES(`Data0`), `Data1` = VALUES(`Data1`);
 
 DELETE FROM `gameobject_template_addon` WHERE `entry` = 2309001;
@@ -138,7 +138,7 @@ INSERT INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `e
 UPDATE `gameobject_loot_template` SET `MinCount` = 1, `MaxCount` = 1 WHERE `Entry` = 2300635 AND `Item` = 559855;
 
 -- No One to Bring Her Flowers names her Martha Argos; the gravestone object read "Agros".
-UPDATE `gameobject_template` SET `name` = 'Martha Argos Gravestone' WHERE `entry` = 2310431;
+UPDATE `gameobject_template` SET `name` = '玛莎·阿戈斯墓碑' WHERE `entry` = 2310431;
 
 -- #10: the Stormwind Keep door sticks from the keep side until the character first opens it from the hallway.
 UPDATE `gameobject_template` SET `ScriptName` = 'go_coa_stormwind_keep_door' WHERE `entry` = 2300653;
@@ -329,7 +329,7 @@ UPDATE `creature_template_model` SET `DisplayScale` = 0.15 WHERE `CreatureID` = 
 -- completion texts (inferred, 2026-10-15).
 DELETE FROM `quest_request_items` WHERE `ID` = 175048;
 INSERT INTO `quest_request_items` (`ID`, `EmoteOnComplete`, `EmoteOnIncomplete`, `CompletionText`, `VerifiedBuild`) VALUES
-(175048, 0, 0, '<Holga''s breathing is shallow and ragged.>$B$BYou came back... Are the rifts closed? Do the Horned Ones still walk in that cave?', 0);
+(175048, 0, 0, '<霍尔加的呼吸浅而急促。>$B$B你回来了……裂隙关闭了吗？那些长角者还在那个洞穴里游荡吗？', 0);
 
 -- #76: Holga wears Deadly Gladiator's Kodohide Robes 49045 and holds a Shadow Council Kris 2075359, picked by the user from
 -- the wardrobe against AscenSS 071226-222341 and 072526-190028.
@@ -424,7 +424,7 @@ UPDATE `gameobject` SET `position_x` = -7515.176, `position_y` = 1271.890, `posi
 UPDATE `gameobject_template` SET `ScriptName` = 'go_coa_cardens_diary' WHERE `entry` = 2300689;
 DELETE FROM `npc_text` WHERE `ID` = 2300689;
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `BroadcastTextID0`, `lang0`, `Probability0`) VALUES
-(2300689, '<Journal found beside a man''s body.>$B$B“My dearest Alanna. The days wither away without your smile. Often, I find myself remembering how we made the impossible possible; an Ealdir and a Crusader, hopelessly in love. Ready for anything. Willing to defy our own; the Light, the gods of the woods.$B$BYou know me well, Alanna. So you know what I intend to do. If we made the impossible possible once before, why not try again?$B$BThis is my promise:$B$BI will bring you back, no matter the cost. And I know where to begin:$B$BThe Three Sisters from your stories.”', '<Journal found beside a man''s body.>$B$B“My dearest Alanna. The days wither away without your smile. Often, I find myself remembering how we made the impossible possible; an Ealdir and a Crusader, hopelessly in love. Ready for anything. Willing to defy our own; the Light, the gods of the woods.$B$BYou know me well, Alanna. So you know what I intend to do. If we made the impossible possible once before, why not try again?$B$BThis is my promise:$B$BI will bring you back, no matter the cost. And I know where to begin:$B$BThe Three Sisters from your stories.”', 0, 0, 1);
+(2300689, '<在一名男子的尸体旁发现的日志。>$B$B“我最亲爱的阿兰娜。没有你的笑容，日子一天天枯萎。我常常回想起我们如何让不可能成为可能；一个埃尔德尔和一个十字军，无可救药地相爱。准备好面对一切。愿意反抗我们自己的族人；反抗圣光，反抗森林诸神。$B$B你很了解我，阿兰娜。所以你知道我打算做什么。既然我们曾经让不可能成为可能，为什么不再试一次？$B$B这是我的承诺：$B$B我会把你带回来，无论付出什么代价。而且我知道从哪里开始：$B$B你故事里的三姐妹。”', '<在一名男子的尸体旁发现的日志。>$B$B“我最亲爱的阿兰娜。没有你的笑容，日子一天天枯萎。我常常回想起我们如何让不可能成为可能；一个埃尔德尔和一个十字军，无可救药地相爱。准备好面对一切。愿意反抗我们自己的族人；反抗圣光，反抗森林诸神。$B$B你很了解我，阿兰娜。所以你知道我打算做什么。既然我们曾经让不可能成为可能，为什么不再试一次？$B$B这是我的承诺：$B$B我会把你带回来，无论付出什么代价。而且我知道从哪里开始：$B$B你故事里的三姐妹。”', 0, 0, 1);
 
 -- Restless Corpses 9960181 and 9961693 removed from the Cresthairn church stairwell with CoAWorldEdit (playtest 2026-10-15).
 DELETE FROM `creature_addon` WHERE `guid` IN (9960181, 9961693);
@@ -519,7 +519,7 @@ UPDATE `creature_display_preset` SET `item_body` = 126805, `item_chest` = 19008,
 -- The Singing Witch (175044): Aisling's turn-in text, transcribed from live footage found by the user (2026-10-16).
 DELETE FROM `quest_offer_reward` WHERE `ID` = 175044;
 INSERT INTO `quest_offer_reward` (`ID`, `Emote1`, `Emote2`, `Emote3`, `Emote4`, `EmoteDelay1`, `EmoteDelay2`, `EmoteDelay3`, `EmoteDelay4`, `RewardText`, `VerifiedBuild`) VALUES
-(175044, 0, 0, 0, 0, 0, 0, 0, 0, 'So Alanna believes only the Three Sisters can save her.$B$B<Aisling''s expression grows grave as she weighs the implications.>$B$BThose three have fickle appetites. They may help you, or punish your insolence for coming to them at all.$B$BEither way, whatever they do with you is not my problem. If you''re willing to risk standing before them, I''ll help you.', 0);
+(175044, 0, 0, 0, 0, 0, 0, 0, 0, '所以阿兰娜相信只有三姐妹能救她。$B$B<艾斯林在权衡其中的含义时，神情变得凝重。>$B$B那三位喜怒无常。它们可能会帮你，也可能因为你竟敢来找它们而惩罚你的冒犯。$B$B无论如何，它们怎么处置你都不关我的事。如果你愿意冒险站在它们面前，我会帮你。', 0);
 
 -- Possessed Crow 9961171 moved with CoAWorldEdit (playtest 2026-10-16); it sits through the template addon.
 UPDATE `creature` SET `position_x` = -7624.051, `position_y` = 1186.906, `position_z` = 164.735, `orientation` = 4.8011, `wander_distance` = 0, `MovementType` = 0 WHERE `guid` = 9961171 AND `id` = 164944;
@@ -527,7 +527,7 @@ UPDATE `creature` SET `position_x` = -7624.051, `position_y` = 1186.906, `positi
 -- The Flowers That Sing (175331): Aisling's turn-in text from live footage (DuWTvw19xtg 34:17).
 DELETE FROM `quest_offer_reward` WHERE `ID` = 175331;
 INSERT INTO `quest_offer_reward` (`ID`, `Emote1`, `Emote2`, `Emote3`, `Emote4`, `EmoteDelay1`, `EmoteDelay2`, `EmoteDelay3`, `EmoteDelay4`, `RewardText`, `VerifiedBuild`) VALUES
-(175331, 0, 0, 0, 0, 0, 0, 0, 0, 'Snowsong. A special plant, as you have surely noticed.$B$BI was beginning to think Hilda and Zelda had forgotten me.$B$BHere, for your trouble.', 0);
+(175331, 0, 0, 0, 0, 0, 0, 0, 0, '雪歌。一种特殊的植物，你肯定已经注意到了。$B$B我起初还以为希尔达和塞尔达把我忘了。$B$B这个，算是给你的辛苦费。', 0);
 
 -- Cresthairn Guard (164134) dresses like the Dunshire Guard (user, 2026-10-16): the Graysky set without the helmet, male and
 -- female bodies like 164124.

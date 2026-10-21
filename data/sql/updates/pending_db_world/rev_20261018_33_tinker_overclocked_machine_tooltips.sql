@@ -20,5 +20,5 @@
 
 DELETE FROM `coa_client_spell_description` WHERE `ID` IN (806781,806782);
 INSERT INTO `coa_client_spell_description` (`ID`,`Description`) VALUES
-(806781,'Unleash a devastating haymaker that deals ${$m1+0+$RAP*.15} Fire Damage.'),
-(806782,'Smash the ground with overwhelming power, dealing ${$m1+0} Arcane Damage to $i enemies in a $a1 yd radius.');
+(806781,'释放一记毁灭性的重拳，造成 ${$m1+0+$RAP*.15} 点火焰伤害。'),
+(806782,'以压倒性的力量砸向地面，对 $a1 码范围内的 $i 名敌人造成 ${$m1+0} 点奥术伤害。');

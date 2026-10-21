@@ -11,10 +11,10 @@ INSERT INTO `creature_template` (
     `AIName`
 ) VALUES
 (
-    165513, 'Smart Tank', 35, 30, 30, 16777216, 1.2, 1.4, 16384, 117, 'SmartAI'
+    165513, '智能坦克', 35, 30, 30, 16777216, 1.2, 1.4, 16384, 117, 'SmartAI'
 ),
 (
-    165514, 'Smart Tank', 35, 30, 30, 16777216, 1.2, 1.4, 16384, 117, 'SmartAI'
+    165514, '智能坦克', 35, 30, 30, 16777216, 1.2, 1.4, 16384, 117, 'SmartAI'
 )
 ON DUPLICATE KEY UPDATE
     `minlevel` = VALUES(`minlevel`),

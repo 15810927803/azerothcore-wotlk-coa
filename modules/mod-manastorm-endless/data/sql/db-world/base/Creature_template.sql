@@ -38,7 +38,7 @@ INSERT INTO `creature_template`
 VALUES
 (
     900025,
-    'Manastorm Heart',
+    '法力风暴之心',
     '',
     1,
     1,
@@ -113,8 +113,8 @@ INSERT INTO `creature_template`
 VALUES
 (
     663028,
-    'Manabomb',
-    'Visual Indicator',
+    '法力炸弹',
+    '视觉指示器',
     1,
     1,
     0,

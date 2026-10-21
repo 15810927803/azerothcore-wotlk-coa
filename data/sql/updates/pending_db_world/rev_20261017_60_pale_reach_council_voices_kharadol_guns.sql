@@ -5,13 +5,13 @@
 -- captured pauses. The scene still ends with this branch's credit for "Listen to the nobles' meeting" (164500).
 DELETE FROM `creature_text` WHERE (`CreatureID` = 164001 AND `GroupID` IN (0, 1, 2)) OR (`CreatureID` = 164211 AND `GroupID` IN (0, 1, 2)) OR (`CreatureID` = 164212 AND `GroupID` = 0) OR `CreatureID` IN (164217, 164218);
 INSERT INTO `creature_text` (`CreatureID`, `GroupID`, `ID`, `Text`, `Type`, `Language`, `Probability`, `Emote`, `Duration`, `Sound`, `BroadcastTextId`, `TextRange`, `comment`) VALUES
-(164001,0,0,'I believe I have made my stance clear. Trolls, bandits, Ealdir... what more must happen before we resolve to intervene?',12,0,100,0,0,215200,0,0,'Lord Servin Darengar - House of Nobles'),
-(164001,1,0,'If we do nothing, there will be nothing left to rule! Tell me, do we only help the drowning if they still have the voice to beg?',12,0,100,0,0,215204,0,0,'Lord Servin Darengar - House of Nobles'),
-(164001,2,0,'Lady Serenya\'s pride will be our undoing. We must--!',12,0,100,0,0,215205,0,0,'Lord Servin Darengar - House of Nobles'),
-(164217,0,0,'And we, I believe, have made ours clear, Lord Darengar.',12,0,100,0,0,215201,0,0,'Lord Broldin Feandor - House of Nobles'),
-(164217,1,0,'Even if there were unanimity, this council cannot simply march the army into Scadeald without the consent of House Coldmere.',12,0,100,0,0,215202,0,0,'Lord Broldin Feandor - House of Nobles'),
-(164217,2,0,'You are wasting your time barking up the wrong tree, Lord Darengar. Our laws exist for a reason. This session is adjourned.',12,0,100,0,0,215206,0,0,'Lord Broldin Feandor - House of Nobles'),
-(164218,0,0,'And do remember that it is the Coldmeres, and not yourself, who rule Scadeald.',12,0,100,0,0,215203,0,0,'Lady Asia Mortel - House of Nobles');
+(164001,0,0,'我相信我已经表明了我的立场。巨魔、强盗、埃尔德尔……还要发生多少事，我们才决心介入？',12,0,100,0,0,215200,0,0,'瑟文·达伦加尔领主 - 贵族议会'),
+(164001,1,0,'如果我们什么都不做，就没什么可统治的了！告诉我，难道只有溺水者还有力气呼救，我们才去救吗？',12,0,100,0,0,215204,0,0,'瑟文·达伦加尔领主 - 贵族议会'),
+(164001,2,0,'瑟蕾妮娅女士的骄傲会毁了我们。我们必须——！',12,0,100,0,0,215205,0,0,'Lord Servin Darengar - House of Nobles'),
+(164217,0,0,'而我相信，我们也已经表明了我们的立场，达伦加尔领主。',12,0,100,0,0,215201,0,0,'Lord Broldin Feandor - House of Nobles'),
+(164217,1,0,'即使意见一致，本议会也不能在没有冷泉家族同意的情况下，就率军开进斯卡德。',12,0,100,0,0,215202,0,0,'Lord Broldin Feandor - House of Nobles'),
+(164217,2,0,'你是在白费力气，找错了树，达伦加尔领主。我们的法律存在自有其道理。本次会议到此结束。',12,0,100,0,0,215206,0,0,'Lord Broldin Feandor - House of Nobles'),
+(164218,0,0,'而且请记住，统治斯卡德的是冷泉家族，而不是你。',12,0,100,0,0,215203,0,0,'Lady Asia Mortel - House of Nobles');
 DELETE FROM `smart_scripts` WHERE `entryorguid` = 16400100 AND `source_type` = 9;
 INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `event_param6`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_param4`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`) VALUES
 (16400100,9,0,0,0,0,100,0,2000,2000,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,'House of Nobles scene - Lord Servin Darengar line 0'),
@@ -28,7 +28,7 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 -- each giving one Kharadol Blunderbuss while on the quest and back after two minutes.
 UPDATE `gameobject_template` SET `displayId` = 515473, `size` = 1 WHERE `entry` = 2300665;
 INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `IconName`, `castBarCaption`, `unk1`, `size`, `Data0`, `Data1`, `Data3`, `Data8`, `AIName`, `ScriptName`, `VerifiedBuild`) VALUES
-(2300807, 3, 515034, 'Kharadol Blunderbuss', '', '', '', 1, 57, 2300665, 1, 175058, '', '', 0) ON DUPLICATE KEY UPDATE `type` = VALUES(`type`), `displayId` = VALUES(`displayId`), `name` = VALUES(`name`), `size` = VALUES(`size`), `Data0` = VALUES(`Data0`), `Data1` = VALUES(`Data1`), `Data3` = VALUES(`Data3`), `Data8` = VALUES(`Data8`);
+(2300807, 3, 515034, '卡拉多尔的大口径火枪', '', '', '', 1, 57, 2300665, 1, 175058, '', '', 0) ON DUPLICATE KEY UPDATE `type` = VALUES(`type`), `displayId` = VALUES(`displayId`), `name` = VALUES(`name`), `size` = VALUES(`size`), `Data0` = VALUES(`Data0`), `Data1` = VALUES(`Data1`), `Data3` = VALUES(`Data3`), `Data8` = VALUES(`Data8`);
 DELETE FROM `gameobject` WHERE `id` = 2300665 AND `guid` IN (9983039, 9983040, 9983041, 9983042, 9983043, 9983086, 9983087, 9983088, 9983089);
 DELETE FROM `gameobject` WHERE `guid` IN (9963470, 9963482, 9963483, 9963484, 9963485);
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `ScriptName`, `VerifiedBuild`, `Comment`) VALUES

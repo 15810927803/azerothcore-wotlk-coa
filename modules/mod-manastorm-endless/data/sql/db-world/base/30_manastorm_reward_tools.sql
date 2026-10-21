@@ -13,7 +13,7 @@ INSERT INTO `spell_script_names` (`spell_id`, `ScriptName`) VALUES
 -- INSERT IGNORE preserves existing/upstream templates and model choices.
 INSERT IGNORE INTO `creature_template`
 (`entry`, `name`, `minlevel`, `maxlevel`, `faction`, `type`, `unit_class`, `AIName`, `ScriptName`, `VerifiedBuild`)
-VALUES (254140, 'Millhouse Manastorm', 1, 1, 35, 7, 1, '', '', 0);
+VALUES (254140, '米尔豪斯·法力风暴', 1, 1, 35, 7, 1, '', '', 0);
 
 INSERT IGNORE INTO `creature_template_model`
 (`CreatureID`, `Idx`, `CreatureDisplayID`, `DisplayScale`, `Probability`, `VerifiedBuild`)
@@ -28,4 +28,4 @@ WHERE NOT EXISTS
 -- Preserve any existing upstream object instead of replacing its appearance.
 INSERT IGNORE INTO `gameobject_template`
 (`entry`, `type`, `displayId`, `name`, `size`, `data10`, `VerifiedBuild`)
-VALUES (210798, 10, 231, 'Recalibrator Pylon', 1, 991584, 0);
+VALUES (210798, 10, 231, '重校准能量塔', 1, 991584, 0);

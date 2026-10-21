@@ -26,8 +26,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `equipmen
 -- wdb_npccache 1200447 and 1200448 verbatim (1200448 is the page on screen at 1:25:04).
 DELETE FROM `npc_text` WHERE `ID` IN (1200447, 1200448);
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `Probability0`) VALUES
-(1200447, '<Ergrain nods, her chest swelling with pride.>$B$BI have studied the history of this city from the very moment Erydna Stonesong left Ironforge, two hundred and thirty years ago, to yesterday. I have memorized every name in every family tree of the founding fathers who followed her, and of every dwarf who came after.$B$BEvery grudge, every gift, every exchange... It is my duty to remember all that concerns Dun Kazad, no matter how trifling.', '<Ergrain nods, her chest swelling with pride.>$B$BI have studied the history of this city from the very moment Erydna Stonesong left Ironforge, two hundred and thirty years ago, to yesterday. I have memorized every name in every family tree of the founding fathers who followed her, and of every dwarf who came after.$B$BEvery grudge, every gift, every exchange... It is my duty to remember all that concerns Dun Kazad, no matter how trifling.', 1),
-(1200448, 'The woman who... How can ye possibly...?$B$B<Ergrain swallows the sharp reply she was about to unleash, and waits one more second before answering.>$B$BThat woman is the founder of Dun Kazad. Erydna Stonesong, mother of Azaghal Stonesong, our current Thane.$B$BWhen the War of the Three Hammers broke out in Ironforge, Erydna took command of all those who fled the city, and led the refugees to these mountains, where they founded Dun Kazad.$B$BThis city is filled with depictions of Erydna: holding a brazier, wielding a hammer, or extending her hand in welcome, as she does here upon this tower.', 'The woman who... How can ye possibly...?$B$B<Ergrain swallows the sharp reply she was about to unleash, and waits one more second before answering.>$B$BThat woman is the founder of Dun Kazad. Erydna Stonesong, mother of Azaghal Stonesong, our current Thane.$B$BWhen the War of the Three Hammers broke out in Ironforge, Erydna took command of all those who fled the city, and led the refugees to these mountains, where they founded Dun Kazad.$B$BThis city is filled with depictions of Erydna: holding a brazier, wielding a hammer, or extending her hand in welcome, as she does here upon this tower.', 1);
+(1200447, '<埃尔格兰点点头，自豪地挺起胸膛。>$B$B从两百三十年前埃瑞德娜·石歌离开铁炉堡的那一刻起，直到昨天，我都在研究这座城市的历史。我记下了跟随她而来的每一位建城之父、以及后来每一位矮人的家族谱系中的每一个名字。$B$B每一桩恩怨、每一份赠礼、每一次交易……凡与丹卡扎德有关的一切，无论多么微不足道，记住它们都是我的职责。', '<埃尔格兰点点头，自豪地挺起胸膛。>$B$B从两百三十年前埃瑞德娜·石歌离开铁炉堡的那一刻起，直到昨天，我都在研究这座城市的历史。我记下了跟随她而来的每一位建城之父、以及后来每一位矮人的家族谱系中的每一个名字。$B$B每一桩恩怨、每一份赠礼、每一次交易……凡与丹卡扎德有关的一切，无论多么微不足道，记住它们都是我的职责。', 1),
+(1200448, '那个女人……你怎么可能……？$B$B<埃尔格兰咽下了即将脱口而出的尖刻回话，又等了一秒才回答。>$B$B那个女人是丹卡扎德的奠基者。埃瑞德娜·石歌，阿扎加尔·石歌之母，也就是我们现任的领主。$B$B当三锤之战在铁炉堡爆发时，埃瑞德娜统领了所有逃离城市的人，带领难民来到这些群山之中，在此建立了丹卡扎德。$B$B这座城市里到处都有埃瑞德娜的形象：手持火盆、挥舞战锤，或是像她在这座塔上这样伸手以示欢迎。', '那个女人……你怎么可能……？$B$B<埃尔格兰咽下了即将脱口而出的尖刻回话，又等了一秒才回答。>$B$B那个女人是丹卡扎德的奠基者。埃瑞德娜·石歌，阿扎加尔·石歌之母，也就是我们现任的领主。$B$B当三锤之战在铁炉堡爆发时，埃瑞德娜统领了所有逃离城市的人，带领难民来到这些群山之中，在此建立了丹卡扎德。$B$B这座城市里到处都有埃瑞德娜的形象：手持火盆、挥舞战锤，或是像她在这座塔上这样伸手以示欢迎。', 1);
 
 DELETE FROM `gossip_menu` WHERE `MenuID` IN (9997020, 9997021);
 INSERT INTO `gossip_menu` (`MenuID`, `TextID`) VALUES
@@ -36,8 +36,8 @@ INSERT INTO `gossip_menu` (`MenuID`, `TextID`) VALUES
 
 DELETE FROM `gossip_menu_option` WHERE `MenuID` = 1200446;
 INSERT INTO `gossip_menu_option` (`MenuID`, `OptionID`, `OptionIcon`, `OptionText`, `OptionBroadcastTextID`, `OptionType`, `OptionNpcFlag`, `ActionMenuID`, `ActionPoiID`, `BoxCoded`, `BoxMoney`, `BoxText`, `BoxBroadcastTextID`, `VerifiedBuild`) VALUES
-(1200446, 0, 0, 'Keeper of Lore?', 0, 1, 1, 9997020, 0, 0, 0, '', 0, 0),
-(1200446, 1, 0, 'Who is the woman carved at the foot of this tower?', 0, 1, 1, 9997021, 0, 0, 0, '', 0, 0);
+(1200446, 0, 0, '博学者？', 0, 1, 1, 9997020, 0, 0, 0, '', 0, 0),
+(1200446, 1, 0, '这座塔脚下雕刻的女人是谁？', 0, 1, 1, 9997021, 0, 0, 0, '', 0, 0);
 
 -- Playtest 2026-10-17: Jagged Cave Ealdir shouted their aggro line on every pull.
 DELETE FROM `smart_scripts` WHERE `entryorguid` = 164043 AND `source_type` = 0;
@@ -50,10 +50,10 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 -- Redthedeer's turn-in in HIbr82QgX6w 21:30-22:06).
 DELETE FROM `quest_request_items` WHERE `ID` = 175008;
 INSERT INTO `quest_request_items` (`ID`, `CompletionText`) VALUES
-(175008, '<Durghain scrutinizes the bags you\'re carrying before shifting his gaze to your face.>');
+(175008, '<杜尔盖恩打量着你携带的包裹，随后把目光转向你的脸。>');
 DELETE FROM `quest_offer_reward` WHERE `ID` = 175008;
 INSERT INTO `quest_offer_reward` (`ID`, `RewardText`) VALUES
-(175008, 'Yes, yes, don\'t tell me. Hilma sent you.$B$BYou\'re the fourth this month. She could afford an escort and come herself, but since our last spat, she prefers to keep her distance. It\'s her way of punishing me.$B$BRegardless, you are not to blame. Here, take this; the payment for your services.$B$B<Durghain bows his head politely.>$B$BThese are lean times for Scadeald, and for my pockets as well; I cannot offer you work. But the guard is always eager to recruit new blood. If you have the stomach for war, I suggest you report to Sir Draewyn, Commander of the Guard.');
+(175008, '是，是，不用说了。是希尔玛让你来的。$B$B你是这个月第四个了。她明明雇得起护卫自己来，但自从我们上次吵架之后，她就宁愿保持距离。这是她惩罚我的方式。$B$B不管怎样，这不是你的错。拿着，这是你应得的报酬。$B$B<杜尔盖恩礼貌地低下头。>$B$B对斯卡德来说，对我这口袋来说，都是艰难时期；我没法给你活儿干。但卫队总是急着招募新人。如果你有胆量打仗，我建议你去向卫队长德雷温爵士报到。');
 
 -- Playtest 2026-10-17: seated NPCs floated a chair's height above their seats. A sit-on-chair stand state raises the
 -- body by the seat height itself, so the spawn belongs on the floor under the chair, not on the seat.

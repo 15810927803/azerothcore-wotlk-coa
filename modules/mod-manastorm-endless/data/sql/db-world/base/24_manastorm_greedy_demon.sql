@@ -206,8 +206,8 @@ INSERT IGNORE INTO `creature_template`
 VALUES
 (
     75121,
-    'Greedy Demon',
-    'Classic',
+    '贪婪恶魔',
+    '经典',
     1,
     1,
     0,
@@ -284,13 +284,13 @@ INSERT IGNORE INTO `gameobject_template`
     `AIName`, `ScriptName`, `VerifiedBuild`
 )
 VALUES
-(710014,3,4175,'Loot','','','','1',
+(710014,3,4175,'战利品','','','','1',
  0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
  '','go_manastorm_greedy_loot',0),
-(710015,3,4175,'Loot','','','','1',
+(710015,3,4175,'战利品','','','','1',
  0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
  '','go_manastorm_greedy_loot',0),
-(710016,3,4175,'Loot','','','','1',
+(710016,3,4175,'战利品','','','','1',
  0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
  '','go_manastorm_greedy_loot',0);
 

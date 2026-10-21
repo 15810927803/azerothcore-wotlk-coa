@@ -1,34 +1,34 @@
 [worldserver]
 
-# Enable/disable the Manastorm gameplay module (requires restart).
+# 启用/禁用法力风暴玩法模块（需要重启）。
 Manastorm.Enable = 1
 
-# Automatic affixes require this stage creature level and completion of the first native affix unlock depth.
-# Individual progression affixes still require their matching native unlock/toast; those depths are unchanged.
+# 自动词缀需要此阶段生物等级以及完成首个原生词缀解锁深度。
+# 个体进度词缀仍需匹配的原生解锁/提示；这些深度保持不变。
 Manastorm.AffixMinimumLevel = 50
 
-# Client integration mode (requires restart):
-#   1 = reconstructed 3.3.5 client addon transport (MANASTORM addon prefix)
-#   2 = original Ascension native Manastorm protocol (uses the included CoA native opcode bridge)
+# 客户端集成模式（需要重启）：
+#   1 = 重构的 3.3.5 客户端插件传输（MANASTORM 插件前缀）
+#   2 = 原始飞升原生 Manastorm 协议（使用随附的 CoA 原生操作码桥接）
 Manastorm.ClientMode = 2
 
-# Matching original client Manastorm.dbc, read-only identity validation in Mode 2.
-# Default when omitted: <DataDir>/dbc/Manastorm.dbc.
+# 匹配原始客户端 Manastorm.dbc，在模式 2 中进行只读身份验证。
+# 省略时默认：<DataDir>/dbc/Manastorm.dbc。
 # Manastorm.NativeDBCPath = "C:/path/to/matching/Manastorm.dbc"
-# This module exclusively owns Manastorm requests and gameplay.
-# The compatibility donor run service is never registered.
-# AscensionCompat.Enable / remote-client admission remain core connection settings.
+# 此模块独家拥有 Manastorm 请求和玩法。
+# 兼容性捐赠者运行服务从不注册。
+# AscensionCompat.Enable / 远程客户端准入仍为核心连接设置。
 
-# Client UI fixes pushed as Lua 5 seconds after login (Mode 2 only, no client files).
-# Bitmask, 0 = off and the stock client UI is left unchanged:
-#   1 = the group finder keybind also opens inside a Manastorm run
-#   2 = reward icons anchor below the Potential Rewards divider
-#   4 = the queue panel handles an empty enterable-level list and uncached reward items
-#   8 = the loadout flyout hides when there are no loadout spells
-#  15 = all of the above
-# A /reload drops them until the next login.
+# 登录 5 秒后以 Lua 推送的客户端 UI 修复（仅模式 2，无需客户端文件）。
+# 位掩码，0 = 关闭，原版客户端 UI 保持不变：
+#   1 = 队伍查找器快捷键在 Manastorm 副本内也可打开
+#   2 = 奖励图标锚定在"潜在奖励"分隔线下方
+#   4 = 队列面板处理空的可进入等级列表和未缓存的奖励物品
+#   8 = 没有配装法术时隐藏配装弹出菜单
+#  15 = 以上全部
+# /reload 会将其丢弃，直到下次登录。
 Manastorm.ClientUIFixes = 0
 
-# Native Mobility covers all 36 listed class spell families automatically in Mode 2.
-# Runtime supporting auras follow the active mixture and are removed outside your Manastorm stage.
-# Requires the matching <DataDir>/dbc/Spell.dbc. No client files or SQL edits are needed.
+# 原生机动性在模式 2 中自动覆盖所有 36 个列出的职业法术系。
+# 运行时辅助光环跟随当前混合内容，并在离开你的 Manastorm 阶段后被移除。
+# 需要匹配的 <DataDir>/dbc/Spell.dbc。无需客户端文件或 SQL 修改。

@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `manastorm_hub_return`
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
-COMMENT='Faction Teleport Pad anchors used only for Manastorm death/wipe ejection';
+COMMENT='阵营传送台锚点，仅用于法力风暴死亡/灭团弹出';
 
 -- ---------------------------------------------------------------------------
 -- Preflight: creature GUID availability
@@ -81,7 +81,7 @@ SELECT
     existing.`map` AS `existing_map`,
     CASE
         WHEN existing.`guid` IS NULL THEN
-            'FREE'
+            '空闲'
         WHEN existing.`id` = desired.`entry`
           AND existing.`map` = desired.`map`
           AND ABS(existing.`position_x` - desired.`position_x`) < 0.01
@@ -89,14 +89,14 @@ SELECT
           AND ABS(existing.`position_z` - desired.`position_z`) < 0.01
           AND ABS(existing.`orientation` - desired.`orientation`) < 0.01
         THEN
-            'ALREADY PRESENT'
+            '已存在'
         ELSE
-            'OCCUPIED - CHOOSE NEW GUID'
+            '已被占用 - 请选择新 GUID'
     END AS `guid_status`
 FROM
 (
     SELECT
-        'Orgrimmar - Cogsworth' AS `location`,
+        '奥格瑞玛 - 科格斯沃斯' AS `location`,
         @MS_ORG_COGSWORTH_GUID AS `guid`,
         179539 AS `entry`,
         1 AS `map`,
@@ -106,7 +106,7 @@ FROM
         1.72271 AS `orientation`
     UNION ALL
     SELECT
-        'Orgrimmar - Millhouse',
+        '奥格瑞玛 - 米尔豪斯',
         @MS_ORG_MILLHOUSE_GUID,
         179538,
         1,
@@ -116,7 +116,7 @@ FROM
         1.72271
     UNION ALL
     SELECT
-        'Stormwind - Cogsworth',
+        '暴风城 - 科格斯沃斯',
         @MS_SW_COGSWORTH_GUID,
         179539,
         0,
@@ -126,7 +126,7 @@ FROM
         5.70449
     UNION ALL
     SELECT
-        'Stormwind - Millhouse',
+        '暴风城 - 米尔豪斯',
         @MS_SW_MILLHOUSE_GUID,
         179538,
         0,
@@ -152,7 +152,7 @@ SELECT
     existing.`map` AS `existing_map`,
     CASE
         WHEN existing.`guid` IS NULL THEN
-            'FREE'
+            '空闲'
         WHEN existing.`id` = desired.`entry`
           AND existing.`map` = desired.`map`
           AND ABS(existing.`position_x` - desired.`position_x`) < 0.01
@@ -160,14 +160,14 @@ SELECT
           AND ABS(existing.`position_z` - desired.`position_z`) < 0.01
           AND ABS(existing.`orientation` - desired.`orientation`) < 0.01
         THEN
-            'ALREADY PRESENT'
+            '已存在'
         ELSE
-            'OCCUPIED - CHOOSE NEW GUID'
+            '已被占用 - 请选择新 GUID'
     END AS `guid_status`
 FROM
 (
     SELECT
-        'Orgrimmar - Teleport Pad' AS `location`,
+        '奥格瑞玛 - 传送台' AS `location`,
         @MS_ORG_PORTAL_GUID AS `guid`,
         20832 AS `entry`,
         1 AS `map`,
@@ -177,7 +177,7 @@ FROM
         2.18527 AS `orientation`
     UNION ALL
     SELECT
-        'Stormwind - Teleport Pad',
+        '暴风城 - 传送台',
         @MS_SW_PORTAL_GUID,
         20832,
         0,
@@ -457,7 +457,7 @@ SELECT
     desired.`guid`,
     CASE
         WHEN existing.`guid` IS NULL THEN
-            'MISSING'
+            '缺失'
         WHEN existing.`id` = desired.`entry`
           AND existing.`map` = desired.`map`
           AND ABS(existing.`position_x` - desired.`position_x`) < 0.01
@@ -465,19 +465,19 @@ SELECT
           AND ABS(existing.`position_z` - desired.`position_z`) < 0.01
           AND ABS(existing.`orientation` - desired.`orientation`) < 0.01
         THEN
-            'ALREADY PRESENT'
+            '已存在'
         ELSE
-            'OCCUPIED - CHOOSE NEW GUID'
+            '已被占用 - 请选择新 GUID'
     END AS `final_status`
 FROM
 (
-    SELECT 'Orgrimmar - Cogsworth' AS `location`, @MS_ORG_COGSWORTH_GUID AS `guid`, 179539 AS `entry`, 1 AS `map`, 1643.89 AS `position_x`, -4431.14 AS `position_y`, 16.7329 AS `position_z`, 1.72271 AS `orientation`
+    SELECT '奥格瑞玛 - 科格斯沃斯' AS `location`, @MS_ORG_COGSWORTH_GUID AS `guid`, 179539 AS `entry`, 1 AS `map`, 1643.89 AS `position_x`, -4431.14 AS `position_y`, 16.7329 AS `position_z`, 1.72271 AS `orientation`
     UNION ALL
-    SELECT 'Orgrimmar - Millhouse', @MS_ORG_MILLHOUSE_GUID, 179538, 1, 1641.28, -4431.54, 16.604, 1.72271
+    SELECT '奥格瑞玛 - 米尔豪斯', @MS_ORG_MILLHOUSE_GUID, 179538, 1, 1641.28, -4431.54, 16.604, 1.72271
     UNION ALL
-    SELECT 'Stormwind - Cogsworth', @MS_SW_COGSWORTH_GUID, 179539, 0, -8891.85, 588.252, 93.5254, 5.70449
+    SELECT '暴风城 - 科格斯沃斯', @MS_SW_COGSWORTH_GUID, 179539, 0, -8891.85, 588.252, 93.5254, 5.70449
     UNION ALL
-    SELECT 'Stormwind - Millhouse', @MS_SW_MILLHOUSE_GUID, 179538, 0, -8893.37, 585.932, 93.3443, 5.70449
+    SELECT '暴风城 - 米尔豪斯', @MS_SW_MILLHOUSE_GUID, 179538, 0, -8893.37, 585.932, 93.3443, 5.70449
 ) AS desired
 LEFT JOIN `creature` AS existing
     ON existing.`guid` = desired.`guid`
@@ -489,7 +489,7 @@ SELECT
     desired.`guid`,
     CASE
         WHEN existing.`guid` IS NULL THEN
-            'MISSING'
+            '缺失'
         WHEN existing.`id` = desired.`entry`
           AND existing.`map` = desired.`map`
           AND ABS(existing.`position_x` - desired.`position_x`) < 0.01
@@ -497,15 +497,15 @@ SELECT
           AND ABS(existing.`position_z` - desired.`position_z`) < 0.01
           AND ABS(existing.`orientation` - desired.`orientation`) < 0.01
         THEN
-            'ALREADY PRESENT'
+            '已存在'
         ELSE
-            'OCCUPIED - CHOOSE NEW GUID'
+            '已被占用 - 请选择新 GUID'
     END AS `final_status`
 FROM
 (
-    SELECT 'Orgrimmar - Teleport Pad' AS `location`, @MS_ORG_PORTAL_GUID AS `guid`, 20832 AS `entry`, 1 AS `map`, 1648.1 AS `position_x`, -4431.11 AS `position_y`, 16.9532 AS `position_z`, 2.18527 AS `orientation`
+    SELECT '奥格瑞玛 - 传送台' AS `location`, @MS_ORG_PORTAL_GUID AS `guid`, 20832 AS `entry`, 1 AS `map`, 1648.1 AS `position_x`, -4431.11 AS `position_y`, 16.9532 AS `position_z`, 2.18527 AS `orientation`
     UNION ALL
-    SELECT 'Stormwind - Teleport Pad', @MS_SW_PORTAL_GUID, 20832, 0, -8888.36, 590.391, 93.5542, 2.21732
+    SELECT '暴风城 - 传送台', @MS_SW_PORTAL_GUID, 20832, 0, -8888.36, 590.391, 93.5542, 2.21732
 ) AS desired
 LEFT JOIN `gameobject` AS existing
     ON existing.`guid` = desired.`guid`
@@ -515,9 +515,9 @@ ORDER BY `location`;
 -- Verify the runtime death/wipe anchors after the spawn checks above.
 SELECT
     CASE `r`.`team_id`
-        WHEN 0 THEN 'Alliance'
-        WHEN 1 THEN 'Horde'
-        ELSE CONCAT('Unknown team ', `r`.`team_id`)
+        WHEN 0 THEN '联盟'
+        WHEN 1 THEN '部落'
+        ELSE CONCAT('未知阵营 ', `r`.`team_id`)
     END AS `team`,
     `r`.`gameobject_guid`,
     `g`.`id` AS `gameobject_entry`,

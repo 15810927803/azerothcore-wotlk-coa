@@ -63,7 +63,7 @@ SELECT
     `difficulty_entry_3`,
     `KillCredit1`,
     `KillCredit2`,
-    'Manastorm Treasure Keeper',
+    '法力风暴宝藏守护者',
     `subname`,
     `IconName`,
     `gossip_menu_id`,

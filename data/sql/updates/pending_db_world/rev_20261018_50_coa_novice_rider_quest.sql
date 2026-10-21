@@ -1,15 +1,15 @@
 -- Path to Ascension: Novice Rider is offered and turned in at the racial riding trainers; learning Novice Riding
 -- (its kill credit 445303) completes it and the turn-in gives the race's starter mount
 INSERT INTO `creature_template` (`entry`, `name`, `faction`, `unit_class`, `unit_flags`, `type`)
-VALUES (445303, 'Learn Novice Riding Credit', 35, 1, 2, 7) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`);
+VALUES (445303, '学习初级骑术信用', 35, 1, 2, 7) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`);
 DELETE FROM `creature_template_model` WHERE `CreatureID` = 445303;
 INSERT INTO `creature_template_model` (`CreatureID`, `Idx`, `CreatureDisplayID`, `DisplayScale`, `Probability`) VALUES
 (445303, 0, 48504, 1, 1);
 
 UPDATE `quest_template` SET
-    `QuestDescription` = 'Greetings, Recruit!$B$BSome trainers cling to the old ways, sending fresh adventurers trudging across the land for what feels like forty miles uphill both ways. That won''t be necessary here. You''ll learn Novice Riding for a nominal fee, granting you your first mount and a steady 40% increase in speed.$B$BThere''s more than enough to keep you busy on your journey, discovering treasures, honing your skills, and testing your mettle. No sense slowing you down when the world is waiting.$B$BHere, we''d rather see you ride than wear out your boots. When you''ve gained more skill, and coin, you may return to a riding trainer to improve your riding skill and increase your mount speed even further.',
-    `LogDescription` = 'Learn how to ride and claim your first mount.', `QuestCompletionLog` = 'Return to the Riding Trainer.',
-    `RequiredNpcOrGo1` = 445303, `RequiredNpcOrGoCount1` = 1, `ObjectiveText1` = 'Learn Novice Riding', `RewardAmount1` = 1
+    `QuestDescription` = '你好，新兵！$B$B有些训练师固守旧习，让新冒险者跋山涉水，仿佛要走四十英里的上坡路，来回都是上坡。这里不必如此。只需支付一笔象征性的费用，你就能学会初级骑术，获得你的第一匹坐骑，并稳定提升 40% 的移动速度。$B$B旅途中有足够多的事让你忙起来：发现宝藏、磨练技艺、考验胆识。世界正在等着你，没有理由拖慢你的脚步。$B$B在这里，我们更愿意看到你骑马前行，而不是磨坏你的靴子。当你积累了更多技能和金币后，可以回到骑术训练师处提升骑术技能，进一步提高坐骑速度。',
+    `LogDescription` = '学习如何骑乘并领取你的第一匹坐骑。', `QuestCompletionLog` = '回到骑术训练师处。',
+    `RequiredNpcOrGo1` = 445303, `RequiredNpcOrGoCount1` = 1, `ObjectiveText1` = '学习初级骑术', `RewardAmount1` = 1
 WHERE `ID` IN (4420430, 4420431, 4420432, 4420433, 4420434, 4420435, 4420436, 4420437, 4420438, 4420439);
 UPDATE `quest_template` SET `AllowableRaces` = 1, `RewardItem1` = 5656 WHERE `ID` = 4420430;
 UPDATE `quest_template` SET `AllowableRaces` = 2, `RewardItem1` = 5665 WHERE `ID` = 4420431;
@@ -25,28 +25,28 @@ UPDATE `quest_template_addon` SET `SpecialFlags` = 0 WHERE `ID` IN (4420430, 442
 
 DELETE FROM `quest_request_items` WHERE `ID` IN (4420430, 4420431, 4420432, 4420433, 4420434, 4420435, 4420436, 4420437, 4420438, 4420439);
 INSERT INTO `quest_request_items` (`ID`, `CompletionText`) VALUES
-(4420430, 'Have you learned to ride yet, $N?'),
-(4420431, 'Have you learned to ride yet, $N?'),
-(4420432, 'Have you learned to ride yet, $N?'),
-(4420433, 'Have you learned to ride yet, $N?'),
-(4420434, 'Have you learned to ride yet, $N?'),
-(4420435, 'Have you learned to ride yet, $N?'),
-(4420436, 'Have you learned to ride yet, $N?'),
-(4420437, 'Have you learned to ride yet, $N?'),
-(4420438, 'Have you learned to ride yet, $N?'),
-(4420439, 'Have you learned to ride yet, $N?');
+(4420430, '你学会骑术了吗，$N？'),
+(4420431, '你学会骑术了吗，$N？'),
+(4420432, '你学会骑术了吗，$N？'),
+(4420433, '你学会骑术了吗，$N？'),
+(4420434, '你学会骑术了吗，$N？'),
+(4420435, '你学会骑术了吗，$N？'),
+(4420436, '你学会骑术了吗，$N？'),
+(4420437, '你学会骑术了吗，$N？'),
+(4420438, '你学会骑术了吗，$N？'),
+(4420439, '你学会骑术了吗，$N？');
 DELETE FROM `quest_offer_reward` WHERE `ID` IN (4420430, 4420431, 4420432, 4420433, 4420434, 4420435, 4420436, 4420437, 4420438, 4420439);
 INSERT INTO `quest_offer_reward` (`ID`, `RewardText`) VALUES
-(4420430, 'Here is your first mount, $N. Ride well.'),
-(4420431, 'Here is your first mount, $N. Ride well.'),
-(4420432, 'Here is your first mount, $N. Ride well.'),
-(4420433, 'Here is your first mount, $N. Ride well.'),
-(4420434, 'Here is your first mount, $N. Ride well.'),
-(4420435, 'Here is your first mount, $N. Ride well.'),
-(4420436, 'Here is your first mount, $N. Ride well.'),
-(4420437, 'Here is your first mount, $N. Ride well.'),
-(4420438, 'Here is your first mount, $N. Ride well.'),
-(4420439, 'Here is your first mount, $N. Ride well.');
+(4420430, '这是你的第一匹坐骑，$N。愿你骑乘愉快。'),
+(4420431, '这是你的第一匹坐骑，$N。愿你骑乘愉快。'),
+(4420432, '这是你的第一匹坐骑，$N。愿你骑乘愉快。'),
+(4420433, '这是你的第一匹坐骑，$N。愿你骑乘愉快。'),
+(4420434, '这是你的第一匹坐骑，$N。愿你骑乘愉快。'),
+(4420435, '这是你的第一匹坐骑，$N。愿你骑乘愉快。'),
+(4420436, '这是你的第一匹坐骑，$N。愿你骑乘愉快。'),
+(4420437, '这是你的第一匹坐骑，$N。愿你骑乘愉快。'),
+(4420438, '这是你的第一匹坐骑，$N。愿你骑乘愉快。'),
+(4420439, '这是你的第一匹坐骑，$N。愿你骑乘愉快。');
 
 DELETE FROM `creature_queststarter` WHERE `quest` IN (4420430, 4420431, 4420432, 4420433, 4420434, 4420435, 4420436, 4420437, 4420438, 4420439);
 INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES

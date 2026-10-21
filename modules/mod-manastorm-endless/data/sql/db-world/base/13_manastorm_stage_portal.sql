@@ -84,7 +84,7 @@ INSERT INTO `creature_template`
 VALUES
 (
     80910,
-    'The Manastorm',
+    '法力风暴',
     '',
     'vehichleCursor',
     0,

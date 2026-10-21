@@ -194,7 +194,7 @@ INSERT IGNORE INTO `creature_template`
 VALUES
 (
     10111377,
-    'Treasure Keeper',
+    '宝藏守护者',
     NULL,
     1,
     1,

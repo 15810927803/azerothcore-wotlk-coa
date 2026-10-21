@@ -15,5 +15,5 @@
 
 DELETE FROM `coa_client_spell_description` WHERE `ID` IN (561359, 560933);
 INSERT INTO `coa_client_spell_description` (`ID`,`Description`) VALUES
-(561359,'Casting |cffffffffUnbridled Rage|r now causes you to begin swinging your weapon around you, dealing ${$560932m1+$560932ppl1+$AP*.3} Physical damage to up to $560932i nearby enemies every second for $560933d.'),
-(560933,'Begin swinging your weapon around you dealing ${$560932m1+$560932ppl1+$AP*.3} Physical Damage to $560932i nearby enemies every second.');
+(561359,'施放 |cffffffff无拘之怒|r 现在会使你开始挥动武器，每秒对最多 $560932i 名附近敌人造成 ${$560932m1+$560932ppl1+$AP*.3} 点物理伤害，持续 $560933d。'),
+(560933,'开始挥动武器，每秒对 $560932i 名附近敌人造成 ${$560932m1+$560932ppl1+$AP*.3} 点物理伤害。');

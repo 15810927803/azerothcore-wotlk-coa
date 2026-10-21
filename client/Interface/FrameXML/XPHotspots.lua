@@ -24,7 +24,7 @@ function H.ShowFeedback()
         f:SetScript("OnDragStart",function(self) self:StartMoving() end)
         f:SetScript("OnDragStop",function(self) self:StopMovingOrSizing() end)
         local title=f:CreateFontString(nil,"OVERLAY","GameFontNormal")
-        title:SetPoint("TOPLEFT",10,-8);title:SetText("XP Hotspot Messages")
+        title:SetPoint("TOPLEFT",10,-8);title:SetText("经验热点消息")
         local log=CreateFrame("ScrollingMessageFrame",nil,f);H.feedbackLog=log
         log:SetPoint("TOPLEFT",10,-28);log:SetPoint("BOTTOMRIGHT",-10,10)
         log:SetFontObject(GameFontHighlightSmall);log:SetJustifyH("LEFT")
@@ -42,11 +42,11 @@ local function Notify(text)
     H.feedbackHistory[#H.feedbackHistory+1]=text
     if #H.feedbackHistory>100 then table.remove(H.feedbackHistory,1) end
     if H.feedbackLog then H.feedbackLog:AddMessage(text) end
-    if not H.ShowFeedback() then DEFAULT_CHAT_FRAME:AddMessage("|cffb080ffHotspots:|r " .. text) end
+    if not H.ShowFeedback() then DEFAULT_CHAT_FRAME:AddMessage("|cffb080ff热点:|r " .. text) end
 end
 local function Send(text)
-    if #text > 240 then Notify("Request too long."); return end
-    if #H.queue >= 128 then Notify("Please wait for pending hotspot requests.");return end
+    if #text > 240 then Notify("请求过长。"); return end
+    if #H.queue >= 128 then Notify("请等待待处理的热点请求。");return end
     H.queue[#H.queue + 1] = text
     return true
 end
@@ -151,22 +151,22 @@ end
 local function Tooltip(r, owner)
     WorldMapTooltip:SetOwner(owner,"ANCHOR_RIGHT")
     WorldMapTooltip:ClearLines()
-    WorldMapTooltip:AddLine(r.name or "Hotspot",1,1,1)
-    WorldMapTooltip:AddLine("+" .. N(r.xp) .. "% monster-kill experience",0.7,1,0.4)
-    WorldMapTooltip:AddLine("Any eligible creature kill while you are inside this area.",0.7,0.8,1,true)
+    WorldMapTooltip:AddLine(r.name or "热点",1,1,1)
+    WorldMapTooltip:AddLine("+" .. N(r.xp) .. "% 怪物击杀经验",0.7,1,0.4)
+    WorldMapTooltip:AddLine("当你身处此区域内时，任何符合条件的生物击杀均可生效。",0.7,0.8,1,true)
     local remaining=math.max(0,N(r.ends)-Now())
-    WorldMapTooltip:AddLine(remaining>0 and SecondsToTime(remaining) .. " remaining" or "Inactive",1,0.82,0)
-    if r.kind == "zone" then WorldMapTooltip:AddLine("Entire zone",0.7,0.8,1) end
+    WorldMapTooltip:AddLine(remaining>0 and SecondsToTime(remaining) .. " 剩余" or "未激活",1,0.82,0)
+    if r.kind == "zone" then WorldMapTooltip:AddLine("整个区域",0.7,0.8,1) end
     if gm and r.geometrySource=="approximate-spawn-circle" then
-        WorldMapTooltip:AddLine("Approximate spawn area; no usable quest polygon recovered.",1,0.7,0.3,true)
+        WorldMapTooltip:AddLine("近似刷新区域；未恢复可用的任务多边形。",1,0.7,0.3,true)
     end
-    if B(r.outlineUnavailable) then WorldMapTooltip:AddLine("Zone boundary preview unavailable",1,0.7,0.3,true) end
+    if B(r.outlineUnavailable) then WorldMapTooltip:AddLine("区域边界预览不可用",1,0.7,0.3,true) end
     if gm then
-        WorldMapTooltip:AddLine("ID " .. N(r.id) .. " | " .. (B(r.enabled) and "Enabled" or "Disabled"),0.8,0.8,0.8)
+        WorldMapTooltip:AddLine("ID " .. N(r.id) .. " | " .. (B(r.enabled) and "已启用" or "已禁用"),0.8,0.8,0.8)
         if not B(r.allowed) and not B(r.draft) then
-            WorldMapTooltip:AddLine("Unavailable: map restriction or unresolved geometry",1,0.4,0.4,true)
+            WorldMapTooltip:AddLine("不可用：地图限制或几何未解析",1,0.4,0.4,true)
         end
-        WorldMapTooltip:AddLine("Click to select and manage",0.7,0.8,1)
+        WorldMapTooltip:AddLine("点击以选择并管理",0.7,0.8,1)
     end
     WorldMapTooltip:Show()
 end
@@ -389,12 +389,12 @@ function H.DrawBrowser()
         b.row=r
         if r then
             b:SetText((N(r.ends)>Now() and "|cff80ff80" or B(r.enabled) and "|cffffffff" or "|cff888888") ..
-                (selected and N(selected.id)==N(r.id) and "[SELECTED] " or "")..
+                (selected and N(selected.id)==N(r.id) and "[已选中] " or "")..
                 (H.merge[N(r.id)] and "[+] " or "")..N(r.id).." "..(r.name or "").."|r")
             b:Show()
         else b:Hide() end
     end
-    browser.page:SetText("Page "..(H.page or 1).." / "..(H.pages or 1))
+    browser.page:SetText("第 "..(H.page or 1).." / "..(H.pages or 1).." 页")
     browser:Show()
 end
 local function ShowBrowser()
@@ -407,7 +407,7 @@ local function ShowBrowser()
         browser:SetBackdropColor(0.03,0.11,0.17,0.97)
         browser:SetBackdropBorderColor(0.78,0.60,0.27,1)
         local title=browser:CreateFontString(nil,"OVERLAY","GameFontNormal")
-        title:SetPoint("TOPLEFT",12,-12);title:SetText("XP Hotspots")
+        title:SetPoint("TOPLEFT",12,-12);title:SetText("经验热点")
         title:SetTextColor(0.95,0.76,0.39)
         browser.title=title
         local search=CreateFrame("EditBox",nil,browser)
@@ -424,7 +424,7 @@ local function ShowBrowser()
         end)
         search:SetScript("OnEscapePressed",function(self) self:ClearFocus() end)
         search:SetScript("OnEnterPressed",function(self) self:ClearFocus();Search() end)
-        Button(browser,"Find",205,-34,45,Search)
+        Button(browser,"查找",205,-34,45,Search)
         browser.rows={}
         for i=1,12 do
             local b=Button(browser,"",10,-64-(i-1)*27,240,function(self)
@@ -443,11 +443,11 @@ local function ShowBrowser()
             end)
             browser.rows[i]=b
         end
-        Button(browser,"Previous",10,-393,100,function() H.Refresh(math.max(1,(H.page or 1)-1)) end)
-        Button(browser,"Next",150,-393,100,function() H.Refresh(math.min(H.pages or 1,(H.page or 1)+1)) end)
+        Button(browser,"上一页",10,-393,100,function() H.Refresh(math.max(1,(H.page or 1)-1)) end)
+        Button(browser,"下一页",150,-393,100,function() H.Refresh(math.min(H.pages or 1,(H.page or 1)+1)) end)
         browser.page=browser:CreateFontString(nil,"OVERLAY","GameFontNormalSmall")
         browser.page:SetPoint("TOP",0,-424)
-        Button(browser,"This map / all locations",10,-440,240,function() H.allMaps=not H.allMaps;H.Refresh(1) end)
+        Button(browser,"此地图 / 所有地点",10,-440,240,function() H.allMaps=not H.allMaps;H.Refresh(1) end)
     end
     H.DrawBrowser()
 end
@@ -469,13 +469,13 @@ local function Field(label,y,default)
     return edit
 end
 local function SelectedCommand(action)
-    if not selected then Notify("Select a hotspot marker first.");return end
+    if not selected then Notify("请先选择一个热点标记。");return end
     Send(action .. " " .. N(selected.id) .. " " .. N(selected.revision))
 end
 local function ApplyFields()
     if H.localSaving then return false end
-    if H.localStrokes and #H.localStrokes>0 then Notify("Settings will be submitted with Save Draft.");return true end
-    if not draft or selected and N(selected.id)~=N(draft.id) then Notify("Click Edit selected first.");return false end
+    if H.localStrokes and #H.localStrokes>0 then Notify("设置将随“保存草稿”一起提交。");return true end
+    if not draft or selected and N(selected.id)~=N(draft.id) then Notify("请先点击“编辑选中项”。");return false end
     if H.canDesign then Send("name "..fields.Name:GetText()) end
     Send("settings "..fields["XP bonus %"]:GetText().." "..N(fields.Minutes:GetText())*60 .." "..
         fields.Weight:GetText().." "..N(fields["Cooldown min"]:GetText())*60 .." "..
@@ -484,10 +484,10 @@ local function ApplyFields()
     return true
 end
 local generalLabels={
-    {2,"Total active",20},{6,"Eastern Kingdoms",20},{7,"Kalimdor",20},
-    {8,"Outland",20},{9,"Northrend",20},{10,"Alliance areas",20},
-    {11,"Horde areas",20},{12,"Neutral / contested",20},{3,"Default XP bonus %",1000},
-    {4,"Default duration (min)",1440},{5,"Default cooldown (min)",10080}
+    {2,"当前激活总数",20},{6,"东部王国",20},{7,"卡利姆多",20},
+    {8,"外域",20},{9,"诺森德",20},{10,"联盟区域",20},
+    {11,"部落区域",20},{12,"中立 / 争夺中",20},{3,"默认经验加成 %",1000},
+    {4,"默认持续时间（分钟）",1440},{5,"默认冷却时间（分钟）",10080}
 }
 local function PopulateGeneral()
     if not generalPanel or not H.general or generalDirty then return end
@@ -521,10 +521,10 @@ function H.ShowGeneral()
         generalPanel:SetBackdropColor(0.03,0.11,0.17,0.97)
         generalPanel:SetBackdropBorderColor(0.78,0.60,0.27,1)
         local title=generalPanel:CreateFontString(nil,"OVERLAY","GameFontNormal")
-        title:SetPoint("TOPLEFT",12,-12);title:SetText("XP Hotspots â€” General Settings")
+        title:SetPoint("TOPLEFT",12,-12);title:SetText("经验热点 — 通用设置")
         Button(generalPanel,"X",325,-5,25,function() generalPanel:Hide() end)
-        Button(generalPanel,"Locations",12,-35,150,H.ShowPanel)
-        Button(generalPanel,"General Settings",180,-35,165,function() end)
+        Button(generalPanel,"地点",12,-35,150,H.ShowPanel)
+        Button(generalPanel,"通用设置",180,-35,165,function() end)
         generalFields={}
         for row,entry in ipairs(generalLabels) do
             local index=entry[1]
@@ -543,26 +543,26 @@ function H.ShowGeneral()
             label:SetPoint("LEFT",check,"RIGHT",0,0);label:SetText(text)
             return check
         end
-        generalFields[1]=Check("Global start announcements",-382)
+        generalFields[1]=Check("全局开始公告",-382)
         generalFields[1]:SetScript("OnClick",function() generalDirty=true end)
-        generalFields[14]=Check("Full-zone hotspots only",-409)
+        generalFields[14]=Check("仅完整区域热点",-409)
         generalFields[14]:SetScript("OnClick",function() generalDirty=true end)
-        generalFields.apply=Check("Apply defaults to all existing hotspots",-436)
+        generalFields.apply=Check("将默认值应用于所有现有点击",-436)
         generalFields.apply:SetChecked(false)
         local hint=generalPanel:CreateFontString(nil,"OVERLAY","GameFontHighlightSmall")
         hint:SetPoint("TOPLEFT",12,-465);hint:SetWidth(334)
-        hint:SetText("Counts are maximums (0 excludes, 20 unrestricted). Lower limits stop excess events. "..
-            "Applying defaults overwrites XP, duration and cooldown, including active events; "..
-            "duration is measured from their original start. Full-zone only stops other active shapes; "..
-            "turn it off to restore normal eligibility.")
-        Button(generalPanel,"Save general settings",12,-535,200,function()
+        hint:SetText("计数为上限（0 表示排除，20 表示无限制）。降低上限会停止超量事件。"..
+            "应用默认值会覆盖经验值、持续时间和冷却时间，包括已激活的事件；"..
+            "持续时间从其原始开始时间计算。仅完整区域会停止其他激活形状；"..
+            "关闭此项可恢复正常资格。")
+        Button(generalPanel,"保存通用设置",12,-535,200,function()
             if not gm or not generalRevision then return end
             local values={generalFields[1]:GetChecked() and 1 or 0}
             for _,entry in ipairs(generalLabels) do
                 local index=entry[1]
                 local value=tonumber(generalFields[index]:GetText())
                 if not value or value<0 or value>entry[3] or value~=math.floor(value) or index==4 and value<1 then
-                    Notify("Invalid value: "..entry[2]);return
+                    Notify("无效值："..entry[2]);return
                 end
                 values[index]=value*((index==4 or index==5) and 60 or 1)
             end
@@ -571,7 +571,7 @@ function H.ShowGeneral()
             Send("general "..table.concat(values," "))
             H.generalSaving=true
         end)
-        Button(generalPanel,"Reload",230,-535,110,function()
+        Button(generalPanel,"重新加载",230,-535,110,function()
             generalDirty=false;Send("general")
         end)
     end
@@ -583,8 +583,8 @@ function H.Select(row)
     H.Draw()
 end
 StaticPopupDialogs["XP_HOTSPOT_DELETE"]={
-    text="Permanently delete hotspot %s?\n\nThis cannot be reversed.",
-    button1="Delete",button2=CANCEL or "Cancel",timeout=0,whileDead=true,hideOnEscape=true,
+    text="永久删除热点 %s？\n\n此操作无法撤销。",
+    button1="删除",button2=CANCEL or "取消",timeout=0,whileDead=true,hideOnEscape=true,
     OnHide=function(self)
         local saved=self.hotspotPresentation
         self.hotspotPresentation=nil
@@ -617,65 +617,65 @@ function H.ShowPanel()
         panel:SetBackdropColor(0.03,0.11,0.17,0.97)
         panel:SetBackdropBorderColor(0.78,0.60,0.27,1)
         local title=panel:CreateFontString(nil,"OVERLAY","GameFontNormal")
-        title:SetPoint("TOPLEFT",10,-12);title:SetText("XP Hotspot Manager")
+        title:SetPoint("TOPLEFT",10,-12);title:SetText("经验热点管理器")
         title:SetTextColor(0.95,0.76,0.39)
         panel.title=title
         Button(panel,"X",325,-5,25,function() panel:Hide();if browser then browser:Hide() end end)
-        Button(panel,"Locations",12,-35,150,function() end)
-        Button(panel,"General Settings",180,-35,165,H.ShowGeneral)
-        Field("Name",-100,"New Hotspot")
-        Field("XP bonus %",-125,"150")
-        Field("Minutes",-150,"60")
-        Field("Weight",-175,"1")
-        Field("Cooldown min",-200,"60")
-        Field("Radius yards",-225,"150")
+        Button(panel,"地点",12,-35,150,function() end)
+        Button(panel,"通用设置",180,-35,165,H.ShowGeneral)
+        Field("名称",-100,"新热点")
+        Field("经验加成 %",-125,"150")
+        Field("分钟",-150,"60")
+        Field("权重",-175,"1")
+        Field("冷却分钟",-200,"60")
+        Field("半径码数",-225,"150")
         local icon=CreateFrame("CheckButton",nil,panel,"UICheckButtonTemplate")
         icon:SetPoint("TOPLEFT",12,-525);icon:SetSize(24,24);icon:SetChecked(true)
         local iconText=panel:CreateFontString(nil,"OVERLAY","GameFontNormalSmall")
-        iconText:SetPoint("LEFT",icon,"RIGHT",0,0);iconText:SetText("Show XP icon")
+        iconText:SetPoint("LEFT",icon,"RIGHT",0,0);iconText:SetText("显示经验图标")
         local fill=CreateFrame("CheckButton",nil,panel,"UICheckButtonTemplate")
         fill:SetPoint("TOPLEFT",180,-525);fill:SetSize(24,24);fill:SetChecked(true)
         local fillText=panel:CreateFontString(nil,"OVERLAY","GameFontNormalSmall")
-        fillText:SetPoint("LEFT",fill,"RIGHT",0,0);fillText:SetText("Show highlight")
+        fillText:SetPoint("LEFT",fill,"RIGHT",0,0);fillText:SetText("显示高亮")
         fields.icon,fields.fill=icon,fill
         H.designButtons={}
         local function DesignButton(...)
             local b=Button(panel,...);H.designButtons[#H.designButtons+1]=b;return b
         end
-        DesignButton("New Draft",12,-65,150,function() H.NewDraft() end)
-        DesignButton("Circle",12,-255,102,function() H.StartShape("circle") end)
-        DesignButton("Whole zone",126,-255,102,function() H.StartShape("zone") end)
-        DesignButton("Polygon",240,-255,102,function() H.StartShape("polygon") end)
-        Button(panel,"Edit selected",12,-285,150,function()
+        DesignButton("新建草稿",12,-65,150,function() H.NewDraft() end)
+        DesignButton("圆形",12,-255,102,function() H.StartShape("circle") end)
+        DesignButton("整个区域",126,-255,102,function() H.StartShape("zone") end)
+        DesignButton("多边形",240,-255,102,function() H.StartShape("polygon") end)
+        Button(panel,"编辑选中项",12,-285,150,function()
             H.vertex=nil;H.newKind=nil;H.awaitingNewDraft=nil;H.expectedDraft=nil
-            if H.localSaving or H.localStrokes and #H.localStrokes>0 then Notify("Save or cancel the local drawing first.");return end
+            if H.localSaving or H.localStrokes and #H.localStrokes>0 then Notify("请先保存或取消本地绘制。");return end
             if selected then Send("edit "..N(selected.id)) end
         end)
-        DesignButton("Merge selection",180,-285,165,function()
+        DesignButton("合并选中项",180,-285,165,function()
             local ids={};for id in pairs(H.merge) do ids[#ids+1]=id end;table.sort(ids)
-            if #ids<2 or #ids>8 then Notify("SHIFT-click 2 to 8 area markers or browser rows to merge.");return end
+            if #ids<2 or #ids>8 then Notify("按住 SHIFT 点击 2 到 8 个区域标记或浏览行以合并。");return end
             local command="merge"
             for _,id in ipairs(ids) do command=command.." "..id.." "..H.merge[id] end
             Send(command);H.newKind=nil;H.vertex=nil
         end)
-        Button(panel,"Apply settings",12,-315,150,ApplyFields)
-        Button(panel,"Save draft",180,-65,165,function()
-            if H.stroke or H.paintPending then Notify("Wait for the drawing preview before saving.");return end
-            if not draft or selected and N(selected.id)~=N(draft.id) then Notify("Click Edit selected first.");return end
-            H.SaveLocalPaint(fields["XP bonus %"]:GetText().." "..N(fields.Minutes:GetText())*60 .." "..
-                fields.Weight:GetText().." "..N(fields["Cooldown min"]:GetText())*60 .." "..
+        Button(panel,"应用设置",12,-315,150,ApplyFields)
+        Button(panel,"保存草稿",180,-65,165,function()
+            if H.stroke or H.paintPending then Notify("请等待绘制预览完成后再保存。");return end
+            if not draft or selected and N(selected.id)~=N(draft.id) then Notify("请先点击“编辑选中项”。");return end
+            H.SaveLocalPaint(fields["经验加成 %"]:GetText().." "..N(fields["分钟"]:GetText())*60 .." "..
+                fields["权重"]:GetText().." "..N(fields["冷却分钟"]:GetText())*60 .." "..
                 (fields.icon:GetChecked() and "1" or "0").." "..(fields.fill:GetChecked() and "1" or "0")..
-                " "..fields["Radius yards"]:GetText().." "..fields.Name:GetText())
+                " "..fields["半径码数"]:GetText().." "..fields["名称"]:GetText())
         end)
-        Button(panel,"Enable selected",12,-345,150,function() SelectedCommand("enable") end)
-        Button(panel,"Disable selected",180,-345,165,function() SelectedCommand("disable") end)
-        Button(panel,"Move to next",12,-375,150,function() SelectedCommand("next") end)
-        Button(panel,"Stop selected",180,-375,165,function() SelectedCommand("stop") end)
-        Button(panel,"Teleport to center",12,-465,333,function() SelectedCommand("teleport") end)
-        H.deleteButton=Button(panel,"Delete selected",180,-405,165,function()
-            if not H.canDelete then Notify("Level 3 GM required to permanently delete hotspots.");return end
+        Button(panel,"启用选中项",12,-345,150,function() SelectedCommand("enable") end)
+        Button(panel,"禁用选中项",180,-345,165,function() SelectedCommand("disable") end)
+        Button(panel,"移至下一个",12,-375,150,function() SelectedCommand("next") end)
+        Button(panel,"停止选中项",180,-375,165,function() SelectedCommand("stop") end)
+        Button(panel,"传送到中心",12,-465,333,function() SelectedCommand("teleport") end)
+        H.deleteButton=Button(panel,"删除选中项",180,-405,165,function()
+            if not H.canDelete then Notify("永久删除热点需要 3 级 GM 权限。");return end
             if not selected or B(selected.draft) or N(selected.id)==0 then
-                Notify("Select a saved hotspot first.");return
+                Notify("请先选择一个已保存的热点。");return
             end
             local popup=StaticPopup_Show("XP_HOTSPOT_DELETE",selected.name or N(selected.id),nil,
                 {id=N(selected.id),revision=N(selected.revision)})
@@ -690,68 +690,68 @@ function H.ShowPanel()
                 popup:SetFrameLevel(math.max(WorldMapFrame:GetFrameLevel(),panel:GetFrameLevel())+20)
                 popup:Raise()
             else
-                Notify("Delete confirmation could not open. Close another dialog and try again.")
+                Notify("无法打开删除确认框。请关闭其他对话框后重试。")
             end
         end)
-        Button(panel,"Browse / active",12,-495,333,function()
+        Button(panel,"浏览 / 已激活",12,-495,333,function()
             H.catalog=not H.catalog;ShowBrowser();H.Refresh(1)
         end)
-        fields.announce=Button(panel,"Announcements",12,-405,150,function()
+        fields.announce=Button(panel,"公告",12,-405,150,function()
             Send("announce "..(announcements and "0" or "1"))
         end)
-        Button(panel,"Cancel draft",180,-315,165,function()
-            if H.localSaving then Notify("Wait for the save result.");return end
+        Button(panel,"取消草稿",180,-315,165,function()
+            if H.localSaving then Notify("请等待保存结果。");return end
             H.ClearLocalPaint()
             if selected then selected=H.rows[N(selected.id)] end
             draft=nil;H.awaitingNewDraft=nil;H.expectedDraft=nil;H.newKind=nil;H.newCenter=nil;H.vertex=nil;H.merge={};Send("cancel");H.Draw();H.DrawBrowser()
         end)
-        Button(panel,"Refresh",12,-435,150,H.Refresh)
-        DesignButton("Drawing tools",180,-435,165,function() H.ShowPaintTools() end)
+        Button(panel,"刷新",12,-435,150,H.Refresh)
+        DesignButton("绘制工具",180,-435,165,function() H.ShowPaintTools() end)
         local hint=panel:CreateFontString(nil,"OVERLAY","GameFontHighlightSmall")
         hint:SetPoint("TOPLEFT",12,-555);hint:SetWidth(333)
         panel.hint=hint
-        hint:SetText("CTRL-click starts a circle. Choose Polygon to map its boundary. Editing: CTRL-click moves center/adds vertex; "..
-            "ALT-click selects vertex; CTRL-right undoes. Drawing tools: CTRL-drag to trace or brush. Save, then Enable.")
+        hint:SetText("按住 CTRL 点击开始绘制圆形。选择“多边形”来描绘其边界。编辑时：按住 CTRL 点击移动中心/添加顶点；"..
+            "按住 ALT 点击选择顶点；按住 CTRL 并右键撤销。绘制工具：按住 CTRL 拖拽来描绘或刷取。保存后，再启用。")
     end
     local r=selected or draft
-    panel.title:SetText(r and ("Selected Hotspot #"..N(r.id)) or "XP Hotspot Manager")
+    panel.title:SetText(r and ("已选热点 #"..N(r.id)) or "经验热点管理器")
     if r then
         fields.Name:SetText(r.name or "")
-        fields["XP bonus %"]:SetText(N(r.xp));fields.Minutes:SetText(N(r.duration)/60)
-        fields.Weight:SetText(N(r.weight));fields["Cooldown min"]:SetText(N(r.cooldown)/60)
-        fields["Radius yards"]:SetText(N(r.radius))
+        fields["经验加成 %"]:SetText(N(r.xp));fields["分钟"]:SetText(N(r.duration)/60)
+        fields["权重"]:SetText(N(r.weight));fields["冷却分钟"]:SetText(N(r.cooldown)/60)
+        fields["半径码数"]:SetText(N(r.radius))
         fields.icon:SetChecked(B(r.icon));fields.fill:SetChecked(B(r.highlight))
     end
     H.UpdateDesignAccess()
     panel:Show()
-    fields.announce:SetText(announcements and "Announce: ON" or "Announce: OFF")
+    fields.announce:SetText(announcements and "公告：开" or "公告：关")
     ShowBrowser()
 end
 function H.NewDraft()
-    if H.localSaving or H.localStrokes and #H.localStrokes>0 then Notify("Save or cancel the local drawing first.");return end
-    if not H.canDesign then Notify("Level 2 GM required to create hotspots.");return end
+    if H.localSaving or H.localStrokes and #H.localStrokes>0 then Notify("请先保存或取消本地绘制。");return end
+    if not H.canDesign then Notify("创建热点需要 2 级 GM 权限。");return end
     if draft then Send("cancel") end
     H.stroke=nil;H.paintMode="Points";H.paintConsumed=nil;H.paintPending=nil
     H.awaitingNewDraft=true;H.expectedDraft=nil
     if H.paintPanel then H.paintPanel:Hide() end
     selected=nil;draft=nil;H.newKind=nil;H.newCenter=nil;H.vertex=nil;H.merge={}
     H.ShowPanel()
-    fields.Name:SetText("New Hotspot")
-    fields["XP bonus %"]:SetText(H.general and H.general[3] or 150)
-    fields.Minutes:SetText((H.general and H.general[4] or 3600)/60)
-    fields["Cooldown min"]:SetText((H.general and H.general[5] or 3600)/60)
-    fields.Weight:SetText(1);fields["Radius yards"]:SetText(150)
+    fields.Name:SetText("新热点")
+    fields["经验加成 %"]:SetText(H.general and H.general[3] or 150)
+    fields["分钟"]:SetText((H.general and H.general[4] or 3600)/60)
+    fields["冷却分钟"]:SetText((H.general and H.general[5] or 3600)/60)
+    fields["权重"]:SetText(1);fields["半径码数"]:SetText(150)
     fields.icon:SetChecked(true);fields.fill:SetChecked(true)
-    H.Draw();Notify("CTRL-click a zone map to start a circular draft. Choose Polygon to map a boundary.")
+    H.Draw();Notify("按住 CTRL 点击区域地图以开始圆形草稿。选择“多边形”来描绘边界。")
 end
 function H.StartShape(kind)
-    if H.localSaving or H.localStrokes and #H.localStrokes>0 then Notify("Save or cancel the local drawing first.");return end
-    if not H.canDesign then Notify("Level 2 GM required to change boundaries.");return end
+    if H.localSaving or H.localStrokes and #H.localStrokes>0 then Notify("请先保存或取消本地绘制。");return end
+    if not H.canDesign then Notify("更改边界需要 2 级 GM 权限。");return end
     if draft and N(draft.id)~=0 and (kind=="circle" or kind=="polygon") then
         if Send("shape "..kind) then H.paintPending=true end;return
     end
     if draft then
-        if N(draft.id)~=0 then Notify("Click New Draft before creating a different shape.");return end
+        if N(draft.id)~=0 then Notify("创建不同形状前请先点击“新建草稿”。");return end
         H.newCenter={map=N(draft.map),zone=N(draft.zone),x=N(draft.x),y=N(draft.y)}
         draft=nil;selected=nil
     elseif selected then
@@ -759,19 +759,19 @@ function H.StartShape(kind)
     end
     H.newKind=kind
     local c=H.newCenter
-    if not c then Notify("CTRL-click a zone map to set the new center.");return end
+    if not c then Notify("按住 CTRL 点击区域地图以设置新的中心。");return end
     H.newKind=nil;H.newCenter=nil;H.vertex=nil
-    H.expectedDraft={map=c.map,zone=c.zone,x=c.x,y=c.y,kind=kind,radius=fields["Radius yards"]:GetText()}
+    H.expectedDraft={map=c.map,zone=c.zone,x=c.x,y=c.y,kind=kind,radius=fields["半径码数"]:GetText()}
     H.awaitingNewDraft=true
     H.draftRequestedAt=GetTime()
-    Notify("Requesting "..kind.." draft on map "..c.map..", zone "..c.zone..". Waiting for server response.")
-    Send("newmap "..kind.." "..c.map.." "..c.zone.." "..c.x.." "..c.y.." "..fields.Name:GetText())
+    Notify("正在请求地图 "..c.map.."、区域 "..c.zone.." 上的 "..kind.." 草稿。等待服务器响应。")
+    Send("newmap "..kind.." "..c.map.." "..c.zone.." "..c.x.." "..c.y.." "..fields["名称"]:GetText())
 
 end
 function H.SetPaintMode(mode)
     if H.stroke then H.EndPaint() end
     H.paintMode=mode;H.Draw();if H.RebuildLocalPaint then H.RebuildLocalPaint() end
-    if H.paintLabel then H.paintLabel:SetText("Mode: "..mode.." | CTRL-drag on a zone map") end
+    if H.paintLabel then H.paintLabel:SetText("模式："..mode.." | 在区域地图上按住 CTRL 拖拽") end
 end
 function H.ShowPaintTools()
     if not gm or not H.canDesign then return end
@@ -785,29 +785,29 @@ function H.ShowPaintTools()
         f:SetScript("OnDragStart",function(self) self:StartMoving() end)
         f:SetScript("OnDragStop",function(self) self:StopMovingOrSizing() end)
         local title=f:CreateFontString(nil,"OVERLAY","GameFontNormal")
-        title:SetPoint("TOPLEFT",10,-10);title:SetText("Polygon drawing tools")
+        title:SetPoint("TOPLEFT",10,-10);title:SetText("多边形绘制工具")
         Button(f,"X",292,-4,28,function() f:Hide();H.SetPaintMode("Points") end)
-        Button(f,"Points",10,-35,96,function() H.SetPaintMode("Points") end)
-        Button(f,"Trace perimeter",112,-35,105,function() H.SetPaintMode("Trace") end)
-        Button(f,"Brush / fill",223,-35,96,function() H.SetPaintMode("Brush") end)
+        Button(f,"点",10,-35,96,function() H.SetPaintMode("Points") end)
+        Button(f,"描绘周界",112,-35,105,function() H.SetPaintMode("Trace") end)
+        Button(f,"画笔 / 填充",223,-35,96,function() H.SetPaintMode("Brush") end)
         H.brushKind="round";H.brushRadius=75
         local shape
-        shape=Button(f,"Brush: Round",10,-70,145,function()
+        shape=Button(f,"画笔：圆形",10,-70,145,function()
             H.brushKind=H.brushKind=="round" and "square" or "round"
-            shape:SetText("Brush: "..(H.brushKind=="round" and "Round" or "Square"))
+            shape:SetText("画笔："..(H.brushKind=="round" and "圆形" or "方形"))
         end)
         local label=f:CreateFontString(nil,"OVERLAY","GameFontHighlightSmall")
-        label:SetPoint("TOPLEFT",165,-72);label:SetText("Radius (yards)")
+        label:SetPoint("TOPLEFT",165,-72);label:SetText("半径（码）")
         local radius=CreateFrame("EditBox",nil,f,"InputBoxTemplate")
         radius:SetSize(55,20);radius:SetPoint("TOPLEFT",255,-70);radius:SetAutoFocus(false)
         radius:SetText("75");radius:SetMaxLetters(4)
         radius:SetScript("OnTextChanged",function(self) H.brushRadius=math.max(5,math.min(1000,N(self:GetText()))) end)
-        Button(f,"Undo stroke",10,-105,145,function() H.UndoLocalPaint() end)
+        Button(f,"撤销笔画",10,-105,145,function() H.UndoLocalPaint() end)
         H.paintLabel=f:CreateFontString(nil,"OVERLAY","GameFontHighlightSmall")
         H.paintLabel:SetPoint("TOPLEFT",10,-138);H.paintLabel:SetWidth(305)
         local hint=f:CreateFontString(nil,"OVERLAY","GameFontHighlightSmall")
         hint:SetPoint("TOPLEFT",10,-158);hint:SetWidth(305)
-        hint:SetText("Brush adds area; Trace replaces it. Up to 20 yards smoothing keeps a single perimeter. Red means a limit or invalid boundary.")
+        hint:SetText("画笔增加区域；描绘替换区域。最多 20 码的平滑处理可保持单一周界。红色表示超出限制或无效边界。")
     end
     H.paintPanel:Show();H.SetPaintMode(H.paintMode or "Points")
 end
@@ -929,12 +929,12 @@ function H.PaintLimit(reason,silent)
 end
 function H.UndoLocalPaint()
     if H.localSaving or H.stroke then return end
-    if H.localStrokes and #H.localStrokes>0 then table.remove(H.localStrokes);H.paintInvalid=nil;if H.paintLabel then H.paintLabel:SetText("Mode: "..(H.paintMode or "Brush").." | CTRL-drag on a zone map") end;H.RebuildLocalPaint() end
+    if H.localStrokes and #H.localStrokes>0 then table.remove(H.localStrokes);H.paintInvalid=nil;if H.paintLabel then H.paintLabel:SetText("模式："..(H.paintMode or "Brush").." | 在区域地图上按住 CTRL 拖拽") end;H.RebuildLocalPaint() end
 end
 function H.SaveLocalPaint(settings)
-    if H.localSaving or H.stroke then Notify("Finish drawing or wait for the save result.");return end
+    if H.localSaving or H.stroke then Notify("请完成绘制或等待保存结果。");return end
     if not H.localStrokes or #H.localStrokes==0 then Send("save "..settings);return end
-    if #H.queue>0 then Notify("Wait for pending requests, then Save Draft again.");return end
+    if #H.queue>0 then Notify("请等待待处理请求，然后再次点击“保存草稿”。");return end
     local requests={}
     local part=""
     local function Add(op)
@@ -956,8 +956,8 @@ function H.SaveLocalPaint(settings)
     for i,text in ipairs(requests) do requests[i]="localpart "..(i-1).." "..text end
     table.insert(requests,1,"localbegin "..N(H.localBase.id).." "..N(H.localBase.revision).." "..count)
     requests[#requests+1]="localsave "..settings
-    if #requests>128 then H.PaintLimit("Drawing exceeds upload capacity. Undo a stroke and retry.");return end
-    for _,text in ipairs(requests) do if #text>240 then Notify("Save request too long. Shorten the name.");return end end
+    if #requests>128 then H.PaintLimit("绘制超出上传容量。请撤销一笔后重试。");return end
+    for _,text in ipairs(requests) do if #text>240 then Notify("保存请求过长。请缩短名称。");return end end
     for _,text in ipairs(requests) do Send(text) end
     H.localSaving=true;H.localSaveAt=GetTime()
 end
@@ -967,7 +967,7 @@ function H.EndPaint()
     H.stroke=nil
     if stroke.mode=="Trace" and #stroke.points<3 or #stroke.points==0 then
         if H.localStrokes[#H.localStrokes]==stroke then table.remove(H.localStrokes) end
-        Notify("Trace at least three boundary points.")
+        Notify("描绘至少需要三个边界点。")
     end
     H.RebuildLocalPaint()
 end
@@ -980,12 +980,12 @@ function H.SamplePaint()
     local distance=last and math.sqrt((x-last.x)^2+(y-last.y)^2) or 999999
     if distance<(stroke.mode=="Brush" and stroke.radius/3 or 5) then return end
     if LocalCount()>=192 then
-        H.EndPaint();H.PaintLimit("192 drawing samples reached. Last addition blocked; Save or Undo before continuing.");return
+        H.EndPaint();H.PaintLimit("已达到 192 个绘制采样点。最后一次添加已被阻止；请保存或撤销后继续。");return
     end
     if math.abs(x)>19000 or math.abs(y)>19000 or distance>5000 and last then
-        H.EndPaint();H.PaintLimit("Map coordinate or 5000-yard stroke limit reached. Last addition blocked.");return
+        H.EndPaint();H.PaintLimit("已达到地图坐标或 5000 码笔画限制。最后一次添加已被阻止。");return
     end
-    if H.paintInvalid and H.paintLabel then H.paintLabel:SetText("Mode: "..(H.paintMode or "Brush").." | CTRL-drag on a zone map") end
+    if H.paintInvalid and H.paintLabel then H.paintLabel:SetText("模式："..(H.paintMode or "Brush").." | 在区域地图上按住 CTRL 拖拽") end
     H.paintInvalid=nil
     local point={x=x,y=y};stroke.points[#stroke.points+1]=point
     if stroke.mode=="Brush" then MarkBrush(stroke,last or point,point);RenderPaint()
@@ -993,7 +993,7 @@ function H.SamplePaint()
 end
 function H.UpdateDesignAccess()
     if not panel then return end
-    for _,key in ipairs({"Name","Radius yards"}) do
+    for _,key in ipairs({"名称","半径码数"}) do
         if fields[key] then fields[key]:EnableMouse(H.canDesign==true);fields[key]:EnableKeyboard(H.canDesign==true) end
     end
     for _,button in ipairs(H.designButtons or {}) do
@@ -1053,7 +1053,7 @@ local function Receive(text)
         enabled=true;gm=isGM=="1"
         if not gm and generalPanel then generalPanel:Hide() end
         announcements=a=="1";clockOffset=N(now)-time()
-        if fields.announce then fields.announce:SetText(announcements and "Announce: ON" or "Announce: OFF") end
+        if fields.announce then fields.announce:SetText(announcements and "公告：开" or "公告：关") end
         snapshot={generation=N(g),page=N(page),pages=N(pages)};incoming={};return
     end
     local index,total,data=text:match("^R|(%d+)|(%d+)|(.*)$")
@@ -1131,7 +1131,7 @@ frame:SetScript("OnEvent",function(_,event,prefix,text,channel,sender)
                     initialize(self,level,menuList)
                     if enabled and gm and filters:IsVisible() and (not level or level==1) then
                         local info=UIDropDownMenu_CreateInfo()
-                        info.text="XP Hotspot Menu";info.notCheckable=true
+                        info.text="经验热点菜单";info.notCheckable=true
                         info.func=function() if enabled and gm then H.ShowPanel() end end
                         UIDropDownMenu_AddButton(info,level)
                     end
@@ -1152,8 +1152,8 @@ frame:SetScript("OnEvent",function(_,event,prefix,text,channel,sender)
             if gm and IsControlKeyDown() and button=="LeftButton" and
                 (H.paintMode=="Brush" or H.paintMode=="Trace") then
                 local x=PaintPosition()
-                if not x then Notify("Select the hotspot, click Edit selected, then Polygon before painting. Open that hotspot's zone map.");H.paintConsumed=true;return end
-                if #H.queue>0 or H.paintPending or H.localSaving then Notify("Wait for pending hotspot requests.");H.paintConsumed=true;return end
+                if not x then Notify("请先选择热点，点击“编辑选中项”，再选择“多边形”后开始绘制。然后打开该热点所在的区域地图。");H.paintConsumed=true;return end
+                if #H.queue>0 or H.paintPending or H.localSaving then Notify("请等待待处理的热点请求。");H.paintConsumed=true;return end
                 H.paintConsumed=true
                 H.stroke={mode=H.paintMode,points={},radius=H.brushRadius or 75,kind=H.brushKind or "round"}
                 H.localStrokes=H.localStrokes or {};if #H.localStrokes==0 then H.localBase=draft end
@@ -1167,14 +1167,14 @@ frame:SetScript("OnEvent",function(_,event,prefix,text,channel,sender)
         WorldMapButton:SetScript("OnMouseUp",function(self,button,...)
             if H.paintConsumed then H.SamplePaint();H.EndPaint();H.paintConsumed=nil;return end
             if H.localSaving or H.localStrokes and #H.localStrokes>0 and IsControlKeyDown() then
-                Notify("Save or cancel the local drawing before point editing.");return
+                Notify("进行点编辑前请先保存或取消本地绘制。");return
             end
             if H.draftRequestedAt and IsControlKeyDown() then
-                Notify("Waiting for the server to create the draft before editing.");return
+                Notify("正在等待服务器创建草稿，然后才能编辑。");return
             end
             if gm and H.canDesign and not draft and IsControlKeyDown() and button=="LeftButton" then
                 local map,zone=View();local x,y=AtCursor()
-                if not x or not zone or zone==0 or Overview() then Notify("Open a zone map first.");return end
+                if not x or not zone or zone==0 or Overview() then Notify("请先打开一张区域地图。");return end
                 if selected then H.NewDraft() else H.ShowPanel() end
                 H.newCenter={map=map,zone=zone,x=x,y=y};H.vertex=nil
                 H.StartShape(H.newKind or "circle")
@@ -1187,7 +1187,7 @@ frame:SetScript("OnEvent",function(_,event,prefix,text,channel,sender)
                     local distance=(x-N(p.x))^2+(y-N(p.y))^2
                     if not best or distance<best then H.vertex=i;best=distance end
                 end
-                if best then Notify("Vertex "..H.vertex.." selected. CTRL-click its new position.") end
+                if best then Notify("已选中顶点 "..H.vertex.."。按住 CTRL 点击其新位置。") end
                 return
             end
             if gm and H.canDesign and draft and IsControlKeyDown() and button=="RightButton" and draft.kind=="polygon" then
@@ -1196,7 +1196,7 @@ frame:SetScript("OnEvent",function(_,event,prefix,text,channel,sender)
             if gm and H.canDesign and draft and IsControlKeyDown() and button=="LeftButton" then
                 local map=View()
                 if map~=N(draft.map) then
-                    Notify("Open the map where this draft belongs.");return
+                    Notify("请打开此草稿所属的地图。");return
                 end
                 local x,y=AtCursor()
                 if x then
@@ -1217,14 +1217,14 @@ frame:SetScript("OnUpdate",function(_,diff)
         if H.stroke and IsMouseButtonDown and not IsMouseButtonDown("LeftButton") then H.EndPaint() end
     end
     if H.localSaving and GetTime()-(H.localSaveAt or GetTime())>60 and #H.queue==0 then
-        H.localSaving=nil;Notify("Save response timed out. Local drawing retained; refresh the hotspot before retrying.")
+        H.localSaving=nil;Notify("保存响应超时。本地绘制已保留；请刷新该热点后再重试。")
     end
     elapsed=elapsed+diff
     if elapsed<0.3 then return end
     elapsed=0
     if H.draftRequestedAt and GetTime()-H.draftRequestedAt>15 and #H.queue==0 then
         H.draftRequestedAt=nil
-        Notify("No draft response from server. Reopen a zone map and retry; report the map and zone shown above if it repeats.")
+        Notify("服务器未响应草稿。请重新打开区域地图后重试；若问题重复出现，请上报上方显示的地图和区域。")
     end
     if H.searchAt and GetTime()>=H.searchAt then
         H.searchAt=nil;H.search=H.searchBox:GetText();H.Refresh(1)

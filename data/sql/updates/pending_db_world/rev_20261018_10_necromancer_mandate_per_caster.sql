@@ -13,5 +13,5 @@ INSERT INTO `spell_group` (`id`, `spell_id`) VALUES
 
 DELETE FROM `spell_group_stack_rules` WHERE `group_id` = 2110011;
 INSERT INTO `spell_group_stack_rules` (`group_id`, `stack_rule`, `description`) VALUES
-(2110011, 2, 'Necromancer Mandates: one Mandate per Necromancer on each target (#4136, #6046)');
+(2110011, 2, '死灵法师敕令：每个目标上每个死灵法师只能有一个敕令 (#4136, #6046)');
 COMMIT;

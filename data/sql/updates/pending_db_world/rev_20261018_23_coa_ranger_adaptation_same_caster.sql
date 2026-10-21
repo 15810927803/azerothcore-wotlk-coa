@@ -10,4 +10,4 @@ INSERT INTO `spell_group` (`id`, `spell_id`) VALUES
 
 DELETE FROM `spell_group_stack_rules` WHERE `group_id` = 2110010;
 INSERT INTO `spell_group_stack_rules` (`group_id`, `stack_rule`, `description`) VALUES
-(2110010, 2, 'Ranger Adaptations: one single-target Adaptation per Ranger on each target (#6113)');
+(2110010, 2, '游侠适配：每个目标上每个游侠只能有一个单体适配 (#6113)');

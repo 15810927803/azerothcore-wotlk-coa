@@ -12,4 +12,4 @@
 
 DELETE FROM `coa_client_spell_description` WHERE `ID` IN (805315);
 INSERT INTO `coa_client_spell_description` (`ID`,`Description`,`ToolTip`) VALUES
-(805315,'Fire Damage taken by you is increased by 3% for each stack of Napalm, up to 30% at 10 stacks, and healing received reduced by 3% for $d. Stacks $u times.','Fire Damage taken from the Tinker increased by 3% for each stack of Napalm, up to 30% at 10 stacks, and healing received reduced by 3%.');
+(805315,'你受到的火焰伤害每层凝固汽油提高 3%，最多 10 层时提高 30%，受到的治疗效果降低 3%，持续 $d。最多叠加 $u 次。','受到工匠的火焰伤害每层凝固汽油提高 3%，最多 10 层时提高 30%，受到的治疗效果降低 3%。');

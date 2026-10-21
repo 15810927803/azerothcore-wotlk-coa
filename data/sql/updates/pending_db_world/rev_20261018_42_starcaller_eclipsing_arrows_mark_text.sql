@@ -8,4 +8,4 @@
 -- with the talent learned and read the mark tooltip.
 DELETE FROM `coa_client_spell_description` WHERE `ID` IN (574154);
 INSERT INTO `coa_client_spell_description` (`ID`,`Description`) VALUES
-(574154,'Marked for |cffffffffEclipsing Arrows|r. |cffffffffHuntress Shot|r heals you.');
+(574154,'被标记为 |cffffffff月蚀之箭|r。|cffffffff女猎手射击|r 会治疗你。');

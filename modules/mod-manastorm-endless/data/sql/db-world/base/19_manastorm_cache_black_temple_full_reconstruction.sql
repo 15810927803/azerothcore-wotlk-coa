@@ -357,16 +357,16 @@ WHERE v.`RequiredLevel` = 70
 --   Mythic Dungeon 31-40       2280
 -- ---------------------------------------------------------------------------
 
-SELECT 'Hyjal Normal' AS `pool`, COUNT(*) AS `rows` FROM `tmp_ms_hyjal_normal`
-UNION ALL SELECT 'Hyjal Heroic', COUNT(*) FROM `tmp_ms_hyjal_heroic`
-UNION ALL SELECT 'Hyjal Mythic', COUNT(*) FROM `tmp_ms_hyjal_mythic`
-UNION ALL SELECT 'Black Temple Normal', COUNT(*) FROM `tmp_ms_bt_normal`
-UNION ALL SELECT 'Black Temple Heroic', COUNT(*) FROM `tmp_ms_bt_heroic`
-UNION ALL SELECT 'Black Temple Mythic', COUNT(*) FROM `tmp_ms_bt_mythic`
-UNION ALL SELECT 'Sunwell Heroic', COUNT(*) FROM `tmp_ms_sunwell_heroic`
-UNION ALL SELECT 'TBC Mythic Dungeon 11-20', COUNT(*) FROM `tmp_ms_dungeon_11_20`
-UNION ALL SELECT 'TBC Mythic Dungeon 21-30', COUNT(*) FROM `tmp_ms_dungeon_21_30`
-UNION ALL SELECT 'TBC Mythic Dungeon 31-40', COUNT(*) FROM `tmp_ms_dungeon_31_40`;
+SELECT '海加尔 普通' AS `pool`, COUNT(*) AS `rows` FROM `tmp_ms_hyjal_normal`
+UNION ALL SELECT '海加尔 英雄', COUNT(*) FROM `tmp_ms_hyjal_heroic`
+UNION ALL SELECT '海加尔 史诗', COUNT(*) FROM `tmp_ms_hyjal_mythic`
+UNION ALL SELECT '黑暗神殿 普通', COUNT(*) FROM `tmp_ms_bt_normal`
+UNION ALL SELECT '黑暗神殿 英雄', COUNT(*) FROM `tmp_ms_bt_heroic`
+UNION ALL SELECT '黑暗神殿 史诗', COUNT(*) FROM `tmp_ms_bt_mythic`
+UNION ALL SELECT '太阳井 英雄', COUNT(*) FROM `tmp_ms_sunwell_heroic`
+UNION ALL SELECT 'TBC 史诗地下城 11-20', COUNT(*) FROM `tmp_ms_dungeon_11_20`
+UNION ALL SELECT 'TBC 史诗地下城 21-30', COUNT(*) FROM `tmp_ms_dungeon_21_30`
+UNION ALL SELECT 'TBC 史诗地下城 31-40', COUNT(*) FROM `tmp_ms_dungeon_31_40`;
 
 -- ---------------------------------------------------------------------------
 -- 4) Build reusable personalized gear reference pools.

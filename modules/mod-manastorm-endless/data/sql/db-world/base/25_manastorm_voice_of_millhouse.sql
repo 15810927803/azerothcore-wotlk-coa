@@ -57,7 +57,7 @@ INSERT IGNORE INTO `creature_template`
 VALUES
 (
     80911,
-    'Voice of Millhouse Manastorm',
+    '米尔豪斯·法力风暴之声',
     '',
     1,
     1,

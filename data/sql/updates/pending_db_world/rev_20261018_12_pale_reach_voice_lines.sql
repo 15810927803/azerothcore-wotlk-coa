@@ -4,10 +4,10 @@
 DELETE FROM `creature_text` WHERE `CreatureID` IN (164217, 164218);
 DELETE FROM `creature_text` WHERE (`CreatureID` = 164211 AND `GroupID` IN (0, 1, 2)) OR (`CreatureID` = 164212 AND `GroupID` = 0);
 INSERT INTO `creature_text` (`CreatureID`, `GroupID`, `ID`, `Text`, `Type`, `Language`, `Probability`, `Emote`, `Duration`, `Sound`, `BroadcastTextId`, `TextRange`, `comment`) VALUES
-(164211, 0, 0, 'And we, I believe, have made ours clear, Lord Darengar.', 12, 0, 100, 0, 0, 215201, 0, 0, 'Lord Aldous Bruck'),
-(164211, 1, 0, 'Even if there were unanimity, this council cannot simply march the army into Scadeald without the consent of House Coldmere.', 12, 0, 100, 0, 0, 215202, 0, 0, 'Lord Aldous Bruck'),
-(164211, 2, 0, 'You are wasting your time barking up the wrong tree, Lord Darengar. Our laws exist for a reason. This session is adjourned.', 12, 0, 100, 0, 0, 215206, 0, 0, 'Lord Aldous Bruck'),
-(164212, 0, 0, 'And do remember that it is the Coldmeres, and not yourself, who rule Scadeald.', 12, 0, 100, 0, 0, 215203, 0, 0, 'Countess Cecilia Clessington');
+(164211, 0, 0, '而我相信，我们也已经表明了我们的立场，达伦加尔领主。', 12, 0, 100, 0, 0, 215201, 0, 0, 'Lord Aldous Bruck'),
+(164211, 1, 0, '即使意见一致，本议会也不能在没有冷泉家族同意的情况下，就率军开进斯卡德。', 12, 0, 100, 0, 0, 215202, 0, 0, 'Lord Aldous Bruck'),
+(164211, 2, 0, '你是在白费力气，找错了树，达伦加尔领主。我们的法律存在自有其道理。本次会议到此结束。', 12, 0, 100, 0, 0, 215206, 0, 0, 'Lord Aldous Bruck'),
+(164212, 0, 0, '而且请记住，统治斯卡德的是冷泉家族，而不是你。', 12, 0, 100, 0, 0, 215203, 0, 0, 'Countess Cecilia Clessington');
 
 -- Voiced lines shipped in the client (sound\scadeald\*.wav, SoundEntries 215207-215226), matched to their chat lines by
 -- transcript: Deirdre (bruja1, 4, 5), Lady Serenya Coldmere (senerya1, 2, 5-8) and the Sicklight loa story (loa1-7).

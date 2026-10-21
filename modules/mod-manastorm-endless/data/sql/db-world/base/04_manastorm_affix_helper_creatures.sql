@@ -41,32 +41,32 @@ VALUES
 -- Original numeric server faction/flags/AI were not preserved.  This is an
 -- inert visual helper, so use the same safe world-trigger treatment as other
 -- Manastorm visual indicators.
-(663025,'Manastorm Meteor Dummy','',1,1,0,35,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
+(663025,'法力风暴流星假人','',1,1,0,35,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
  33554434,10,0,0,'NullCreatureAI',0,1,1.0,1.0,1,1,0,0,64,'',NULL),
 
 -- 663026 Shards of Magic
 -- Recovered client Creature.dbc: exact entry/name/display=11686.
 -- The helper is summoned by Shards of Magic Precast; original server-only
 -- combat fields were not preserved.
-(663026,'Shards of Magic','',1,1,0,35,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
+(663026,'魔法碎片','',1,1,0,35,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
  33554434,10,0,0,'NullCreatureAI',0,1,1.0,1.0,1,1,0,0,64,'',NULL),
 
 -- 663029 Vortex
 -- Preserved Exiles: Neutral, subname Visual Indicator, display=11686.
 -- Spell.dbc proves 93382 summons this exact entry with SummonProperties 64.
-(663029,'Vortex','Visual Indicator',1,1,0,7,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
+(663029,'漩涡','视觉指示物',1,1,0,7,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
  33554434,10,0,0,'NullCreatureAI',0,1,1.0,1.0,1,1,0,0,64,'',NULL),
 
 -- 80913 Bonestorm
 -- Recovered: Hostile, Boss/rank=3, type_flags=4, type=10, family=0,
 -- display 14501, HP mod 0.7, mana mod 1.0, client movementId=999.
-(80913,'Bonestorm','',1,1,0,14,1,1.14286,1,1,0,3,0,1,2000,2000,1,1,1,
+(80913,'骨暴','',1,1,0,14,1,1.14286,1,1,0,3,0,1,2000,2000,1,1,1,
  33554434,10,4,0,'NullCreatureAI',0,1,0.7,1.0,1,1,0,0,64,'',NULL),
 
 -- 80914 Mushroom (Fungal helper)
 -- Recovered: Hostile, Boss/rank=3, type_flags=4, type=10, family=0,
 -- display 14501, HP mod 0.7, mana mod 1.0, client movementId=999.
-(80914,'Mushroom','',1,1,0,14,1,1.14286,1,1,0,3,0,1,2000,2000,1,1,1,
+(80914,'蘑菇','',1,1,0,14,1,1.14286,1,1,0,3,0,1,2000,2000,1,1,1,
  33554434,10,4,0,'NullCreatureAI',0,1,0.7,1.0,1,1,0,0,64,'',NULL),
 
 -- 80916 Creeping Frost
@@ -74,38 +74,38 @@ VALUES
 -- type=10, family=0, display=14501.  Original numeric server faction/AI
 -- were not preserved; use the same inert hostile-helper treatment as the
 -- neighboring recovered Manastorm hazard helpers.
-(80916,'Creeping Frost','',1,1,0,14,1,1.14286,1,1,0,3,0,1,2000,2000,1,1,1,
+(80916,'蔓延寒霜','',1,1,0,14,1,1.14286,1,1,0,3,0,1,2000,2000,1,1,1,
  33554434,10,4,0,'NullCreatureAI',0,1,1.0,1.0,1,1,0,0,64,'',NULL),
 
 -- 80917 Overwhelming Energy
 -- Recovered: subname Cosmetic, Hostile, Boss/rank=3, type_flags=4, type=10,
 -- family=0, display 14501, HP mod 0.7, mana mod 1.0, client movementId=999.
-(80917,'Overwhelming Energy','Cosmetic',1,1,0,14,1,1.14286,1,1,0,3,0,1,2000,2000,1,1,1,
+(80917,'压倒性能量','装饰',1,1,0,14,1,1.14286,1,1,0,3,0,1,2000,2000,1,1,1,
  33554434,10,4,0,'NullCreatureAI',0,1,0.7,1.0,1,1,0,0,64,'',NULL),
 
 -- 80922 Wild Magics
 -- Recovered: Neutral, rank=0, type_flags=0, type=10, family=0,
 -- displays 24890/24895/26622/24898, HP mod 0.2, mana mod 1.0,
 -- client movementId=998.
-(80922,'Wild Magics','',1,1,0,7,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
+(80922,'狂野魔法','',1,1,0,7,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
  33554434,10,0,0,'NullCreatureAI',0,1,0.2,1.0,1,1,0,0,64,'',NULL),
 
 -- 80923 Wild Magics Cosmetic Dummy
 -- Recovered: Neutral, rank=0, type_flags=0, type=10, family=0,
 -- display 200003, HP mod 0.2, mana mod 1.0, client movementId=998.
-(80923,'Wild Magics Cosmetic Dummy','',1,1,0,7,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
+(80923,'狂野魔法装饰假人','',1,1,0,7,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
  33554434,10,0,0,'NullCreatureAI',0,1,0.2,1.0,1,1,0,0,64,'',NULL),
 
 -- 80924 Cold Snap
 -- Recovered: Neutral, rank=0, type_flags=0, type=10, family=0,
 -- display 100003, HP mod 0.2, mana mod 1.0, client movementId=999.
-(80924,'Cold Snap','',1,1,0,7,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
+(80924,'寒流','',1,1,0,7,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
  33554434,10,0,0,'NullCreatureAI',0,1,0.2,1.0,1,1,0,0,64,'',NULL),
 
 -- 80925 Cold Snap Effect
 -- Recovered: Neutral, rank=0, type_flags=0, type=10, family=0,
 -- display 100003, HP mod 0.2, mana mod 1.0, client movementId=999.
-(80925,'Cold Snap Effect','',1,1,0,7,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
+(80925,'寒流效果','',1,1,0,7,1,1.14286,1,1,0,0,0,1,2000,2000,1,1,1,
  33554434,10,0,0,'NullCreatureAI',0,1,0.2,1.0,1,1,0,0,64,'',NULL);
 
 INSERT IGNORE INTO `creature_template_model`

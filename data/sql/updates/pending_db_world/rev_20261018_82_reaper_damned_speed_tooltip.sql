@@ -4,5 +4,5 @@
 -- effect 1; 560420 has no description of its own.
 DELETE FROM `coa_client_spell_description` WHERE `ID` IN (706786, 560420);
 INSERT INTO `coa_client_spell_description` (`ID`,`Description`,`ToolTip`) VALUES
-(706786,'When you gain |cff5ee2ffSoul Infusion|r, your movement speed is increased by $560420s1% for $560420d.',NULL),
-(560420,'','Movement speed increased ${$w1}%.');
+(706786,'当你获得 |cff5ee2ff灵魂灌注|r 时，你的移动速度提高 $560420s1%，持续 $560420d。',NULL),
+(560420,'','移动速度提高 ${$w1}%。');
