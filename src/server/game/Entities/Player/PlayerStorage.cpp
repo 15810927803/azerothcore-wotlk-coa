@@ -5702,12 +5702,9 @@ bool Player::LoadFromDB(ObjectGuid playerGuid, CharacterDatabaseQueryHolder cons
     }
 
     // RaF stuff.
-    m_grantableLevels = fields[71].Get<uint8>();
+    SetGrantableLevels(fields[71].Get<uint8>());
     if (GetSession()->IsARecruiter() || (GetSession()->GetRecruiterId() != 0))
         SetDynamicFlag(UNIT_DYNFLAG_REFER_A_FRIEND);
-
-    if (m_grantableLevels > 0)
-        SetByteValue(PLAYER_FIELD_BYTES, 1, 0x01);
 
     _LoadDeclinedNames(holder.GetPreparedResult(PLAYER_LOGIN_QUERY_LOAD_DECLINED_NAMES));
 
@@ -7040,7 +7037,9 @@ bool Player::Satisfy(DungeonProgressionRequirements const* ar, uint32 target_map
                     {
                         ChatHandler(GetSession()).PSendSysMessage("{}", missingLeaderQuests[0]->note);
                     }
-                    else if (mapDiff->hasErrorMessage)
+                    // CoA's MapDifficulty.dbc gives every raid's difficulty 0 the text "This difficulty is not available.", so a
+                    // level shortfall goes on to the level message below rather than that text.
+                    else if (mapDiff->hasErrorMessage && !LevelMin)
                     {
                         // if (missingAchievement) covered by this case
                         SendTransferAborted(target_map, TRANSFER_ABORT_DIFFICULTY, target_difficulty);
@@ -7271,6 +7270,9 @@ void Player::SaveToDB(CharacterDatabaseTransaction trans, bool create, bool logo
 
     if (!create)
         sScriptMgr->OnPlayerSave(this);
+
+    if (!create)
+        GetSession()->UpdateRecruitAFriendRewards(true);
 
     _SaveCharacter(create, trans);
 

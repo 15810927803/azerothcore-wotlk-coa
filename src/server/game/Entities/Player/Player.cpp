@@ -2706,15 +2706,12 @@ void Player::GiveLevel(uint8 level)
     UpdateAchievementCriteria(ACHIEVEMENT_CRITERIA_TYPE_REACH_LEVEL);
 
     // Refer-A-Friend
-    if (GetSession()->GetRecruiterId())
-        if (level < sWorld->getIntConfig(CONFIG_MAX_RECRUIT_A_FRIEND_BONUS_PLAYER_LEVEL))
-            if (level % 2 == 0)
-            {
-                ++m_grantableLevels;
-
-                if (!HasByteFlag(PLAYER_FIELD_BYTES, 1, 0x01))
-                    SetByteFlag(PLAYER_FIELD_BYTES, 1, 0x01);
-            }
+    if (GetSession()->GetRecruiterId() && level > oldLevel)
+    {
+        uint32 const cap = sWorld->getIntConfig(CONFIG_MAX_RECRUIT_A_FRIEND_BONUS_PLAYER_LEVEL);
+        uint32 const earned = std::min<uint32>(level, cap) / 2 - std::min<uint32>(oldLevel, cap) / 2;
+        SetGrantableLevels(uint8(std::min<uint32>(255, uint32(m_grantableLevels) + earned)));
+    }
 
     SendQuestGiverStatusMultiple();
 
@@ -6355,7 +6352,7 @@ float Player::CalculateReputationGain(ReputationSource source, uint32 creatureOr
         percent *= repRate;
     }
 
-    if (source != REPUTATION_SOURCE_SPELL && GetsRecruitAFriendBonus(false))
+    if (rep > 0.0f && source != REPUTATION_SOURCE_SPELL && GetsRecruitAFriendBonus(false))
         percent *= 1.0f + sWorld->getRate(RATE_REPUTATION_RECRUIT_A_FRIEND_BONUS);
 
     return CalculatePct(rep, percent);
@@ -10436,6 +10433,17 @@ void Player::ApplySpellMod(uint32 spellId, SpellModOp op, T& basevalue, Spell* s
         }
         else if (mod->type == SPELLMOD_PCT)
         {
+            // Ascension: a positive percent critical strike chance modifier adds percentage points ("increases the
+            // critical strike chance of your Mind Flay by 5%", "Fireball guaranteed crit QA aura" at 100). Stock data
+            // never has one; the negative stock case (Surge of Light's -100) keeps the multiplier below.
+            if (mod->op == SPELLMOD_CRITICAL_CHANCE && mod->value > 0)
+            {
+                if (totalflat < 100)
+                    totalflat += mod->value;
+                ApplyModToSpell(mod, spell);
+                return;
+            }
+
             // skip percent mods for null basevalue (most important for spell mods with charges)
             if (basevalue == T(0) || totalmul == 0.0f)
                 return;
@@ -13501,6 +13509,15 @@ bool Player::isHonorOrXPTarget(Unit* victim) const
             return false;
 
     return true;
+}
+
+void Player::SetGrantableLevels(uint8 val)
+{
+    m_grantableLevels = val;
+    if (val)
+        SetByteFlag(PLAYER_FIELD_BYTES, 1, 0x01);
+    else
+        RemoveByteFlag(PLAYER_FIELD_BYTES, 1, 0x01);
 }
 
 bool Player::GetsRecruitAFriendBonus(bool forXP)
@@ -17376,6 +17393,7 @@ std::string Player::GetPlayerName()
 
 void Player::SetSummonPoint(uint32 mapid, float x, float y, float z, uint32 delay /*= 0*/, bool asSpectator /*= false*/)
 {
+    GetSession()->SetRecruitAFriendSummoner(ObjectGuid::Empty);
     m_summon_expire = GameTime::GetGameTime().count() + (delay ? delay : MAX_PLAYER_SUMMON_DELAY);
     m_summon_mapid = mapid;
     m_summon_x = x;
