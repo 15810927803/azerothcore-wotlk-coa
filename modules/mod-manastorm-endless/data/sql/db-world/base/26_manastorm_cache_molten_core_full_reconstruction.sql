@@ -973,21 +973,21 @@ CREATE TEMPORARY TABLE `tmp_ms_mc_family` (
     `Expected` INT UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 INSERT INTO `tmp_ms_mc_family` (`Entry`, `Label`, `Source`, `Tier`, `SpecificMarker`, `Expected`) VALUES
-(9002001, '普通熔火之心', 'MoltenCore', '', '', 106),
-(9002002, '英雄熔火之心', 'MoltenCore', 'Heroic', '@Heroic Molten Core@%', 86),
-(9002003, '史诗熔火之心', 'MoltenCore', 'Mythic', '@Mythic Molten Core@%', 106),
-(9002004, '飞升熔火之心', 'MoltenCore', 'Ascended', '@Ascended Molten Core@%', 105),
-(9002010, '普通奥妮克希亚', 'Onyxia60', '', '', 14),
-(9002011, '英雄奥妮克希亚', 'Onyxia60', 'Heroic', '@Heroic Onyxia@%', 14),
-(9002012, '史诗奥妮克希亚', 'Onyxia60', 'Mythic', '@Mythic Onyxia@%', 14),
-(9002013, '飞升奥妮克希亚', 'Onyxia60', 'Ascended', '@Ascended Onyxia@%', 14),
-(9002022, '史诗祖尔格拉布', 'ZulGurub', 'Mythic', '@Mythic Zul''Gurub@%', 122),
-(9002030, '经典史诗地下城', 'ClassicDungeonCatalog', 'Dungeon', '', 611),
-(9002031, '经典史诗地下城 1-10', 'ClassicDungeonCatalog', 'Band', '', 6109),
-(9002040, '普通熔火之心 + 奥妮克希亚', 'Combined', '', '', 120),
-(9002041, '英雄熔火之心 + 奥妮克希亚', 'Combined', '', '', 100),
-(9002042, '史诗熔火之心 + 奥妮克希亚', 'Combined', '', '', 120),
-(9002043, '飞升熔火之心 + 奥妮克希亚', 'Combined', '', '', 119);
+(9002001, 'Normal Molten Core', 'MoltenCore', '', '', 106),
+(9002002, 'Heroic Molten Core', 'MoltenCore', 'Heroic', '@Heroic Molten Core@%', 86),
+(9002003, 'Mythic Molten Core', 'MoltenCore', 'Mythic', '@Mythic Molten Core@%', 106),
+(9002004, 'Ascended Molten Core', 'MoltenCore', 'Ascended', '@Ascended Molten Core@%', 105),
+(9002010, 'Normal Onyxia', 'Onyxia60', '', '', 14),
+(9002011, 'Heroic Onyxia', 'Onyxia60', 'Heroic', '@Heroic Onyxia@%', 14),
+(9002012, 'Mythic Onyxia', 'Onyxia60', 'Mythic', '@Mythic Onyxia@%', 14),
+(9002013, 'Ascended Onyxia', 'Onyxia60', 'Ascended', '@Ascended Onyxia@%', 14),
+(9002022, 'Mythic Zul''Gurub', 'ZulGurub', 'Mythic', '@Mythic Zul''Gurub@%', 122),
+(9002030, 'Classic Mythic Dungeon', 'ClassicDungeonCatalog', 'Dungeon', '', 611),
+(9002031, 'Classic Mythic Dungeon 1-10', 'ClassicDungeonCatalog', 'Band', '', 6109),
+(9002040, 'Normal MC + Onyxia', 'Combined', '', '', 120),
+(9002041, 'Heroic MC + Onyxia', 'Combined', '', '', 100),
+(9002042, 'Mythic MC + Onyxia', 'Combined', '', '', 120),
+(9002043, 'Ascended MC + Onyxia', 'Combined', '', '', 119);
 
 -- Scan the large recovered item table once and index a narrow temporary lookup.
 -- Avoid repeated full item_template scans; never alter its persistent indexes.
@@ -1126,7 +1126,7 @@ BEGIN
     END;
     IF @MS_OPTIONAL_FAMILY_PCT IS NULL OR @MS_OPTIONAL_FAMILY_PCT <= 0 OR @MS_OPTIONAL_FAMILY_PCT > 100
         OR @MS_SECOND_HEROIC_MC_PCT IS NULL OR @MS_SECOND_HEROIC_MC_PCT <= 0 OR @MS_SECOND_HEROIC_MC_PCT > 100 THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = '熔火之心缓存重建：随机百分比无效';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'MC cache reconstruction: invalid roll percentages';
     END IF;
     IF EXISTS (
         SELECT 1 FROM `tmp_ms_mc_family` AS `f`
@@ -1134,31 +1134,31 @@ BEGIN
         WHERE COALESCE(`p`.`N`, 0) <> `f`.`Expected` OR `f`.`Expected` = 0
     ) THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =
-        '熔火之心缓存重建：池数量不匹配；请检查数据集/变体审计';
+        'MC cache reconstruction: pool count mismatch; inspect dataset/variant audit';
     END IF;
     IF (SELECT COUNT(*) FROM `item_template` AS `i` JOIN `tmp_ms_mc_cache` AS `c` ON `c`.`Entry` = `i`.`entry`
         WHERE (`i`.`Flags` & 4) <> 0 AND `i`.`ScriptName` = '') <> 8 THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =
-        '熔火之心缓存重建：预期为八个无脚本的 HAS_LOOT 容器';
+        'MC cache reconstruction: expected eight scriptless HAS_LOOT containers';
     END IF;
     IF (SELECT COUNT(*) FROM `information_schema`.`TABLES`
         WHERE `TABLE_SCHEMA` = DATABASE() AND `TABLE_NAME` IN ('item_loot_template', 'reference_loot_template')
             AND `ENGINE` = 'InnoDB') <> 2 THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = '熔火之心缓存重建：需要 InnoDB 掉落表';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'MC cache reconstruction: InnoDB loot tables required';
     END IF;
     IF EXISTS (SELECT 1 FROM `reference_loot_template` AS `r` JOIN `tmp_ms_mc_family` AS `f` USING (`Entry`)
         WHERE `r`.`Comment` NOT LIKE 'MS MC pool - %') THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = '熔火之心缓存重建：保留的引用命名空间冲突';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'MC cache reconstruction: reserved reference namespace collision';
     END IF;
     -- Separate statements avoid reopening tmp_ms_mc_family in one IF expression.
     IF EXISTS (SELECT 1 FROM `reference_loot_template` AS `r` JOIN `tmp_ms_mc_family` AS `f` ON `f`.`Entry` =
         `r`.`Reference`) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = '熔火之心缓存重建：保留的引用命名空间冲突';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'MC cache reconstruction: reserved reference namespace collision';
     END IF;
     IF EXISTS (SELECT 1 FROM `item_loot_template` AS `r` JOIN `tmp_ms_mc_family` AS `f` ON `f`.`Entry` =
         `r`.`Reference`
             LEFT JOIN `tmp_ms_mc_cache` AS `c` ON `c`.`Entry` = `r`.`Entry` WHERE `c`.`Entry` IS NULL) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = '熔火之心缓存重建：保留的引用命名空间冲突';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'MC cache reconstruction: reserved reference namespace collision';
     END IF;
     IF EXISTS (SELECT 1 FROM `creature_loot_template` WHERE `Reference` IN (9002001,9002002,9002003,9002004,9002010,
         9002011,9002012,9002013,9002022,9002030,9002031,9002040,9002041,9002042,9002043))
@@ -1183,14 +1183,14 @@ BEGIN
         OR EXISTS (SELECT 1 FROM `player_loot_template` WHERE `Reference` IN (9002001,9002002,9002003,9002004,9002010,
         9002011,9002012,9002013,9002022,9002030,9002031,9002040,9002041,9002042,9002043)) THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =
-        '熔火之心缓存重建：保留的引用已被其他掉落存储使用';
+        'MC cache reconstruction: reserved references used by another loot store';
     END IF;
     IF EXISTS (SELECT 1 FROM `conditions` WHERE (`SourceTypeOrReferenceId` = 10 AND `SourceGroup` IN (9002001,9002002,
         9002003,9002004,9002010,9002011,9002012,9002013,9002022,9002030,9002031,9002040,9002041,9002042,9002043))
         OR (`SourceTypeOrReferenceId` = 5 AND `SourceGroup` IN (1278056,1278058,1278060,1278061,1278062,1278063,
         1278065,1278067))) THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =
-        '熔火之心缓存重建：已存在的掉落条件需要手动检查';
+        'MC cache reconstruction: existing loot conditions require manual review';
     END IF;
     START TRANSACTION;
     DELETE `r` FROM `reference_loot_template` AS `r` JOIN `tmp_ms_mc_family` AS `f` USING (`Entry`);
@@ -1223,7 +1223,7 @@ BEGIN
     IF EXISTS (SELECT 1 FROM `tmp_ms_mc_cache` AS `c`
         LEFT JOIN (SELECT `Entry`, COUNT(*) AS `N` FROM `item_loot_template` GROUP BY `Entry`) AS `r` USING (`Entry`)
         WHERE COALESCE(`r`.`N`, 0) <> `c`.`ExpectedRows`) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = '熔火之心缓存重建：物理行数不匹配';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'MC cache reconstruction: physical row count mismatch';
     END IF;
     COMMIT;
 END$$
