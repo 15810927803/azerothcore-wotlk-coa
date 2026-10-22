@@ -4,4 +4,4 @@
 
 DELETE FROM `coa_client_spell_description` WHERE `ID` = 803372;
 INSERT INTO `coa_client_spell_description` (`ID`, `Description`, `ToolTip`) VALUES
-(803372, 'Damage dealt by Scourgebane now increases the damage of Argent Blade by $s2% for $d, stacking $u times.', 'Damage taken from the Crusader''s Argent Blade is increased by ${$w2}%. Stacks $u times.');
+(803372, 'Scourgebane 造成的伤害现在使 Argent Blade 的伤害提高 $s2%，持续 $d，最多叠加 $u 次。', '受到 Crusader 的 Argent Blade 造成的伤害提高 ${$w2}%。最多叠加 $u 次。');

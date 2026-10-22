@@ -4,7 +4,7 @@
 -- Murder on the Reaper's target. SummonProperties 61 replaces faction 35 with the caster's; flags_extra 64 is NO_XP.
 INSERT INTO `creature_template` (`entry`, `name`, `minlevel`, `maxlevel`, `faction`, `unit_class`, `type`,
 `HealthModifier`, `BaseAttackTime`, `RangeAttackTime`, `flags_extra`, `ScriptName`) VALUES
-(850000, 'Spectral Reaper', 1, 1, 35, 1, 7, 0.5, 2000, 2000, 64, 'npc_ascension_reaper_spectral_reaper')
+(850000, '幽灵收割者', 1, 1, 35, 1, 7, 0.5, 2000, 2000, 64, 'npc_ascension_reaper_spectral_reaper')
 ON DUPLICATE KEY UPDATE `name` = VALUES(`name`), `type` = VALUES(`type`), `HealthModifier` = VALUES(`HealthModifier`),
 `flags_extra` = VALUES(`flags_extra`), `ScriptName` = VALUES(`ScriptName`);
 DELETE FROM `creature_template_model` WHERE `CreatureID` = 850000;
