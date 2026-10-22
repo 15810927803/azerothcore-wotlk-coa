@@ -37,6 +37,7 @@
 #include "AscensionAmmunitionData.h"
 #include "AscensionAverageItemLevel.h"
 #include "AscensionPersonalBank.h"
+#include "AscensionVanityOwnership.h"
 #include "AscensionCollectibleSpellData.h"
 #include "AscensionCustomClassData.h"
 #include "AscensionAuraAmounts.h"
@@ -454,6 +455,7 @@ enum class AscensionCompatConfig {
   CLIENT_DBC_DIRECTORY,
   COLLECTIONS_FOR_BOTS,
   RANDOM_BOT_ACCOUNT_PREFIX,
+  STARTER_VANITY_ITEMS,
 
   NUM_CONFIGS,
 };
@@ -483,6 +485,8 @@ public:
         "CoA.AppearanceCatalogPerCategory", 500);
     SetConfigValue<bool>(AscensionCompatConfig::UNLOCK_ALL_VANITY,
                          "CoA.UnlockAllVanity", true);
+    SetConfigValue<std::string>(AscensionCompatConfig::STARTER_VANITY_ITEMS,
+                                "CoA.StarterVanityItems", "");
     SetConfigValue<std::string>(AscensionCompatConfig::REALM_TYPE,
                                 "CoA.RealmType", "live");
     SetConfigValue<std::string>(AscensionCompatConfig::CLASS_MODEL,
@@ -6742,6 +6746,28 @@ private:
         state.OwnedVanityItems.insert(result->Fetch()[0].Get<uint32>());
       } while (result->NextRow());
     }
+
+    GrantStarterVanityItems(player, state);
+  }
+
+  void GrantStarterVanityItems(Player *player, PlayerCollectionState &state) {
+    if (player->GetSession()->IsBot() && !LoadsCollectionsForBot(player))
+      return;
+
+    std::string const items = ascensionCompatConfig.GetConfigValue<std::string>(
+        AscensionCompatConfig::STARTER_VANITY_ITEMS);
+    for (std::string_view token : Acore::Tokenize(items, ' ', false)) {
+      uint32 const itemId = Acore::StringTo<uint32>(token).value_or(0);
+      auto const vanity = _vanityItems.find(itemId);
+      if (vanity == _vanityItems.end() || IsConsumableVanityItem(vanity->second) ||
+          !state.OwnedVanityItems.insert(itemId).second)
+        continue;
+
+      CharacterDatabasePreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_INS_ACCOUNT_VANITY_COLLECTION);
+      stmt->SetData(0, state.AccountId);
+      stmt->SetData(1, itemId);
+      CharacterDatabase.Execute(stmt);
+    }
   }
 
   void ScanPlayerInventory(Player *player, PlayerCollectionState &state) {
@@ -8509,6 +8535,12 @@ class AscensionCompatPlayerScript : public PlayerScript {
         }
     }
 
+    void RemoveExpiredExperienceAura(Player* player)
+    {
+        if (player->GetLevel() >= sWorld->getIntConfig(CONFIG_MAX_RECRUIT_A_FRIEND_BONUS_PLAYER_LEVEL))
+            player->RemoveAurasDueToSpell(818059);
+    }
+
 public:
   AscensionCompatPlayerScript()
       : PlayerScript(
@@ -8700,6 +8732,7 @@ public:
       AscensionDisplayPatchService::Instance().OnPlayerLogin(player);
       RefreshScaledQuestQueries(player);
       SendAverageItemLevel(player);
+      RemoveExpiredExperienceAura(player);
     }
   }
 
@@ -8720,6 +8753,7 @@ public:
       AscensionClassService::Instance().SendCharacterAdvancementKnownEntries(player);
 
       RefreshScaledQuestQueries(player);
+      RemoveExpiredExperienceAura(player);
     }
   }
 
@@ -9920,6 +9954,20 @@ class spell_ascension_experience_potion : public SpellScript
     }
 };
 
+}
+
+AscensionVanityOwnership::TestOverride::TestOverride(bool unlockAll, std::string const& starterItems)
+    : _unlockAll(ascensionCompatConfig.GetConfigValue<bool>(AscensionCompatConfig::UNLOCK_ALL_VANITY)),
+      _starterItems(ascensionCompatConfig.GetConfigValue<std::string>(AscensionCompatConfig::STARTER_VANITY_ITEMS))
+{
+    ascensionCompatConfig.OverwriteConfigValue<bool>(AscensionCompatConfig::UNLOCK_ALL_VANITY, unlockAll);
+    ascensionCompatConfig.OverwriteConfigValue<std::string>(AscensionCompatConfig::STARTER_VANITY_ITEMS, starterItems);
+}
+
+AscensionVanityOwnership::TestOverride::~TestOverride()
+{
+    ascensionCompatConfig.OverwriteConfigValue<bool>(AscensionCompatConfig::UNLOCK_ALL_VANITY, _unlockAll);
+    ascensionCompatConfig.OverwriteConfigValue<std::string>(AscensionCompatConfig::STARTER_VANITY_ITEMS, _starterItems);
 }
 
 bool IsAscensionPrimalistTameEligible(Player const* player)

@@ -53,18 +53,23 @@ CoA.AutoCollectAppearances = 1
 CoA.EquippedGearLoot = 1
 CoA.EquippedGearLootChance = 5
 
-# 普通难度生物的生命值和伤害倍率，已根据 Ascension 的战斗日志进行调整。
-# 当生物确定其等级时，生命值会被乘以倍率；伤害适用于对玩家及其宠物的命中。
-# 英雄/史诗、战场、竞技场、宠物、召唤物、图腾、触发器、小动物和训练假人
-# 不会改变；列在 coa_boss_flex 中的团队副本生物保留其测得的弹性生命值。
-# MapHealth/MapDamage 按地图以 "mapId:multiplier" 替换上下文值。
-# 如果没有此部分，服务器会保留这些倍率，但该功能处于禁用状态。
+# 普通难度生物的生命值和伤害倍率，已根据飞升计划实机观测数据调整。
+# 生命值在生物确定等级时进行乘法计算；伤害适用于对玩家及其宠物的攻击。
+# 英雄/史诗难度、战场、竞技场、宠物、召唤物、图腾、触发器、小动物和训练假人
+# 不受影响；coa_boss_flex 中列出的团队副本生物保留其测得的弹性生命值。
+# MapHealth/MapDamage 按地图以 "mapId:multiplier" 的形式替换上下文数值。
+# 每个值也可以是基于生物等级的公式：数字、level、+ - * /、括号、min(a, b) 和
+# max(a, b)，例如 CoA.CreatureScaling.World.Health = "1.17 + 0.013 * level"。在 MapHealth/MapDamage 中写入公式时
+# 不要带空格（"43:0.3+0.08*level"），或用 ';' 分隔条目（"43: 0.3 + 0.08 * level; 36: 2.2"）。
+# World 已根据飞升计划实机视频中开放世界生物生命值（1-59 级）进行拟合；世界伤害使用
+# 相同的公式。地下城和团队副本保留此前的估算值。
+# 如果没有此段配置，服务器会保留这些倍率，但该功能处于禁用状态。
 CoA.CreatureScaling.Enable = 1
-CoA.CreatureScaling.World.Health = 2.5
+CoA.CreatureScaling.World.Health = "1.17 + 0.013 * level"
 CoA.CreatureScaling.Dungeon.Health = 2.5
 CoA.CreatureScaling.Raid.Health = 2.2
 CoA.CreatureScaling.MapHealth = "36:2.2 43:2.0 229:4.0 389:3.0 469:5.0"
-CoA.CreatureScaling.World.Damage = 2.0
+CoA.CreatureScaling.World.Damage = "1.17 + 0.013 * level"
 CoA.CreatureScaling.Dungeon.Damage = 1.5
 CoA.CreatureScaling.Raid.Damage = 1.0
 CoA.CreatureScaling.MapDamage = ""
@@ -82,15 +87,23 @@ CoA.RandomBotAccountPrefix = "rndbot"
 # 单人服务器便利：解锁完整的本地外观目录。
 # 每个类别的值用于平衡初始快照；剩余的幻化外观随后以流式传输，
 # 以保持在旧版客户端 64 KiB 数据包限制之下。
-CoA.UnlockLocalAppearanceCatalog = 1
+CoA.UnlockLocalAppearanceCatalog = 0
 CoA.AppearanceCatalogPerCategory = 500
 
 # 单人服务器便利：将每个静态 VanityCollection 条目公开为账户所有。
 # 仅限 Ascension 的自定义条目仍然需要匹配的服务器物品/法术模板才能交付。
 CoA.UnlockAllVanity = 0
 
-# 如果装饰物品没有服务器物品模板，但其 DBC 行指定了有效的法术，
-# 则在请求交付时直接学习该法术。
+# 每个账号首次登录时即拥有的收藏品道具，以空格分隔的物品 ID 表示。
+# 它们会记录在账号的收藏中，因此即使 CoA.UnlockAllVanity = 0 也仍保持已拥有状态，
+# 且CoA.LearnOwnedCompanions 会教授其对应的坐骑/伙伴法术。
+# 客户端VanityCollection.dbc 中缺失的 ID 以及消耗品条目会被跳过。
+# 示例："98457 134987"（飞升之书和工匠之书）。
+# Default: ""
+CoA.StarterVanityItems = ""
+
+# 如果某个收藏品道具没有服务器物品模板，但其 DBC 行指定了有效法术，
+# 则在请求发放时直接学习该法术。
 CoA.AllowLearnedSpellDelivery = 1
 
 # 永久教授已拥有的装饰坐骑/伙伴法术，以小的登录批次进行。

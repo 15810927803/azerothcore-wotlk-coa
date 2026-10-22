@@ -98,4 +98,15 @@ Wildcard.Synergy.TalentsNeedTarget = 1
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled)
 
-Wildcard.Synergy.LogRolls = 0
+Wildcard.Synergy.LogRolls = 1
+
+#    Wildcard.FreeScrolls
+#        Description: 在暴风城和奥格瑞玛的希拉斯·暗月身旁生成皮特·阿尔 <掠夺贸易代表（PTR）>。
+#                     他会免费给予通配符英雄 10 张其当前专精的命运卷轴，
+#                     以及其第一个锁定专精的专精宝典。
+#                     用于测试服（PTR）；
+#                     在正式服务器上请保持关闭。
+#        Default:     0 - (Disabled)
+#                     1 - (Enabled)
+
+Wildcard.FreeScrolls = 0
