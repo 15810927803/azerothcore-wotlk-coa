@@ -6,4 +6,4 @@
 
 DELETE FROM `coa_client_spell_description` WHERE `ID` IN (91617);
 INSERT INTO `coa_client_spell_description` (`ID`, `Description`, `ToolTip`) VALUES
-(91617, 'Summons and dismisses Aima, Steed of the Second Eidolon. This mount is capable of flight.\n\nGround speed 100%, flying speed 280%.', 'Increases ground speed by ${$w2}%.$?s91774[ Increases flying speed by 310%.][$?s34091[ Increases flying speed by 280%.][$?s34090[ Increases flying speed by 150%.][]]');
+(91617, '召唤或解散艾玛，第二幻影之马。该坐骑可以飞行。\n\n地面速度 100%，飞行速度 280%。', '提高地面速度 ${$w2}%。$?s91774[ 提高飞行速度 310%。][$?s34091[ 提高飞行速度 280%。][$?s34090[ 提高飞行速度 150%。][]]');

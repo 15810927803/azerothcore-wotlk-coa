@@ -1,10 +1,10 @@
 -- Pete Arr <Plunder Trade Representative (PTR)>, a pirate quartermaster for test realms. The template has no
 -- spawns: with Wildcard.FreeScrolls = 1 the worldserver places him beside Silas Darkmoon in Stormwind and
 -- Orgrimmar (npc_wildcard_pete_arr), and his gossip opens a free vendor list built by the script.
-SET @GREETING := 'Ahoy, $N! Pete Arr, Plunder Trade Representative. On the PTR me plunder be free for the taking.';
+SET @GREETING := '啊嘿，$N！我是皮特·阿尔，掠夺贸易代表。在 PTR 上，我的战利品可以免费拿取。';
 CREATE TEMPORARY TABLE `wildcard_pete_arr` ENGINE=InnoDB AS
     SELECT * FROM `creature_template` WHERE `entry` = 2500;
-UPDATE `wildcard_pete_arr` SET `entry` = 642829, `name` = 'Pete Arr', `subname` = 'Plunder Trade Representative (PTR)',
+UPDATE `wildcard_pete_arr` SET `entry` = 642829, `name` = '皮特·阿尔', `subname` = '掠夺贸易代表（PTR）',
     `minlevel` = 60, `maxlevel` = 60, `faction` = 35, `npcflag` = 129, `gossip_menu_id` = 0,
     `ScriptName` = 'npc_wildcard_pete_arr';
 INSERT INTO `creature_template` SELECT * FROM `wildcard_pete_arr`

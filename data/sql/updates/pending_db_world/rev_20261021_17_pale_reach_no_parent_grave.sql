@@ -21,4 +21,4 @@ INSERT INTO `gameobject_template_addon` (`entry`, `faction`, `flags`, `mingold`,
 
 DELETE FROM `quest_offer_reward` WHERE `ID` = 175041;
 INSERT INTO `quest_offer_reward` (`ID`, `Emote1`, `Emote2`, `Emote3`, `Emote4`, `EmoteDelay1`, `EmoteDelay2`, `EmoteDelay3`, `EmoteDelay4`, `RewardText`, `VerifiedBuild`) VALUES
-(175041, 0, 0, 0, 0, 0, 0, 0, 0, 'Have you done it?$B$B<Despite the circumstances, Aralia manages to offer a faint, tiny smile of gratitude.>$B$BI cannot pay you for what you have done for me. I could not, even if I were the wealthiest woman in the province.', 0);
+(175041, 0, 0, 0, 0, 0, 0, 0, 0, '你做到了吗？$B$B<尽管处境如此，阿拉利亚还是勉强露出了一丝微弱的、感激的微笑。>$B$B我无法为你的所作所为付给你报酬。就算我是这行省最富有的女人，我也付不起。', 0);

@@ -7,4 +7,4 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 
 DELETE FROM `creature_text` WHERE `CreatureID` = 164044;
 INSERT INTO `creature_text` (`CreatureID`, `GroupID`, `ID`, `Text`, `Type`, `Language`, `Probability`, `Emote`, `Duration`, `Sound`, `BroadcastTextId`, `TextRange`, `comment`) VALUES
-(164044, 0, 0, 'Oh, Noghan. It is almost for the best that you did not live to see the day one son died at the hands of the other.', 12, 0, 100, 0, 0, 0, 0, 0, 'Aralia Dolmen - after Senseless Death, Shattered Hearts');
+(164044, 0, 0, '哦，诺甘。你没活到亲眼看见一个儿子死在另一个儿子手中的那一天，这几乎算是件好事。', 12, 0, 100, 0, 0, 0, 0, 0, 'Aralia Dolmen - after Senseless Death, Shattered Hearts');
