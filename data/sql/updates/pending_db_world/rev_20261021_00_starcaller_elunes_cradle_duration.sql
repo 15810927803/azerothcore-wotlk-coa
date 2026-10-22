@@ -6,4 +6,4 @@
 
 DELETE FROM `coa_client_spell_description` WHERE `ID` IN (807992);
 INSERT INTO `coa_client_spell_description` (`ID`,`Description`) VALUES
-(807992,'Creates an area of rejuvenating stars around the enemy for $d, healing up to $i allies within $a1 yds for ${$m1*$<scalingbp>+$BH*0.08} every $t1 sec.');
+(807992,'在敌人周围创造一片复苏星辰区域，持续 $d，每 $t1 秒为 $a1 码内最多 $i 名盟友恢复 ${$m1*$<scalingbp>+$BH*0.08} 点生命值。');

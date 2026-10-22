@@ -3489,24 +3489,24 @@ Rate.InstanceResetTime = 1
 
 #
 #    Instance.UnloadDelay
-#        Description: Time (in milliseconds) before instance maps are unloaded from memory if no
-#                     characters are inside.
-#        Default:     1800000 - (Enabled, 30 minutes)
-#                     0       - (Disabled, Instance maps are kept in memory until the instance
-#                               resets)
+#        Description: 当副本内没有角色时，
+#                     副本地图从内存中卸载前的等待时间（单位：毫秒）。
+#        Default:     1800000 - (启用，30 分钟）
+#                     0       - (禁用，副本地图会一直保留在内存中，
+#                               直到副本重置）
 
 Instance.UnloadDelay = 1800000
 
 #
 #   AccountInstancesPerHour
-#        Description: Controls the max amount of different instances player can enter within hour
+#        Description: 控制玩家每小时可进入的不同副本的最大数量
 #        Default:     10
 
 AccountInstancesPerHour = 10
 
 #
 #    Instance.SharedNormalHeroicId
-#        Description: Forces ICC and RS Normal and Heroic to share lockouts.  ToC is uneffected and Normal and Heroic will be separate.
+#        Description: 强制 ICC 和 RS 的普通与英雄难度共享锁定。ToC 不受影响，普通和英雄难度将保持独立。
 #        Default:     1 - Enable
 #                     0 - Disable
 
@@ -3515,17 +3515,17 @@ Instance.SharedNormalHeroicId = 1
 #
 #    DungeonAccessRequirements.PrintMode
 #
-#        Description: Select the preferred format to display information to the player who cannot enter a portal dungeon because when has not met the access requirements:
-#        Default:     1 - (Display only one requirement at a time (BlizzLike, like in the LFG interface))
-#                     0 - (Display no extra information, only "Requirements  not met")
-#                     2 - (Display detailed requirements, all at once, with clickable links)
+#        Description: 选择向因未满足进入条件而无法进入传送门副本的玩家显示信息的首选格式：
+#        Default:     1 - （一次只显示一项要求（暴雪原生风格，与 LFG 界面一致））
+#                     0 - （不显示额外信息，仅显示“未满足要求”）
+#                     2 - （一次性显示所有详细要求，并带有可点击链接）
 
 DungeonAccessRequirements.PrintMode = 1
 
 #
 #    DungeonAccessRequirements.PortalAvgIlevelCheck
 #
-#        Description: Enable average item level requirement when entering a dungeon/raid's portal (= deny the entry if player has too low average ilevel, like in LFG).
+#        Description: 进入副本/团队副本传送门时启用平均物品等级要求（= 如果玩家的平均物品等级过低则拒绝进入，与 LFG 界面一致）。
 #        Default:     0 - (Disabled  -> Blizzlike)
 #                     1 - (Enabled)
 
@@ -3534,8 +3534,8 @@ DungeonAccessRequirements.PortalAvgIlevelCheck = 0
 #
 #    DungeonAccessRequirements.OptionalStringID
 #
-#        Description: Display an extra message from acore_strings in the chat after printing the dungeon access requirements.
-#                     To enable it set the ID of your desired string from the table acore_strings
+#        Description: 在聊天中打印副本进入要求后，从 acore_strings 显示一条额外消息。
+#                     要启用它，请将 acore_strings 表中所需字符串的 ID 设为此值。
 #        Default:     0  - (Disabled)
 #                     1+ - (Enabled)
 
@@ -3548,11 +3548,11 @@ DungeonAccessRequirements.OptionalStringID = 0
 # PLAY TIME LIMIT (CAIS)-游戏时间限制（CAIS）
 #
 #    CAIS.Enable
-#        Description: Enable the Chinese realm consecutive play time restrictions. After 3
-#                     hours of consecutive play, XP and looted money are halved; after 5
-#                     hours, the character can no longer gain XP, loot, or turn in quests.
-#                     Staying offline for 5 hours resets the accumulated time. The 3h/5h
-#                     thresholds are hardcoded client-side.
+#        Description: 启用中国区连续游戏时长限制。
+#                     连续游戏 3 小时后，经验值和拾取的金币减半；
+#                     5 小时后，角色将无法再获得经验、拾取物品或交任务。
+#                     离线 5 小时可重置累计时间。
+#                     3 小时/5 小时阈值在客户端硬编码。
 #        Note:        世界服务器重启会重置每个账户的累计时间。
 #        Default:     0 - Disabled
 #                     1 - Enabled
@@ -3596,7 +3596,7 @@ DungeonFinder.OptionsMask = 5
 #
 #    LFG.Location.All
 #
-#        Description: Includes satellite to search for work elsewhere LFG
+#        Description: 允许在寻找组队（LFG）中搜索其他地区（卫星地图）的队友
 #        Default:     0 - Disable
 #                     1 - Enable
 
@@ -3604,15 +3604,15 @@ LFG.Location.All = 0
 
 #
 #    LFG.MaxKickCount
-#        Description: Specify the maximum number of kicks allowed in LFG groups (max 3 kicks)
+#        Description: 指定 LFG 队伍中允许踢人的最大次数（最多 3 次）
 #        Default:     2
-#                     0 - Disabled (kicks are never allowed)
+#                     0 - Disabled （永不允许踢人）
 
 LFG.MaxKickCount = 2
 
 #
 #    LFG.KickPreventionTimer
-#        Description: Specify for how long players are prevented from being kicked after just joining LFG groups
+#        Description: 指定玩家刚加入 LFG 队伍后被禁止踢出的持续时间
 #        Default:     900 secs (15 minutes)
 #                     0 - Disabled
 
@@ -3621,7 +3621,7 @@ LFG.KickPreventionTimer = 900
 #
 #    DungeonAccessRequirements.LFGLevelDBCOverride
 #
-#        Description: If enabled, use `min_level` and `max_level` values from table `dungeon_access_requirements` to list or to hide a dungeon from the LFG window.
+#        Description: 如果启用，则使用表 `dungeon_access_requirements` 中的 `min_level` 和 `max_level` 值来在 LFG 窗口中显示或隐藏副本。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
@@ -3630,7 +3630,7 @@ DungeonAccessRequirements.LFGLevelDBCOverride = 0
 #
 #    DungeonFinder.CastDeserter
 #
-#        Description: Cast Deserter to player who leave a dungeon prematurely
+#        Description: 对提前离开副本的玩家施加逃亡者debuff
 #        Default:     1 - (Enabled, Blizzlike)
 #                     0 - (Disabled)
 
@@ -3639,9 +3639,9 @@ DungeonFinder.CastDeserter = 1
 #
 #    DungeonFinder.AllowCompleted
 #
-#        Description: Controls whether completed heroic dungeons are excluded from LFG queue.
-#                     0 - (Classic WLK mode: Dungeons completed by any group member today are excluded (daily lockout enforced))
-#        Default:     1 - (Blizzlike: All dungeons are available for queue, even if already completed)
+#        Description: 控制已完成英雄难度的副本是否从 LFG 队列中排除。
+#                     0 - （经典 WLK 模式：当天被队伍中任何成员完成过的副本会被排除（强制执行每日锁定））
+#        Default:     1 - （暴雪原生风格：所有副本均可排队，即使已完成）
 
 DungeonFinder.AllowCompleted = 1
 
@@ -3791,7 +3791,7 @@ Guild.MemberLimit = 0
 # FFAPVP
 #
 #    FFAPvPTimer
-#        Description: Specify time offset when player unset FFAPvP flag when leaving FFAPvP area. (e.g. Gurubashi Arena)
+#        Description: 指定玩家离开强制 PvP 区域（例如古拉巴什竞技场）时取消 FFAPvP 标记的时间偏移。
 #        Default:     30 sec
 
 FFAPvPTimer = 30
@@ -3803,7 +3803,7 @@ FFAPvPTimer = 30
 # OUTDOORPVP-户外PVP
 #
 #    OutdoorPvPCaptureRate
-#        Description: Specify rate multiplier for outdoor PvP capture points. (e.g. Eastern Plaguelands, Hellfire Peninsula)
+#        Description: 指定户外 PvP 占领点的速率倍数（例如东瘟疫之地、地狱火半岛）。
 #        Default:     1.0
 
 OutdoorPvPCaptureRate = 1.0

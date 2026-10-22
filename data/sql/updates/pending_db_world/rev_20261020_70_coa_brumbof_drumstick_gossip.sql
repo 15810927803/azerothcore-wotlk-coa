@@ -3,8 +3,8 @@ UPDATE `creature_template` SET `minlevel` = 14, `maxlevel` = 14, `faction` = 104
 
 DELETE FROM `npc_text` WHERE `ID` IN (9010700, 9010701);
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `Probability0`) VALUES
-(9010700, '<The drummer is busy playing his drum. He doesn''t seem to notice you.>', '<The drummer is busy playing his drum. He doesn''t seem to notice you.>', 0, 1),
-(9010701, 'I didn''t realize there was another drummer here at the Crossroads.$B$BI''ve got a spare drumstick, you can have it if you promise to introduce us after the party!', 'I didn''t realize there was another drummer here at the Crossroads.$B$BI''ve got a spare drumstick, you can have it if you promise to introduce us after the party!', 0, 1);
+(9010700, '<鼓手正忙着打鼓。他似乎没有注意到你。>', '<鼓手正忙着打鼓。他似乎没有注意到你。>', 0, 1),
+(9010701, '我不知道十字路口这里还有另一个鼓手。$B$B我有一根备用的鼓槌，如果你答应派对结束后介绍我们认识，就送给你！', '我不知道十字路口这里还有另一个鼓手。$B$B我有一根备用的鼓槌，如果你答应派对结束后介绍我们认识，就送给你！', 0, 1);
 
 DELETE FROM `gossip_menu` WHERE `MenuID` = 9010701;
 INSERT INTO `gossip_menu` (`MenuID`, `TextID`) VALUES
@@ -12,7 +12,7 @@ INSERT INTO `gossip_menu` (`MenuID`, `TextID`) VALUES
 
 DELETE FROM `gossip_menu_option` WHERE `MenuID` = 9010700;
 INSERT INTO `gossip_menu_option` (`MenuID`, `OptionID`, `OptionIcon`, `OptionText`, `OptionBroadcastTextID`, `OptionType`, `OptionNpcFlag`, `ActionMenuID`, `ActionPoiID`, `BoxCoded`, `BoxMoney`, `BoxText`, `BoxBroadcastTextID`) VALUES
-(9010700, 0, 0, 'Excuse me, friend. I need a drumstick for someone, do you have one you can spare?', 0, 1, 1, 9010701, 0, 0, 0, '', 0);
+(9010700, 0, 0, '打扰一下，朋友。我需要一根鼓槌给某人，你有多余的吗？', 0, 1, 1, 9010701, 0, 0, 0, '', 0);
 
 DELETE FROM `smart_scripts` WHERE `entryorguid` = 753513 AND `source_type` = 0;
 INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `event_param6`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_param4`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`) VALUES

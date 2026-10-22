@@ -17,10 +17,10 @@
 DELETE FROM `npc_text` WHERE `ID` IN (932517, 932518, 932519, 932520);
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `BroadcastTextID0`, `lang0`, `Probability0`)
 VALUES
-(932517, 'I was barely more than a pup when the Horde first came through the Dark Portal. By the end of the Second War I sat behind the walls of a human internment camp, like most of our people, and the fire in me had gone cold.$B$BYears we lay in the mud. Then a young warchief broke the camps open, and the old blood remembered what it was to be free.', 'I was barely more than a pup when the Horde first came through the Dark Portal. By the end of the Second War I sat behind the walls of a human internment camp, like most of our people, and the fire in me had gone cold.$B$BYears we lay in the mud. Then a young warchief broke the camps open, and the old blood remembered what it was to be free.', 0, 0, 1),
-(932518, '<Bagamul''s gaze drifts out over the sea.>$B$BThrall took ships from the humans and led us west, across the Great Sea. The storms nearly sank us all. When we reached this shore at last, the earth was red and dry and the sun beat down like a hammer.$B$BWe named the land Durotar, for the Warchief''s father, and we made it our own.', '<Bagamul''s gaze drifts out over the sea.>$B$BThrall took ships from the humans and led us west, across the Great Sea. The storms nearly sank us all. When we reached this shore at last, the earth was red and dry and the sun beat down like a hammer.$B$BWe named the land Durotar, for the Warchief''s father, and we made it our own.', 0, 0, 1),
-(932519, 'We raised this tower before we raised a single hut. From up here a sentry sees the road, the hills and the waves all at once, and I stood many watches on these boards.$B$BThe sea did not stay quiet. Kul Tiran sails came over the horizon, and Proudmoore''s soldiers burned what we had built. Their keep still stands down the coast, a reminder that peace here was paid for in blood.', 'We raised this tower before we raised a single hut. From up here a sentry sees the road, the hills and the waves all at once, and I stood many watches on these boards.$B$BThe sea did not stay quiet. Kul Tiran sails came over the horizon, and Proudmoore''s soldiers burned what we had built. Their keep still stands down the coast, a reminder that peace here was paid for in blood.', 0, 0, 1),
-(932520, '<The old orc is silent for a long moment.>$B$BNow the young ones hurry past this tower with their eyes on Orgrimmar and the glory beyond it. Let them hurry. But someone should remember why there is a Razor Hill at all.$B$BYou have been patient with an old orc''s memories, $N. Go on, then. The world will not wait for either of us.', '<The old orc is silent for a long moment.>$B$BNow the young ones hurry past this tower with their eyes on Orgrimmar and the glory beyond it. Let them hurry. But someone should remember why there is a Razor Hill at all.$B$BYou have been patient with an old orc''s memories, $N. Go on, then. The world will not wait for either of us.', 0, 0, 1);
+(932517, '部落初次穿过黑暗之门时，我还只是个小崽子。到第二次战争结束时，我和大多数族人一样，坐在人类收容所的高墙之后，我心中的火焰早已冷却。$B$B我们在泥泞中躺了多年。后来，一位年轻的酋长砸开了收容所，古老的血脉重新记起了自由是什么滋味。', '部落初次穿过黑暗之门时，我还只是个小崽子。到第二次战争结束时，我和大多数族人一样，坐在人类收容所的高墙之后，我心中的火焰早已冷却。$B$B我们在泥泞中躺了多年。后来，一位年轻的酋长砸开了收容所，古老的血脉重新记起了自由是什么滋味。', 0, 0, 1),
+(932518, '<巴加穆尔的目光飘向大海。>$B$B萨尔从人类手中夺来船只，带领我们向西，横渡无尽之海。风暴几乎让我们全军覆没。当我们终于抵达这片海岸时，大地赤红干燥，太阳像锤子一样砸下来。$B$B我们以酋长之父的名字，将这片土地命名为杜隆塔尔，并把它变成了我们自己的家园。', '<巴加穆尔的目光飘向大海。>$B$B萨尔从人类手中夺来船只，带领我们向西，横渡无尽之海。风暴几乎让我们全军覆没。当我们终于抵达这片海岸时，大地赤红干燥，太阳像锤子一样砸下来。$B$B我们以酋长之父的名字，将这片土地命名为杜隆塔尔，并把它变成了我们自己的家园。', 0, 0, 1),
+(932519, '我们先建起这座塔，之后才建起第一间小屋。从这里，哨兵能同时看到道路、山丘和波浪，我在这座木台上站过许多班岗。$B$B大海并未保持平静。库尔提拉斯的船帆出现在地平线上，普罗德摩尔的士兵烧毁了我们建起的一切。他们的要塞仍矗立在海岸那边，提醒着人们，这里的和平是用鲜血换来的。', '我们先建起这座塔，之后才建起第一间小屋。从这里，哨兵能同时看到道路、山丘和波浪，我在这座木台上站过许多班岗。$B$B大海并未保持平静。库尔提拉斯的船帆出现在地平线上，普罗德摩尔的士兵烧毁了我们建起的一切。他们的要塞仍矗立在海岸那边，提醒着人们，这里的和平是用鲜血换来的。', 0, 0, 1),
+(932520, '<老兽人沉默了好一会儿。>$B$B如今，年轻人匆匆经过这座塔，眼睛盯着奥格瑞玛和它背后的荣耀。让他们匆匆赶路吧。但总得有人记得，剃刀岭究竟为何存在。$B$B你耐心听了一个老兽人的回忆，$N。去吧。这个世界不会等我们中的任何一个。', '<老兽人沉默了好一会儿。>$B$B如今，年轻人匆匆经过这座塔，眼睛盯着奥格瑞玛和它背后的荣耀。让他们匆匆赶路吧。但总得有人记得，剃刀岭究竟为何存在。$B$B你耐心听了一个老兽人的回忆，$N。去吧。这个世界不会等我们中的任何一个。', 0, 0, 1);
 
 DELETE FROM `gossip_menu` WHERE `MenuID` IN (932517, 932518, 932519, 932520);
 INSERT INTO `gossip_menu` (`MenuID`, `TextID`)
@@ -33,14 +33,14 @@ VALUES
 DELETE FROM `gossip_menu_option` WHERE `MenuID` IN (932516, 932517, 932518, 932519, 932520);
 INSERT INTO `gossip_menu_option` (`MenuID`, `OptionID`, `OptionIcon`, `OptionText`, `OptionBroadcastTextID`, `OptionType`, `OptionNpcFlag`, `ActionMenuID`, `ActionPoiID`, `BoxCoded`, `BoxMoney`, `BoxText`, `BoxBroadcastTextID`)
 VALUES
-(932516, 0, 0, '<Stay a while and listen.>', 0, 1, 1, 932517, 0, 0, 0, '', 0),
-(932517, 0, 0, 'What happened next?', 0, 1, 1, 932518, 0, 0, 0, '', 0),
-(932517, 1, 0, '<Skip the story.>', 0, 1, 1, 0, 0, 0, 0, '', 0),
-(932518, 0, 0, 'And then what happened?', 0, 1, 1, 932519, 0, 0, 0, '', 0),
-(932518, 1, 0, '<Skip the story.>', 0, 1, 1, 0, 0, 0, 0, '', 0),
-(932519, 0, 0, 'What happened after that?', 0, 1, 1, 932520, 0, 0, 0, '', 0),
-(932519, 1, 0, '<Skip the story.>', 0, 1, 1, 0, 0, 0, 0, '', 0),
-(932520, 0, 0, '<Thank Bagamul for the story.>', 0, 1, 1, 0, 0, 0, 0, '', 0);
+(932516, 0, 0, '<留下听听吧。>', 0, 1, 1, 932517, 0, 0, 0, '', 0),
+(932517, 0, 0, '后来发生了什么？', 0, 1, 1, 932518, 0, 0, 0, '', 0),
+(932517, 1, 0, '<跳过这段故事。>', 0, 1, 1, 0, 0, 0, 0, '', 0),
+(932518, 0, 0, '然后又发生了什么？', 0, 1, 1, 932519, 0, 0, 0, '', 0),
+(932518, 1, 0, '<跳过这段故事。>', 0, 1, 1, 0, 0, 0, 0, '', 0),
+(932519, 0, 0, '那之后又发生了什么？', 0, 1, 1, 932520, 0, 0, 0, '', 0),
+(932519, 1, 0, '<跳过这段故事。>', 0, 1, 1, 0, 0, 0, 0, '', 0),
+(932520, 0, 0, '<感谢巴加穆尔的故事。>', 0, 1, 1, 0, 0, 0, 0, '', 0);
 
 DELETE FROM `conditions` WHERE `SourceTypeOrReferenceId` = 15 AND `SourceGroup` IN (932516, 932517, 932518, 932519, 932520);
 INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorType`, `ErrorTextId`, `ScriptName`, `Comment`)

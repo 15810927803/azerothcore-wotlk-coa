@@ -8,4 +8,4 @@
 
 DELETE FROM `coa_client_spell_description` WHERE `ID` IN (572784);
 INSERT INTO `coa_client_spell_description` (`ID`,`Description`) VALUES
-(572784,'Applies |cFFFFFFFFEclipsing Arrows|r to all party and raid members within $a1 yds for $574154d.\r\n\r\nCasting |cffffffffHuntress Shot|r heals marked allies for ${($704232m1+$704232ppl1+$SP*.3)*((100+$887014ppl3)/100)}.');
+(572784,'对 $a1 码内所有小队和团队成员施加|cFFFFFFFF蚀影箭|r，持续 $574154d。\r\n\r\n施放|cffffffff女猎手射击|r会为被标记的盟友恢复 ${($704232m1+$704232ppl1+$SP*.3)*((100+$887014ppl3)/100)} 点生命值。');

@@ -14,5 +14,5 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, 
 (8006108, 154357, 0, 0, 0, 1, 1, -9348.5, -2312.2, 45.539, 3.927, 0, 0, 0.923878, -0.382688, 2, 255, 1, '', NULL, 'Glinting Mud (Ascension spawn point, issue 6108)');
 DELETE FROM `pool_gameobject` WHERE `guid` = 8006108;
 INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES
-(8006108, 138, 0, 'Glinting Mud');
-UPDATE `pool_template` SET `description` = 'Glinting Mud - 2/11' WHERE `entry` = 138;
+(8006108, 138, 0, '闪烁的淤泥');
+UPDATE `pool_template` SET `description` = '闪烁的淤泥 - 2/11' WHERE `entry` = 138;
