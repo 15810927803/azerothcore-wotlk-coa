@@ -177,9 +177,10 @@ CoA.AutoProgression = 0
 # 如果始终未到达，则有一个简短的登录回退。
 CoA.SendDisplayPatches = 1
 
-# 客户端 CreatureDisplayInfo.dbc 的未打补丁副本，用于精确流式传输
-# 客户端缺失的行。留空则选择 DataDir/dbc_clientset；当该副本不可用时，
-# 改为流式传输所有大于等于 652000 的显示 ID。
+# 客户端 CreatureDisplayInfo.dbc 的未打补丁副本，用于精确流式传输客户端缺失的行。
+# 留空则选择 DataDir/dbc_clientset；当该副本不可用时，使用服务器自身的
+# DataDir/dbc/CreatureDisplayInfo.dbc，因此只流式传输通过
+# creaturedisplayinfo_dbc 添加的行。
 CoA.ClientDbcDirectory = ""
 
 # 从已安装客户端的操作码分发表中导出的扩展范围。
@@ -618,3 +619,5 @@ XPHotspots.Enable = 0
 XPHotspots.MaxContinent = 2
 XPHotspots.ActiveCount = 3
 XPHotspots.BuffSpell = 993945
+# Brand: a short label (32 characters at most, no "|") the client shows with the hotspots; empty = none.
+XPHotspots.Brand = ""
