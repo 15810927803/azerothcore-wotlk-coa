@@ -89,12 +89,6 @@ MythicPlus.DefaultForces.Elite = 2
 
 MythicPlus.NoCreatureLoot = 1
 
-#    MythicPlus.OvertimeCaches
-#        Description: 在时限之后完成的地下城所获得的宝库数量（限时内为 1 到 3）。
-#        Default:     1
-
-MythicPlus.OvertimeCaches = 1
-
 #    MythicPlus.CoinItem
 #    MythicPlus.CoinItem.TBC
 #    MythicPlus.CoinItem.WotLK
