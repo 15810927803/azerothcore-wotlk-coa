@@ -7,7 +7,8 @@
 #       Boost  : choco boost-msvc-14.3 1.84.0（官方源可用，已验证）
 #       OpenSSL: choco openssl 4.1.0（slproweb 的 3.x 链接已失效，4.x 可下；本 fork 为 2026 活跃项目已适配）
 #       MySQL  : 直链下载 mysql-8.0.41-winx64.zip（choco 下载源 404，改用 dev.mysql.com 跳转直链）
-#   - 依赖路径动态探测后写入 GITHUB_ENV，并在 CMake 配置时以 -D 显式传入，避免找不到。
+#   - CMake 固定 3.31.6（AC 社区验证版，规避 runner 自带 CMake 4.x 对 VS 探测失效的问题）。
+#   - 用 vswhere 显式定位 VS2022 安装路径，经 -DCMAKE_GENERATOR_INSTANCE 强制指定，绕开自动探测失败。
 
 name: Build Windows Server (CoA, no bots)
 
@@ -25,6 +26,11 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 1
+
+      - name: 固定 CMake 3.31.6
+        uses: actions/setup-cmake@v5
+        with:
+          cmake-version: '3.31.6'
 
       - name: 安装依赖 (Boost/OpenSSL via Choco, MySQL 直链)
         shell: pwsh
@@ -45,14 +51,27 @@ jobs:
           Write-Host "OPENSSL_ROOT_DIR=$env:OPENSSL_ROOT_DIR"
           Write-Host "MYSQL_DIR=$env:MYSQL_DIR"
 
+      - name: 定位 Visual Studio 2022 安装路径
+        id: vs
+        shell: pwsh
+        run: |
+          $vswhere = "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vsPath = & $vswhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath 2>$null
+          if (-not $vsPath) { $vsPath = & $vswhere -latest -property installationPath 2>$null }
+          Write-Host "VS instance: $vsPath"
+          if (-not $vsPath) { Write-Error "未找到 Visual Studio 实例"; exit 1 }
+          Add-Content -Path $env:GITHUB_ENV -Value "VS_INSTANCE=$vsPath"
+
       - name: CMake 配置（排除机器人模块）
         shell: pwsh
         run: |
           $args = @('-B','build','-G','Visual Studio 17 2022','-A','x64',
             '-DCMAKE_BUILD_TYPE=Release','-DTOOLS_BUILD=all','-DSCRIPTS=static','-DMODULES=none')
-          if ($env:BOOST_ROOT)       { $args += "-DBOOST_ROOT=$env:BOOST_ROOT" }
-          if ($env:OPENSSL_ROOT_DIR) { $args += "-DOPENSSL_ROOT_DIR=$env:OPENSSL_ROOT_DIR" }
-          if ($env:MYSQL_DIR)        { $args += "-DMYSQL_DIR=$env:MYSQL_DIR" }
+          if ($env:VS_INSTANCE)     { $args += "-DCMAKE_GENERATOR_INSTANCE=$env:VS_INSTANCE" }
+          if ($env:BOOST_ROOT)      { $args += "-DBOOST_ROOT=$env:BOOST_ROOT" }
+          if ($env:OPENSSL_ROOT_DIR){ $args += "-DOPENSSL_ROOT_DIR=$env:OPENSSL_ROOT_DIR" }
+          if ($env:MYSQL_DIR)       { $args += "-DMYSQL_DIR=$env:MYSQL_DIR" }
+          cmake --version
           cmake @args
 
       - name: 编译 worldserver / authserver
