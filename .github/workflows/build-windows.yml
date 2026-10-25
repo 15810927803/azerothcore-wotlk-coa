@@ -1,15 +1,11 @@
 # CoA 飞升计划 - GitHub Actions 云端 Windows 编译（不含机器人 / bot 模块）
 #
-# 「即插即用」步骤：
-#   1) 在 GitHub 上 fork 该仓库到你的账号
-#   2) 将此文件放到你 fork 仓库的  .github/workflows/  目录（建议改名 build-windows.yml）并提交
-#   3) 进入仓库的 Actions 标签页 -> 选择该工作流 -> Run workflow（手动触发）
-#   4) 运行结束后，在 Artifacts 中下载 coa-windows-server（含 worldserver.exe / authserver.exe）
-#
+# 用法：推到 fork 仓库的 .github/workflows/ 后，Actions 标签页手动 Run workflow。
 # 说明：
 #   - 已用 -DMODULES=none 排除所有模块（含 playerbots 机器人模块），只编译纯核心服务端。
-#   - 依赖通过 Chocolatey 安装预编译包（openssl / boost / mysql），比 vcpkg 源码编译快很多。
-#   - 云端 runner 首次编译较慢；若依赖查找报错，按日志微调下方 choco 安装命令或环境变量即可。
+#   - 依赖通过 Chocolatey 安装预编译包（已锁定到与 VS2022 / AC 3.3.5 验证过的版本）：
+#       openssl 3.4.1 / boost-msvc-14.3 1.84.0 / mysql 8.0.41
+#   - 依赖路径动态探测后写入 GITHUB_ENV，并在 CMake 配置时以 -D 显式传入，避免找不到。
 
 name: Build Windows Server (CoA, no bots)
 
@@ -31,21 +27,29 @@ jobs:
       - name: 安装依赖 (OpenSSL / Boost / MySQL) via Chocolatey
         shell: pwsh
         run: |
-          choco install openssl boost-msvc mysql --no-progress -y
-          # 动态定位并导出 CMake 所需的依赖路径
-          $boost = Get-ChildItem "C:\local" -Filter "boost_*" -Directory | Select-Object -First 1
+          choco install openssl --version=3.4.1 --no-progress -y
+          choco install boost-msvc-14.3 --version=1.84.0 --no-progress -y
+          choco install mysql --version=8.0.41 --no-progress -y
+          # 动态定位并导出 CMake 所需的依赖路径（路径不存在时不报错）
+          $boost = Get-ChildItem "C:\local" -Filter "boost_*" -Directory -ErrorAction SilentlyContinue | Select-Object -First 1
           if ($boost) { Add-Content -Path $env:GITHUB_ENV -Value "BOOST_ROOT=$($boost.FullName)" }
-          $openssl = Get-ChildItem "C:\Program Files" -Filter "OpenSSL*" -Directory | Select-Object -First 1
+          $openssl = Get-ChildItem "C:\Program Files" -Filter "OpenSSL*" -Directory -ErrorAction SilentlyContinue | Select-Object -First 1
           if ($openssl) { Add-Content -Path $env:GITHUB_ENV -Value "OPENSSL_ROOT_DIR=$($openssl.FullName)" }
-          $mysql = Get-ChildItem "C:\Program Files\MySQL" -Filter "MySQL Server*" -Directory | Select-Object -First 1
+          $mysql = Get-ChildItem "C:\Program Files\MySQL" -Filter "MySQL Server*" -Directory -ErrorAction SilentlyContinue | Select-Object -First 1
           if ($mysql) { Add-Content -Path $env:GITHUB_ENV -Value "MYSQL_DIR=$($mysql.FullName)" }
+          Write-Host "BOOST_ROOT=$env:BOOST_ROOT"
+          Write-Host "OPENSSL_ROOT_DIR=$env:OPENSSL_ROOT_DIR"
+          Write-Host "MYSQL_DIR=$env:MYSQL_DIR"
 
       - name: CMake 配置（排除机器人模块）
-        run: cmake -B build -G "Visual Studio 17 2022" -A x64 `
-            -DCMAKE_BUILD_TYPE=Release `
-            -DTOOLS_BUILD=all `
-            -DSCRIPTS=static `
-            -DMODULES=none
+        shell: pwsh
+        run: |
+          $args = @('-B','build','-G','Visual Studio 17 2022','-A','x64',
+            '-DCMAKE_BUILD_TYPE=Release','-DTOOLS_BUILD=all','-DSCRIPTS=static','-DMODULES=none')
+          if ($env:BOOST_ROOT)       { $args += "-DBOOST_ROOT=$env:BOOST_ROOT" }
+          if ($env:OPENSSL_ROOT_DIR) { $args += "-DOPENSSL_ROOT_DIR=$env:OPENSSL_ROOT_DIR" }
+          if ($env:MYSQL_DIR)        { $args += "-DMYSQL_DIR=$env:MYSQL_DIR" }
+          cmake @args
 
       - name: 编译 worldserver / authserver
         run: cmake --build build --config Release --target worldserver authserver
