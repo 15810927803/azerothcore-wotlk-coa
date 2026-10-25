@@ -11,6 +11,8 @@
 #     故不写死 "Visual Studio 17 2022" 生成器，而是用 vswhere 定位 VS 后调用 vcvarsall.bat 注入 MSVC 环境，
 #     再让 CMake 自动探测已安装的 VS2026 生成器，彻底避免版本号硬编码导致 "could not find Visual Studio"。
 #   - 不使用第三方 setup 类 action（远程不稳），直接复用 runner 自带工具链（cmake/vswhere/msbuild）。
+#   - 产物打包前，把运行时 DLL（libmysql / libcrypto / libssl）从已安装依赖目录拷进 build/bin/Release，
+#     使下载的成品可直接与 exe 一同放置运行，无需再单独找 DLL。
 
 name: Build Windows Server (CoA, no bots)
 
@@ -65,6 +67,26 @@ jobs:
           cmake --version
           cmake -B build -DCMAKE_BUILD_TYPE=Release -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=none -DBOOST_ROOT="%BOOST_ROOT%" -DOPENSSL_ROOT_DIR="%OPENSSL_ROOT_DIR%" -DMYSQL_DIR="%MYSQL_DIR%"
           cmake --build build --config Release --target worldserver authserver
+
+      - name: 收集运行时 DLL 进产物目录
+        shell: pwsh
+        run: |
+          $rel = "build\bin\Release"
+          if (-not (Test-Path $rel)) { Write-Error "未找到 $rel，编译可能失败"; exit 1 }
+          # MySQL 客户端库
+          $mysqlDll = Join-Path $env:MYSQL_DIR "lib\libmysql.dll"
+          if (Test-Path $mysqlDll) { Copy-Item $mysqlDll $rel; Write-Host "已复制 libmysql.dll" }
+          else { Write-Error "libmysql.dll 未找到: $mysqlDll"; exit 1 }
+          # OpenSSL
+          $sslBin = Join-Path $env:OPENSSL_ROOT_DIR "bin"
+          $c = Join-Path $sslBin "libcrypto-3-x64.dll"
+          $s = Join-Path $sslBin "libssl-3-x64.dll"
+          if ((Test-Path $c) -and (Test-Path $s)) {
+            Copy-Item $c $rel; Copy-Item $s $rel
+            Write-Host "已复制 libcrypto-3-x64.dll / libssl-3-x64.dll"
+          } else { Write-Error "OpenSSL DLL 未找到: $sslBin"; exit 1 }
+          Write-Host "=== 产物目录 DLL ==="
+          Get-ChildItem $rel -Filter *.dll | Select-Object Name
 
       - name: 上传编译产物
         uses: actions/upload-artifact@v4
