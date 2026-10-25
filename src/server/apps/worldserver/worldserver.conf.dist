@@ -472,14 +472,14 @@ Ra.MinLevel = 3
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-SOAP.Enabled = 0
+SOAP.Enabled = 1
 
 #
 #    SOAP.IP
 #        Description: 将 SOAP 服务绑定到 IP/主机名
 #        Default:     "127.0.0.1" - (Bind to localhost)
 
-SOAP.IP = "127.0.0.1"
+SOAP.IP = "0.0.0.0"
 
 #
 #    SOAP.Port
@@ -2571,17 +2571,19 @@ MaxGroupXPDistance = 74
 Rate.XP.Global = 0.9295
 
 #    Rate.XP.Profession
-#        临时本地公式，未验证与实时 Ascension 经验一致：
-#        floor(当前等级所需经验 * BaseFraction * Profession * 技能修正 * 难度)。
-#        然后应用全局和 XP 模块修改器，接着是正常的 GiveXP 限制/奖励。
-#        每次完成采集/制造动作时授予，独立于技能提升判定。
-#        钓鱼使用区域技能阈值；垃圾捕获不授予。灰色默认为零。
-#        采集节点使用核心的每玩家每重生一次的技能尝试守卫。
-#        技能/难度默认值来自 PR #4128；BaseFraction 是本地策略（1/50 等级）。
-#        将 Profession 设置为 0 以禁用普通专业奖励。所有倍率随 .reload config 重新加载。
-#        仅专业挑战保留其单独的每次技能提升公式和队伍共享；
-#        这些奖励也使用全局和动态经验。伐木/木工在此没有核心动作路径
-Rate.XP.Profession = 0.4
+#        临时本地公式，尚未验证与 Ascension 线上 XP 完全一致：
+#        floor(当前等级所需 XP * BaseFraction * Profession * 技能修正 * 难度)。
+#        然后应用 Global 和 XP 模块修正，随后是正常的 GiveXP 限制/加成。
+#        每次完成采集/制作动作时发放，独立于技能提升判定。
+#        钓鱼使用区域技能阈值；垃圾钓获不发放任何奖励。灰色默认值为零。
+#        采集节点使用核心的“每名玩家每次重生仅一次技能尝试”保护。
+#        技能/难度默认值来自 PR #4128；BaseFraction 是本地策略（一级的 1/50）。
+#        将 Profession 设为 0 可禁用普通专业奖励。所有速率可通过 .reload config 重载。
+#        仅专业挑战保留其独立的每次技能提升公式和队伍共享；
+#        这些奖励也使用 Global 和动态 XP。伐木/木工在此没有核心动作路径。
+#        熔炼是采矿专业制作，使用 Rate.XP.Profession.Smelting 而非 Mining 速率，因此
+#        矿石在开采时支付一次；0（默认）使熔炼不获得 XP。
+Rate.XP.Profession = 0.2
 Rate.XP.Profession.BaseFraction = 0.02
 Rate.XP.Profession.Gray = 0
 Rate.XP.Profession.Green = 0.95
@@ -2590,6 +2592,7 @@ Rate.XP.Profession.Orange = 1.05
 Rate.XP.Profession.Mining = 2.11
 Rate.XP.Profession.Herbalism = 1.44
 Rate.XP.Profession.Disenchanting = 1.44
+Rate.XP.Profession.Smelting = 0
 Rate.XP.Profession.Skinning = 0.55
 Rate.XP.Profession.Fishing = 0.33
 Rate.XP.Profession.Blacksmithing = 3.77
@@ -2973,21 +2976,21 @@ Rate.Drop.Money                 = 1
 
 #
 #    Rate.Drop.Item.ReferencedAmount
-#        Description: Multiplier for referenced loot amount. Makes many raid bosses (and others) drop additional loot.
+#        Description: 引用掉落数量的倍率。使许多团本首领（以及其他单位）掉落额外战利品。
 #        Default:     1
 
 Rate.Drop.Item.ReferencedAmount = 1
 
 #
 #    Rate.Drop.Item.GroupAmount
-#        Description: Multiplier for grouped items. Makes many dungeon bosses (and others) drop additional loot.
+#        Description: 分组物品的倍率。使许多地下城首领（以及其他单位）掉落额外战利品。
 #        Default:     1
 
 Rate.Drop.Item.GroupAmount = 1
 
 #
 #    LootNeedBeforeGreedILvlRestriction
-#        Description: Specify level restriction for items below player's subclass in Need Before Greed loot mode in DF groups
+#        Description: 指定地下城查找器队伍在“需求优先于贪婪”拾取模式下，对低于玩家子类的物品的等级限制。
 #        Default:     70
 #                     0  - Disabled
 
@@ -2995,9 +2998,9 @@ LootNeedBeforeGreedILvlRestriction = 70
 
 #
 #    Item.SetItemTradeable
-#        Description: Enabled/Disabled trading BoP items among raid members.
-#        Default:     1 - (Set BoP items tradeable timer to 2 hours)
-#                     0 - (Disable trading BoP items among raid members)
+#        Description: 启用/禁用团本成员之间交易拾取绑定（BoP）物品。
+#        Default:     1 - (将拾取绑定物品的可交易计时设为 2 小时)
+#                     0 - (禁用团本成员之间交易拾取绑定物品)
 
 Item.SetItemTradeable = 1
 
@@ -3008,7 +3011,7 @@ Item.SetItemTradeable = 1
 # QUEST-任务
 #
 #    Quests.EnableQuestTracker
-#        Description: Store data in the database about quest completion and abandonment to help finding bugged quests.
+#        Description: 在数据库中存储有关任务完成和放弃的数据，以帮助查找有问题的任务。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
@@ -3016,7 +3019,7 @@ Quests.EnableQuestTracker = 0
 
 #
 #    QuestPOI.Enabled
-#        Description: Show points of interest on the map
+#        Description: 在地图上显示兴趣点
 #        Default:     1 - Enabled
 #                     0 - Disabled
 
@@ -3024,25 +3027,25 @@ QuestPOI.Enabled = 1
 
 #
 #    Quests.LowLevelHideDiff
-#        Description: Level difference between player and quest level at which quests are
-#                     considered low-level and are not shown via exclamation mark (!) at quest
-#                     givers.
-#        Default:     4  - (Enabled, Hide quests that are more than 4 levels lower than the character)
+#        Description: 玩家与任务等级之间的等级差，
+#                     达到该差值时任务被视为低等级，
+#                     不再在任务给予者处通过感叹号（!）显示。
+#        Default:     4  - (启用，隐藏比角色低 4 级以上的任务)
 
 Quests.LowLevelHideDiff = 4
 
 #
 #    Quests.HighLevelHideDiff
-#        Description: Level difference between player and quest level at which quests are
-#                     considered high-level and are not shown via exclamation mark (!) at quest
-#                     givers.
-#        Default:     7  - (Enabled, Hide quests that are more than 7 levels higher than the character)
+#        Description: 玩家与任务等级之间的等级差，
+#                     达到该差值时任务被视为高等级，
+#                     不再在任务给予者处通过感叹号（!）显示。
+#        Default:     7  - (Enabled, 隐藏比角色高 7 级以上的任务)
 
 Quests.HighLevelHideDiff = 7
 
 #
 #    Quests.IgnoreRaid
-#        Description: Allow non-raid quests to be completed while in a raid group.
+#        Description: 允许非团本任务在团本队伍中完成。
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
@@ -3050,31 +3053,31 @@ Quests.IgnoreRaid = 0
 
 #
 #    Quests.IgnoreAutoAccept
-#        Description: Ignore auto accept flag. Clients will have to manually accept all quests.
-#        Default:     0 - (Disabled, DB values determine if quest is marked auto accept or not.)
-#                     1 - (Enabled, clients will not be told to automatically accept any quest.)
+#        Description: 忽略自动接受标志。客户端将必须手动接受所有任务。
+#        Default:     0 - (Disabled, 由数据库值决定任务是否标记为自动接受。)
+#                     1 - (Enabled, 客户端不会被告知自动接受任何任务。)
 
 Quests.IgnoreAutoAccept = 0
 
 #
 #    Quests.IgnoreAutoComplete
-#        Description: Ignore auto complete flag. Clients will have to manually complete all quests.
-#        Default:     0 - (Disabled, DB values determine if quest is marked auto complete or not.)
-#                     1 - (Enabled, clients will not be told to automatically complete any quest.)
+#        Description: 略自动完成标志。客户端将必须手动完成所有任务。
+#        Default:     0 - (Disabled, 由数据库值决定任务是否标记为自动完成。)
+#                     1 - (Enabled, 客户端不会被告知自动完成任何任务。)
 
 Quests.IgnoreAutoComplete = 0
 
 #
 #    Rate.RewardQuestMoney
-#        Description: Allows to tweak the amount of money rewarded by quests (does not affect RewardBonusMoney).
+#        Description: 允许调整任务奖励的金钱数量（不影响 RewardBonusMoney）。
 #        Default:     1
 
 Rate.RewardQuestMoney = 1
 
 #
 #    Rate.RewardBonusMoney
-#        Description: Allows to further tweak the amount of extra money rewarded by quests when the player
-#                     is at MaxPlayerLevel.
+#        Description: 允许进一步调整玩家处于 MaxPlayerLevel 时
+#                    任务奖励的额外金钱数量。
 #        Default:     1
 
 Rate.RewardBonusMoney = 1
@@ -3086,16 +3089,16 @@ Rate.RewardBonusMoney = 1
 # CREATURE-生物
 #
 #    MonsterSight
-#        Description: The maximum distance in yards that a "monster" creature can see
-#                     regardless of level difference (through CreatureAI::IsVisible).
-#                     Increases CONFIG_SIGHT_MONSTER to 50 yards. Used to be 20 yards.
+#        Description: “怪物”类生物能够看到的最大距离（单位：码），
+#                     不受等级差影响（通过 CreatureAI::IsVisible 实现）。
+#                     将 CONFIG_SIGHT_MONSTER 提高到 50 码。以前是 20 码。
 #        Default:     50.000000
 
 MonsterSight = 50.000000
 
 #
 #    Rate.Creature.Aggro
-#        Description: Aggro radius percentage.
+#        Description: 仇恨半径百分比。
 #        Default:     1   - (Enabled, 100%)
 #                     1.5 - (Enabled, 150%)
 #                     0   - (Disabled, 0%)
@@ -3104,7 +3107,7 @@ Rate.Creature.Aggro = 1
 
 #
 #    CreatureFamilyFleeAssistanceRadius
-#        Description: Distance for fleeing creatures seeking assistance from other creatures.
+#        Description: 逃跑生物向其他生物寻求协助的距离。
 #        Default:     30 - (Enabled)
 #                     0  - (Disabled)
 
@@ -3112,8 +3115,8 @@ CreatureFamilyFleeAssistanceRadius = 30
 
 #
 #    CreatureLeashRadius
-#        Description: Distance (in yards) for default leash due to being too far from pulled position.
-#        Default:     50 - (Enabled, vanilla chase distance)
+#        Description: 因距离被拉位置过远而触发默认脱战返回的距离（单位：码）。
+#        Default:     50 - (Enabled, 原版追击距离)
 #                     0  - (Disabled)
 
 CreatureLeashRadius = 50
@@ -4681,6 +4684,22 @@ AllowTwoSide.Interaction.Arena = 1
 #                     1 - (Enabled)
 
 AllowTwoSide.Interaction.Auction = 1
+
+#
+#    AllowTwoSide.Interaction.Mail
+#        Description: Allow sending mails between factions.
+#        Default:     1 - (Enabled)
+#                     0 - (Disabled)
+
+AllowTwoSide.Interaction.Mail = 1
+
+#
+#    AllowTwoSide.Trade
+#        Description: Allow trading between factions.
+#        Default:     1 - (Enabled)
+#                     0 - (Disabled)
+
+AllowTwoSide.Trade = 1
 
 #
 #    AllowTwoSide.WhoList

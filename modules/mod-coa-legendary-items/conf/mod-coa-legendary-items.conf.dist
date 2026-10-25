@@ -1,10 +1,13 @@
 [worldserver]
 
 # 启用该模块的掉落和已装备的强化能力。
-CoALegendaryItems.Enable = 0
+CoALegendaryItems.Enable = 1
 
-# 每个符合条件生物击杀的百分比几率。每具尸体最多掉落一件传奇物品。
-CoALegendaryItems.DropChance = 0.5
+# 每次击杀符合条件的生物时的百分比掉落几率。每具尸体最多掉落一件传奇物品。
+CoALegendaryItems.DropChance = 0.05
 
-# 达到或高于此等级的玩家不再获得新的掉落。已有物品仍然有效。
-CoALegendaryItems.StopDropLevel = 60
+# 达到或高于此等级的玩家不会获得新的掉落。
+CoALegendaryItems.StopDropLevel = 45
+
+# 到或高于此等级的玩家无法从已装备的传奇物品中获得能力加成。
+CoALegendaryItems.StopPowerLevel = 60

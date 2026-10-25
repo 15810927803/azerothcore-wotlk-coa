@@ -74,13 +74,26 @@ CoA.CreatureScaling.Dungeon.Damage = 1.5
 CoA.CreatureScaling.Raid.Damage = 1.0
 CoA.CreatureScaling.MapDamage = ""
 
-# 机器人所扮演角色的衣橱、套装、幻化和坐骑/同伴收藏。
-# 0 - 从不：机器人会话跳过这些收藏（默认）。
-# 1 - 仅限玩家账号的角色被作为机器人游玩时（小号），绝不包含随机机器人账号：
+# 非玩家控制的 NPC 使用类似原版的魔法抗性，包括神圣系
+# （docs/coa/monster-linear-resistance.md）。每一点战斗等级为所有魔法学派增加 PerLevel 抗性；
+# 穿透和减益效果会将其降低至至少 0。每一点 PerPercent 抗性增加 1% 平均抵抗率，上限由
+# MaxReductionPct 限制。直接命中和持续伤害跳数围绕该平均值按原生 10% 部分抵抗阶梯判定；伤害
+# 法术永远不会被完全抵抗，控制效果可以被完全抵抗。玩家、宠物和被魅惑的生物保持原生规则。
+# PerPercent 是重建时选择的数值，并非已验证的线上值。
+# 1 - enabled (default).
+# 0 - 原生抗性，包括隐藏的等级差项和 Classic+ 抵抗表。
+CoA.MonsterResistance.Enable = 1
+CoA.MonsterResistance.PerLevel = 1.0
+CoA.MonsterResistance.PerPercent = 5.0
+CoA.MonsterResistance.MaxReductionPct = 75.0
+
+# 为机器人操控的角色启用衣柜、套装、外观和坐骑/伙伴收藏。
+# 0 - 从不：机器人会话跳过收藏（默认）。
+# 1 - 仅限玩家账号中被作为机器人操控的角色（小号），绝不包含随机机器人账号：
 #     其保存的套装和外观会像玩家一样被应用。
-# 2 - 每个机器人会话。
-# 随机机器人账号通过其名称前缀 CoA.RandomBotAccountPrefix 识别，
-# 该前缀必须与 mod-playerbots 的 AiPlayerbot.RandomBotAccountPrefix 匹配（默认：rndbot）。
+# 2 - 所有机器人会话。
+# 随机机器人账号通过名称前缀 CoA.RandomBotAccountPrefix 识别，该前缀必须
+# 与 mod-playerbots 的 AiPlayerbot.RandomBotAccountPrefix 匹配（默认：rndbot）。
 CoA.CollectionsForBots = 0
 CoA.RandomBotAccountPrefix = "rndbot"
 
@@ -114,11 +127,23 @@ CoA.LearnOwnedCompanions = 1
 # 包括一级角色。不授予专业。
 CoA.MaxRidingFromStart = 0
 
-# 为在登录时未携带三种 PvP 规则集光环中任何一种的角色授予 PvE 设置，
-# 因为角色创建不授予规则集，且客户端的选择界面受等级和休息区域限制。
-# PvE 设置就是单独的 PvE 模式光环 9931032，与按下“PvE 模式”所应用的完全相同。
-# 与此设置无关，
-# 携带战争模式光环 1004119 与 PvE 模式并存时，该角色在登录时会失去战争模式光环。
+# 坐骑飞行规则。
+# 0 - 玩家在达到专家骑术或更高等级时可以在外域飞行；在诺森德，学会寒冷天气飞行后可以飞行；
+#     在艾泽拉斯、战场、战地和禁飞区域永远不能飞行。所有坐骑都遵循此规则，
+#     包括 Ascension 自有的坐骑（如 Ash'adar）；
+#     离开飞行区域的骑手会被自动下马。
+# 1 - 沿用 PR #8631 之前的飞行规则：上述规则仅适用于法术书中的坐骑，
+#     Ash'adar 永远不能飞行，其他坐骑在其自身法术允许的地方飞行，
+#     离开飞行区域时不会被下马。
+# 启动时和配置重载时生效。
+# Default: 0
+CoA.LegacyMountFlight = 0
+
+# 在登录时，为不携带三种 PvP 规则集光环中任何一种的角色授予 PvE 规则集，
+# 因为角色创建时不会授予规则集，且客户端的选择界面受等级和休息区域限制。
+# PvE 规则集就是单独的 PvE 模式光环 9931032，
+# 与点击“PvE 模式”所应用的效果完全一致。与此设置无关，
+# 携带 PvE 模式旁边 War Mode 光环 1004119 的角色在登录时会失去 War Mode 光环。
 # 设为 0 可将此类角色保留在 Ruleset.None 上。
 CoA.RulesetLoginDefault = 1
 
@@ -619,5 +644,5 @@ XPHotspots.Enable = 0
 XPHotspots.MaxContinent = 2
 XPHotspots.ActiveCount = 3
 XPHotspots.BuffSpell = 993945
-# Brand: a short label (32 characters at most, no "|") the client shows with the hotspots; empty = none.
+# Brand: 客户端与热点一起显示的简短标签（最多 32 个字符，不能包含“|”）；留空 = 无。
 XPHotspots.Brand = ""
