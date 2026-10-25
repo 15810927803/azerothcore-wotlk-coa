@@ -3,8 +3,10 @@
 # 用法：推到 fork 仓库的 .github/workflows/ 后，Actions 标签页手动 Run workflow。
 # 说明：
 #   - 已用 -DMODULES=none 排除所有模块（含 playerbots 机器人模块），只编译纯核心服务端。
-#   - 依赖通过 Chocolatey 安装预编译包（已锁定到与 VS2022 / AC 3.3.5 验证过的版本）：
-#       openssl 3.4.1 / boost-msvc-14.3 1.84.0 / mysql 8.0.41
+#   - 依赖获取方式（已规避 chocolatey 失效的下载源）：
+#       Boost  : choco boost-msvc-14.3 1.84.0（官方源可用，已验证）
+#       OpenSSL: choco openssl 4.1.0（slproweb 的 3.x 链接已失效，4.x 可下；本 fork 为 2026 活跃项目已适配）
+#       MySQL  : 直链下载 mysql-8.0.41-winx64.zip（choco 下载源 404，改用 dev.mysql.com 跳转直链）
 #   - 依赖路径动态探测后写入 GITHUB_ENV，并在 CMake 配置时以 -D 显式传入，避免找不到。
 
 name: Build Windows Server (CoA, no bots)
@@ -24,19 +26,21 @@ jobs:
           submodules: recursive
           fetch-depth: 1
 
-      - name: 安装依赖 (OpenSSL / Boost / MySQL) via Chocolatey
+      - name: 安装依赖 (Boost/OpenSSL via Choco, MySQL 直链)
         shell: pwsh
         run: |
-          choco install openssl --version=3.4.1 --no-progress -y
           choco install boost-msvc-14.3 --version=1.84.0 --no-progress -y
-          choco install mysql --version=8.0.41 --no-progress -y
-          # 动态定位并导出 CMake 所需的依赖路径（路径不存在时不报错）
+          choco install openssl --no-progress -y
+          # MySQL 8.0.41 客户端库（choco 下载源 404，改 dev.mysql.com 跳转直链）
+          curl.exe -L -o C:\mysql8.zip "https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.41-winx64.zip"
+          Expand-Archive C:\mysql8.zip -DestinationPath C:\mysql8
+          # 动态定位并导出 CMake 所需的依赖路径
           $boost = Get-ChildItem "C:\local" -Filter "boost_*" -Directory -ErrorAction SilentlyContinue | Select-Object -First 1
-          if ($boost) { Add-Content -Path $env:GITHUB_ENV -Value "BOOST_ROOT=$($boost.FullName)" }
+          if ($boost)   { Add-Content -Path $env:GITHUB_ENV -Value "BOOST_ROOT=$($boost.FullName)" }
           $openssl = Get-ChildItem "C:\Program Files" -Filter "OpenSSL*" -Directory -ErrorAction SilentlyContinue | Select-Object -First 1
           if ($openssl) { Add-Content -Path $env:GITHUB_ENV -Value "OPENSSL_ROOT_DIR=$($openssl.FullName)" }
-          $mysql = Get-ChildItem "C:\Program Files\MySQL" -Filter "MySQL Server*" -Directory -ErrorAction SilentlyContinue | Select-Object -First 1
-          if ($mysql) { Add-Content -Path $env:GITHUB_ENV -Value "MYSQL_DIR=$($mysql.FullName)" }
+          $mysql = Get-ChildItem "C:\mysql8" -Directory -ErrorAction SilentlyContinue | Select-Object -First 1
+          if ($mysql)   { Add-Content -Path $env:GITHUB_ENV -Value "MYSQL_DIR=$($mysql.FullName)" }
           Write-Host "BOOST_ROOT=$env:BOOST_ROOT"
           Write-Host "OPENSSL_ROOT_DIR=$env:OPENSSL_ROOT_DIR"
           Write-Host "MYSQL_DIR=$env:MYSQL_DIR"
